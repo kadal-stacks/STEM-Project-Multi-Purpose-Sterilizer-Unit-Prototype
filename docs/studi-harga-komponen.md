@@ -49,7 +49,7 @@ Gambar-gambar berikut berasal dari Wikimedia Commons dan memperlihatkan produk/p
   <tr>
     <td align="center" width="50%">
       <a href="https://commons.wikimedia.org/wiki/File:UV_STERILIZER_BOX_PHILIPS.jpg">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/0/00/UV_STERILIZER_BOX_PHILIPS.jpg" alt="Kabinet UV tertutup yang difoto oleh PT SUM HING INDONESIA" width="230" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/UV_STERILIZER_BOX_PHILIPS.jpg/500px-UV_STERILIZER_BOX_PHILIPS.jpg" alt="Kabinet UV tertutup yang difoto oleh PT SUM HING INDONESIA" width="220" />
       </a>
       <br /><sub><b>Contoh kabinet tertutup</b><br />PT SUM HING INDONESIA · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></sub>
     </td>
@@ -63,9 +63,9 @@ Gambar-gambar berikut berasal dari Wikimedia Commons dan memperlihatkan produk/p
   <tr>
     <td align="center" width="50%">
       <a href="https://commons.wikimedia.org/wiki/File:Germicidal_Lamp_2.jpg">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Germicidal_Lamp_2.jpg" alt="Foto detail lampu germicidal kompak" width="180" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/UV_Sterilisation.jpg/960px-UV_Sterilisation.jpg" alt="Perlakuan UV pada pipet dan tip di dalam biosafety cabinet" width="220" />
       </a>
-      <br /><sub><b>Contoh lampu kompak</b><br />Atlant · <a href="https://creativecommons.org/licenses/by-sa/2.5/">CC BY-SA 2.5</a></sub>
+      <br /><sub><b>Perlakuan UV dalam kabinet</b><br />Orla Keogh · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></sub>
     </td>
     <td align="center" width="50%">
       <a href="https://commons.wikimedia.org/wiki/File:UV-C_LED_lamp.jpg">
@@ -142,6 +142,14 @@ Pencarian Shopee sebelumnya menghasilkan indikasi harga berikut. Harga dan statu
 Harga CH32V003 bare chip tidak boleh dibandingkan langsung dengan harga development kit. Ketersediaan komponen, paket, programmer, dan kebutuhan penyolderan berbeda.
 
 ## 6. Pilihan mikrokontroler
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Candidate-STC8H1K08-2563eb?style=flat-square" alt="Candidate: STC8H1K08" />
+  <img src="https://img.shields.io/badge/Candidate-CH32V003-7c3aed?style=flat-square" alt="Candidate: CH32V003" />
+  <img src="https://img.shields.io/badge/Architecture-RISC--V-334155?style=flat-square&logo=riscv&logoColor=white" alt="RISC-V architecture badge" />
+</p>
+
+> Badge adalah penanda kandidat yang sedang dibandingkan, bukan konfirmasi pemilihan komponen. Logo RISC-V digunakan hanya sebagai penjelas arsitektur untuk kandidat CH32V003.
 
 ![Pilihan MCU](https://img.shields.io/badge/MCU%20option-STC8H1K08-2563eb?style=flat-square) ![Pilihan MCU](https://img.shields.io/badge/MCU%20option-CH32V003%20%2F%20RISC--V-7c3aed?style=flat-square&logo=riscv&logoColor=white)
 
@@ -270,7 +278,7 @@ Semua foto di bagian referensi visual ditautkan ke versi asli di Wikimedia Commo
 
 1. **UV STERILIZER BOX PHILIPS.jpg** — foto oleh PT SUM HING INDONESIA, lisensi [Creative Commons Attribution-ShareAlike 4.0 (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/). [Halaman sumber](https://commons.wikimedia.org/wiki/File:UV_STERILIZER_BOX_PHILIPS.jpg).
 2. **Germicidal Lamp 1.jpg** — foto oleh Atlant, lisensi [Creative Commons Attribution 2.5 (CC BY 2.5)](https://creativecommons.org/licenses/by/2.5/). [Halaman sumber](https://commons.wikimedia.org/wiki/File:Germicidal_Lamp_1.jpg).
-3. **Germicidal Lamp 2.jpg** — foto oleh Atlant, lisensi [Creative Commons Attribution-ShareAlike 2.5 (CC BY-SA 2.5)](https://creativecommons.org/licenses/by-sa/2.5/). [Halaman sumber](https://commons.wikimedia.org/wiki/File:Germicidal_Lamp_2.jpg).
+3. **UV Sterilisation.jpg** — foto oleh Orla Keogh yang memperlihatkan perlakuan UV pada pipet dan tip di biosafety cabinet, lisensi [Creative Commons Attribution 4.0 (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/). [Halaman sumber](https://commons.wikimedia.org/wiki/File:UV_Sterilisation.jpg).
 4. **UV-C LED lamp.jpg** — foto oleh Morrow363, lisensi [Creative Commons Attribution-ShareAlike 4.0 (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/). [Halaman sumber](https://commons.wikimedia.org/wiki/File:UV-C_LED_lamp.jpg).
 
 Gambar ditampilkan tanpa perubahan. Pemilik gambar dan Wikimedia Commons tidak menyatakan dukungan terhadap proyek ini.
