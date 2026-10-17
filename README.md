@@ -17,7 +17,7 @@ The photographs below are **real reference images found on Wikimedia Commons**, 
   <tr>
     <td align="center" width="34%">
       <a href="https://commons.wikimedia.org/wiki/File:UV_STERILIZER_BOX_PHILIPS.jpg">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/0/00/UV_STERILIZER_BOX_PHILIPS.jpg" alt="Photograph of a commercial enclosed UV sterilizer cabinet" width="240" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/UV_STERILIZER_BOX_PHILIPS.jpg/500px-UV_STERILIZER_BOX_PHILIPS.jpg" alt="Photograph of a commercial enclosed UV sterilizer cabinet" width="220" />
       </a>
       <br /><sub><b>Enclosed UV cabinet</b><br />PT SUM HING INDONESIA · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></sub>
     </td>
@@ -41,6 +41,26 @@ The photographs below are **real reference images found on Wikimedia Commons**, 
 ## Documentation
 
 - **[Component Price Study / BOM Review](docs/studi-harga-komponen.md)**: marketplace price observations, component comparison, preliminary budget, missing cost items, purchase checks, technical references, and visual-source attributions.
+
+> **Image policy:** photographs are external reference imagery from Wikimedia Commons. They are not images of this prototype and are not endorsements of the project. Attribution and license links are documented in the BOM review.
+
+## Technology and project badges
+
+<p align="center">
+  <a href="https://github.com/kadal-stacks/STEM-Project-Multi-Purpose-Sterilizer-Unit-Prototype">
+    <img src="https://img.shields.io/badge/Source%20code-GitHub-181717?style=flat-square&logo=github&logoColor=white" alt="Source code on GitHub" />
+  </a>
+  <img src="https://img.shields.io/badge/Docs-Markdown-111827?style=flat-square&logo=markdown&logoColor=white" alt="Markdown documentation" />
+  <img src="https://img.shields.io/badge/Control%20MCU-Selection%20Pending-64748b?style=flat-square" alt="Microcontroller selection pending" />
+  <img src="https://img.shields.io/badge/Safety%20Review-Required-b45309?style=flat-square" alt="Safety review required" />
+</p>
+
+<p align="center">
+  <a href="https://commons.wikimedia.org/wiki/File:RISC-V-logo.svg">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/RISC-V-logo.svg" alt="RISC-V logo" width="160" />
+  </a>
+  <br /><sub>RISC-V mark shown only to identify the CH32V003 candidate architecture. It does not indicate that this MCU has been selected or that RISC-V endorses the project.</sub>
+</p>
 
 ## Current status
 
