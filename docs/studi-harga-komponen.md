@@ -1,6 +1,10 @@
 # Studi Harga Komponen
 ## Multi-Purpose Sterilizer Unit Prototype
 
+![Engineering concept visual of an enclosed modular treatment chamber, removable perforated tray, door interlock, and separate low-voltage controller subsystem. Illustrative only, not a validated design.](../assets/sterilizer-key-visual.svg)
+
+<sub><em>Gambar konsep untuk identitas dokumen. Tidak mewakili skematik, dimensi manufaktur, susunan lampu yang tervalidasi, atau bukti efektivitas disinfeksi/sterilisasi.</em></sub>
+
 > **Status dokumen:** studi awal / belum menjadi BOM final  
 > **Tanggal observasi marketplace:** 17 Oktober 2026  
 > **Tujuan:** membandingkan kisaran harga komponen prototipe dan mengidentifikasi biaya yang belum masuk anggaran.  
