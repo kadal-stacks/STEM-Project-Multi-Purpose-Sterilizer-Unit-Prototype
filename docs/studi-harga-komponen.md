@@ -62,7 +62,7 @@ Gambar-gambar berikut berasal dari Wikimedia Commons dan memperlihatkan produk/p
   </tr>
   <tr>
     <td align="center" width="50%">
-      <a href="https://commons.wikimedia.org/wiki/File:Germicidal_Lamp_2.jpg">
+      <a href="https://commons.wikimedia.org/wiki/File:UV_Sterilisation.jpg">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/UV_Sterilisation.jpg/960px-UV_Sterilisation.jpg" alt="Perlakuan UV pada pipet dan tip di dalam biosafety cabinet" width="220" />
       </a>
       <br /><sub><b>Perlakuan UV dalam kabinet</b><br />Orla Keogh · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></sub>
