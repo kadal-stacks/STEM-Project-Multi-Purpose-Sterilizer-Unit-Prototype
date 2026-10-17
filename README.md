@@ -1,11 +1,11 @@
 # STEM Project: Multi-Purpose Sterilizer Unit Prototype
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Repository-GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="Repository hosted on GitHub" />
-  <img src="https://img.shields.io/badge/Documentation-Markdown-111827?style=for-the-badge&logo=markdown&logoColor=white" alt="Documentation written in Markdown" />
-  <img src="https://img.shields.io/badge/Stage-Feasibility%20Study-0F766E?style=for-the-badge" alt="Project stage: feasibility study" />
-  <img src="https://img.shields.io/badge/UV--C%20Safety-Review%20Required-B45309?style=for-the-badge" alt="UV-C safety review required" />
-  <img src="https://img.shields.io/badge/License-Unlicense-64748b?style=for-the-badge" alt="Project source license: The Unlicense" />
+  <img src="https://img.shields.io/badge/Repository-GitHub-181717?style=flat-square&logo=github&logoColor=white" alt="Repository hosted on GitHub" />
+  <img src="https://img.shields.io/badge/Documentation-Markdown-111827?style=flat-square&logo=markdown&logoColor=white" alt="Documentation written in Markdown" />
+  <img src="https://img.shields.io/badge/Stage-Feasibility%20Study-0F766E?style=flat-square" alt="Project stage: feasibility study" />
+  <img src="https://img.shields.io/badge/UV--C%20Safety-Review%20Required-B45309?style=flat-square" alt="UV-C safety review required" />
+  <img src="https://img.shields.io/badge/License-Unlicense-64748b?style=flat-square" alt="Project source license: The Unlicense" />
 </p>
 
 > A student engineering research project exploring a modular, multi-purpose treatment chamber with an embedded controller. The design and its performance are still under study.
