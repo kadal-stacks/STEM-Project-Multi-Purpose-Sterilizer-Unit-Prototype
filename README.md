@@ -5,6 +5,7 @@
   <img src="https://img.shields.io/badge/Documentation-Markdown-111827?style=for-the-badge&logo=markdown&logoColor=white" alt="Documentation written in Markdown" />
   <img src="https://img.shields.io/badge/Stage-Feasibility%20Study-0F766E?style=for-the-badge" alt="Project stage: feasibility study" />
   <img src="https://img.shields.io/badge/UV--C%20Safety-Review%20Required-B45309?style=for-the-badge" alt="UV-C safety review required" />
+  <img src="https://img.shields.io/badge/License-Unlicense-64748b?style=for-the-badge" alt="Project source license: The Unlicense" />
 </p>
 
 > A student engineering research project exploring a modular, multi-purpose treatment chamber with an embedded controller. The design and its performance are still under study.
@@ -15,21 +16,29 @@ The photographs below are **real reference images found on Wikimedia Commons**, 
 
 <table>
   <tr>
-    <td align="center" width="34%">
+    <td align="center" width="50%">
       <a href="https://commons.wikimedia.org/wiki/File:UV_STERILIZER_BOX_PHILIPS.jpg">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/UV_STERILIZER_BOX_PHILIPS.jpg/500px-UV_STERILIZER_BOX_PHILIPS.jpg" alt="Photograph of a commercial enclosed UV sterilizer cabinet" width="220" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/UV_STERILIZER_BOX_PHILIPS.jpg/500px-UV_STERILIZER_BOX_PHILIPS.jpg" alt="Photograph of a commercial enclosed UV treatment cabinet" width="300" />
       </a>
       <br /><sub><b>Enclosed UV cabinet</b><br />PT SUM HING INDONESIA · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></sub>
     </td>
-    <td align="center" width="33%">
+    <td align="center" width="50%">
+      <a href="https://commons.wikimedia.org/wiki/File:UV_Sterilisation.jpg">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/UV_Sterilisation.jpg/960px-UV_Sterilisation.jpg" alt="UV treatment of pipettes and tips inside a biosafety cabinet" width="300" />
+      </a>
+      <br /><sub><b>UV treatment in a cabinet</b><br />Orla Keogh · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
       <a href="https://commons.wikimedia.org/wiki/File:Germicidal_Lamp_1.jpg">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Germicidal_Lamp_1.jpg" alt="Photograph of a compact germicidal fluorescent lamp" width="240" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Germicidal_Lamp_1.jpg" alt="Photograph of a compact germicidal fluorescent lamp" width="300" />
       </a>
       <br /><sub><b>Germicidal fluorescent lamp</b><br />Atlant · <a href="https://creativecommons.org/licenses/by/2.5/">CC BY 2.5</a></sub>
     </td>
-    <td align="center" width="33%">
+    <td align="center" width="50%">
       <a href="https://commons.wikimedia.org/wiki/File:UV-C_LED_lamp.jpg">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/UV-C_LED_lamp.jpg" alt="Photograph of a UV-C LED module with heatsink and power connection" width="200" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/UV-C_LED_lamp.jpg" alt="Photograph of a UV-C LED module with heatsink and power connection" width="240" />
       </a>
       <br /><sub><b>UV-C LED module</b><br />Morrow363 · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></sub>
     </td>
@@ -44,22 +53,17 @@ The photographs below are **real reference images found on Wikimedia Commons**, 
 
 > **Image policy:** photographs are external reference imagery from Wikimedia Commons. They are not images of this prototype and are not endorsements of the project. Attribution and license links are documented in the BOM review.
 
-## Technology and project badges
+## Candidate hardware marks
 
 <p align="center">
-  <a href="https://github.com/kadal-stacks/STEM-Project-Multi-Purpose-Sterilizer-Unit-Prototype">
-    <img src="https://img.shields.io/badge/Source%20code-GitHub-181717?style=flat-square&logo=github&logoColor=white" alt="Source code on GitHub" />
-  </a>
-  <img src="https://img.shields.io/badge/Docs-Markdown-111827?style=flat-square&logo=markdown&logoColor=white" alt="Markdown documentation" />
-  <img src="https://img.shields.io/badge/Control%20MCU-Selection%20Pending-64748b?style=flat-square" alt="Microcontroller selection pending" />
-  <img src="https://img.shields.io/badge/Safety%20Review-Required-b45309?style=flat-square" alt="Safety review required" />
+  <img src="https://img.shields.io/badge/Candidate-STC8H1K08-2563eb?style=flat-square" alt="Candidate microcontroller: STC8H1K08" />
+  <img src="https://img.shields.io/badge/Candidate-CH32V003-7c3aed?style=flat-square" alt="Candidate microcontroller: CH32V003" />
 </p>
-
 <p align="center">
   <a href="https://commons.wikimedia.org/wiki/File:RISC-V-logo.svg">
     <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/RISC-V-logo.svg" alt="RISC-V logo" width="160" />
   </a>
-  <br /><sub>RISC-V mark shown only to identify the CH32V003 candidate architecture. It does not indicate that this MCU has been selected or that RISC-V endorses the project.</sub>
+  <br /><sub>The RISC-V mark identifies the architecture of the CH32V003 candidate only. It does not indicate final MCU selection or endorsement by RISC-V.</sub>
 </p>
 
 ## Current status
