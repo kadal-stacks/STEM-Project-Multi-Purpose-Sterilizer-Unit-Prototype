@@ -2,9 +2,9 @@
 ## Multi-Purpose Sterilizer Unit Prototype
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Document-BOM%20Review-1D4ED8?style=for-the-badge" alt="Document type: BOM review" />
-  <img src="https://img.shields.io/badge/Stage-Preliminary-0F766E?style=for-the-badge" alt="Status: preliminary" />
-  <img src="https://img.shields.io/badge/Price%20Data-Not%20Checkout%20Verified-B45309?style=for-the-badge" alt="Price data not verified at checkout" />
+  <img src="https://img.shields.io/badge/Document-BOM%20Review-1D4ED8?style=flat-square" alt="Document type: BOM review" />
+  <img src="https://img.shields.io/badge/Stage-Preliminary-0F766E?style=flat-square" alt="Status: preliminary" />
+  <img src="https://img.shields.io/badge/Price%20Data-Not%20Checkout%20Verified-B45309?style=flat-square" alt="Price data not verified at checkout" />
 </p>
 
 
