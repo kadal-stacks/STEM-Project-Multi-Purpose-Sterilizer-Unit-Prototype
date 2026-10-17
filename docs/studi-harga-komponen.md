@@ -1,9 +1,12 @@
 # Studi Harga Komponen
 ## Multi-Purpose Sterilizer Unit Prototype
 
-![Engineering concept visual of an enclosed modular treatment chamber, removable perforated tray, door interlock, and separate low-voltage controller subsystem. Illustrative only, not a validated design.](../assets/sterilizer-key-visual.svg)
+<p align="center">
+  <img src="https://img.shields.io/badge/Document-BOM%20Review-1D4ED8?style=for-the-badge" alt="Document type: BOM review" />
+  <img src="https://img.shields.io/badge/Stage-Preliminary-0F766E?style=for-the-badge" alt="Status: preliminary" />
+  <img src="https://img.shields.io/badge/Price%20Data-Not%20Checkout%20Verified-B45309?style=for-the-badge" alt="Price data not verified at checkout" />
+</p>
 
-<sub><em>Gambar konsep untuk identitas dokumen. Tidak mewakili skematik, dimensi manufaktur, susunan lampu yang tervalidasi, atau bukti efektivitas disinfeksi/sterilisasi.</em></sub>
 
 > **Status dokumen:** studi awal / belum menjadi BOM final  
 > **Tanggal observasi marketplace:** 17 Oktober 2026  
@@ -37,6 +40,43 @@ Studi ini meninjau komponen berikut:
 7. Kabel dan steker 220 VAC serta komponen perlindungan yang diperlukan.
 
 Dokumen ini hanya merupakan kajian belanja awal. Bukan skematik listrik, sertifikasi keselamatan, validasi mikrobiologis, ataupun instruksi pemasangan tegangan PLN.
+
+## Referensi visual dari sumber eksternal
+
+Gambar-gambar berikut berasal dari Wikimedia Commons dan memperlihatkan produk/perangkat referensi yang benar-benar difoto. **Gambar ini bukan prototipe kita, bukan rekomendasi untuk menyalin desainnya, dan tidak membuktikan efektivitas proses.** Lisensi dan atribusi mengikuti halaman sumber masing-masing.
+
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <a href="https://commons.wikimedia.org/wiki/File:UV_STERILIZER_BOX_PHILIPS.jpg">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/00/UV_STERILIZER_BOX_PHILIPS.jpg" alt="Kabinet UV tertutup yang difoto oleh PT SUM HING INDONESIA" width="230" />
+      </a>
+      <br /><sub><b>Contoh kabinet tertutup</b><br />PT SUM HING INDONESIA · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></sub>
+    </td>
+    <td align="center" width="50%">
+      <a href="https://commons.wikimedia.org/wiki/File:Germicidal_Lamp_1.jpg">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Germicidal_Lamp_1.jpg" alt="Tabung lampu germicidal fluoresen" width="300" />
+      </a>
+      <br /><sub><b>Contoh tabung germicidal</b><br />Atlant · <a href="https://creativecommons.org/licenses/by/2.5/">CC BY 2.5</a></sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <a href="https://commons.wikimedia.org/wiki/File:Germicidal_Lamp_2.jpg">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Germicidal_Lamp_2.jpg" alt="Foto detail lampu germicidal kompak" width="180" />
+      </a>
+      <br /><sub><b>Contoh lampu kompak</b><br />Atlant · <a href="https://creativecommons.org/licenses/by-sa/2.5/">CC BY-SA 2.5</a></sub>
+    </td>
+    <td align="center" width="50%">
+      <a href="https://commons.wikimedia.org/wiki/File:UV-C_LED_lamp.jpg">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/UV-C_LED_lamp.jpg" alt="Modul UV-C LED dengan heatsink" width="190" />
+      </a>
+      <br /><sub><b>Contoh modul UV-C LED</b><br />Morrow363 · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></sub>
+    </td>
+  </tr>
+</table>
+
+**Catatan untuk studi harga:** visual ini hanya konteks teknologi dan bentuk produk. Harga, panjang gelombang, kebutuhan ballast, driver, dudukan, tegangan, dan spesifikasi setiap komponen harus tetap ditentukan dari listing serta datasheet yang benar.
 
 ## 3. Metode dan keterbatasan pengambilan data
 
@@ -102,6 +142,10 @@ Pencarian Shopee sebelumnya menghasilkan indikasi harga berikut. Harga dan statu
 Harga CH32V003 bare chip tidak boleh dibandingkan langsung dengan harga development kit. Ketersediaan komponen, paket, programmer, dan kebutuhan penyolderan berbeda.
 
 ## 6. Pilihan mikrokontroler
+
+![Pilihan MCU](https://img.shields.io/badge/MCU%20option-STC8H1K08-2563eb?style=flat-square) ![Pilihan MCU](https://img.shields.io/badge/MCU%20option-CH32V003%20%2F%20RISC--V-7c3aed?style=flat-square&logo=riscv&logoColor=white)
+
+> Badge di atas hanya menandai dua kandidat yang sedang dikaji. Tidak menyatakan bahwa MCU sudah dipilih atau digunakan pada prototipe.
 
 ### Opsi A: STC8H1K08
 
@@ -220,7 +264,18 @@ RTOS belum terlihat diperlukan untuk prototipe kecil yang hanya membaca limit sw
 7. CDC/NIOSH, [Germicidal Ultraviolet (GUV)](https://www.cdc.gov/niosh/ventilation/germicidal-ultraviolet/index.html).
 8. Parik-2006, [BIOSAFETY_EL: contoh proyek UV-C dengan door interlock](https://github.com/Parik-2006/BIOSAFETY_EL). Dipakai hanya sebagai contoh struktur fitur keselamatan untuk dipelajari, bukan bukti bahwa desain tersebut tervalidasi atau aman.
 
-## 15. Artefak data
+## 15. Sumber dan lisensi gambar
+
+Semua foto di bagian referensi visual ditautkan ke versi asli di Wikimedia Commons. Atribusi yang disertakan di dekat tiap gambar merupakan bagian dari kredit sumber.
+
+1. **UV STERILIZER BOX PHILIPS.jpg** — foto oleh PT SUM HING INDONESIA, lisensi [Creative Commons Attribution-ShareAlike 4.0 (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/). [Halaman sumber](https://commons.wikimedia.org/wiki/File:UV_STERILIZER_BOX_PHILIPS.jpg).
+2. **Germicidal Lamp 1.jpg** — foto oleh Atlant, lisensi [Creative Commons Attribution 2.5 (CC BY 2.5)](https://creativecommons.org/licenses/by/2.5/). [Halaman sumber](https://commons.wikimedia.org/wiki/File:Germicidal_Lamp_1.jpg).
+3. **Germicidal Lamp 2.jpg** — foto oleh Atlant, lisensi [Creative Commons Attribution-ShareAlike 2.5 (CC BY-SA 2.5)](https://creativecommons.org/licenses/by-sa/2.5/). [Halaman sumber](https://commons.wikimedia.org/wiki/File:Germicidal_Lamp_2.jpg).
+4. **UV-C LED lamp.jpg** — foto oleh Morrow363, lisensi [Creative Commons Attribution-ShareAlike 4.0 (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/). [Halaman sumber](https://commons.wikimedia.org/wiki/File:UV-C_LED_lamp.jpg).
+
+Gambar ditampilkan tanpa perubahan. Pemilik gambar dan Wikimedia Commons tidak menyatakan dukungan terhadap proyek ini.
+
+## 16. Artefak data
 
 - CSV sumber: `hasil_tokopedia_20261017_173836.csv` (hasil scraper lokal, disimpan terpisah dari dokumen ini).
 - Catatan konsol scraper: `Pasted text.txt` (menunjukkan beberapa timeout dan hasil query yang tidak relevan).
