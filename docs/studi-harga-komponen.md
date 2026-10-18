@@ -22,6 +22,7 @@ Temuan awal:
 - **LCD 16x2 non-I2C** terdeteksi mulai sekitar Rp16.665; modul I2C terpisah atau versi LCD+I2C perlu dipastikan sebelum membeli.
 - **Relay 1 kanal 5 V** terdeteksi mulai sekitar Rp7.000, tetapi rating yang tercetak pada relay murah bukan bukti bahwa keseluruhan modul aman untuk switching beban 220 VAC.
 - **PCB matrix 5x7 cm** terdeteksi mulai sekitar Rp2.750.
+- Untuk menghubungkan pad komponen pada matrix board, anggarkan **kawat jumper solid-core sekitar 0,5 mm** untuk lintasan pendek dan **kabel jumper berisolasi** untuk lintasan yang menyilang atau lebih panjang.
 - **Lampu yang diklaim UV-C/germicidal** terdeteksi mulai Rp75.000 per unit. Jenis tabung, panjang gelombang, ballast, soket, emisi ozon, dan spektrum perlu diverifikasi.
 - Biaya utama bukan hanya MCU, LCD dan relay. Driver/ballast lampu, rangkaian catu daya, interlock keselamatan independen, enclosure, pengaman listrik, kabel/konektor, pengujian, dan ongkir bisa menaikkan biaya total secara signifikan.
 
@@ -36,7 +37,7 @@ Studi ini meninjau komponen berikut:
 3. Modul relay satu kanal 5 V.
 4. Micro limit switch untuk mendeteksi pintu.
 5. LCD karakter 16x2, idealnya dengan antarmuka I2C.
-6. PCB matrix/perfboard, resistor, kapasitor, pin header, socket dan kabel.
+6. PCB matrix/perfboard, resistor, kapasitor, pin header/socket, kawat jumper PCB dan kabel penghubung.
 7. Kabel dan steker 220 VAC serta komponen perlindungan yang diperlukan.
 
 Dokumen ini hanya merupakan kajian belanja awal. Bukan skematik listrik, sertifikasi keselamatan, validasi mikrobiologis, ataupun instruksi pemasangan tegangan PLN.
@@ -138,8 +139,21 @@ Pencarian Shopee sebelumnya menghasilkan indikasi harga berikut. Harga dan statu
 | Micro limit switch | sekitar Rp1.900–4.600 | [Pencarian micro limit switch](https://shopee.co.id/search?keyword=micro+limit+switch) |
 | PCB matrix | sekitar Rp4.250 untuk 5x7 cm pada listing lain | [Pencarian PCB matrix](https://shopee.co.id/search?keyword=PCB+matrix+5x7) |
 | Lampu UV-C 254 nm | sekitar Rp75.000/unit untuk listing 4 W yang diklaim germicidal; perlu cek model | [Pencarian lampu UV-C 254 nm](https://shopee.co.id/search?keyword=lampu+UV-C+254nm+4W) |
+| Kawat jumper PCB solid-core 0,5 mm, 1 meter | Rp1.500/m pada listing | [Kawat jumper 0,5 mm per meter](https://shopee.co.id/Kawat-Jumper-0.5mm-Tunggal-Kabel-Wire-PCB-Breadboard-harga-permeter-i.134242419.21021859571) |
+| Kawat/kabel tunggal berisolasi untuk jalur PCB, 1 meter | Rp2.500 pada listing dengan pilihan variasi | [Kabel tunggal 0,5 mm untuk PCB/breadboard](https://shopee.co.id/Kabel-Tunggal-Kawat-NYA-0.5mm-0.5-mm-Warna-Bread-Proto-Project-Board-PCB-Jumper-Male-BreadBoard-i.1093272634.29938159885) |
+| Jumper PCB potong 6 cm, diameter 0,5 mm | Rp150/pcs, listing mensyaratkan minimum 50 pcs | [Kawat jumper 6 cm, minimum 50 pcs](https://shopee.co.id/Kawat-Jumper-6cm-d.0.5mm-wire-breadboard-pcb-arduino-harga-perbuah-minimal-beli-50buah-i.134242419.5845710785) |
 
 Harga CH32V003 bare chip tidak boleh dibandingkan langsung dengan harga development kit. Ketersediaan komponen, paket, programmer, dan kebutuhan penyolderan berbeda.
+
+### Kawat penghubung untuk matrix board
+
+Untuk papan matrix dengan pad tembaga per lubang, pertimbangkan dua jenis penghubung:
+
+- **Kawat jumper solid-core 0,5 mm tanpa isolasi:** cocok untuk membuat sambungan pendek antara pad yang berdekatan di sisi solder. Potong sesuai panjang, bentuk rapi, lalu solder di pad yang diperlukan.
+- **Kawat tunggal berisolasi:** lebih cocok ketika jalur harus melintasi jalur lain, mengitari komponen, atau dibuat di sisi bawah papan. Isolasi mengurangi risiko korsleting ketika beberapa jalur bersilangan.
+- **Jumper siap-potong 6 cm:** alternatif praktis untuk sambungan pendek. Harga per potong terlihat murah, tetapi cek minimum pembelian yang tercantum pada listing.
+
+**Jangan memakai besi/kawat baja biasa.** Pilih kawat konduktor yang memang bisa disolder untuk elektronik, idealnya kawat tembaga berlapis timah atau kawat jumper PCB. Kawat tanpa isolasi tidak boleh menyentuh jalur/pad lain yang berbeda net. Harga marketplace di atas adalah referensi saat pencarian, bukan konfirmasi stok atau harga checkout.
 
 ## 6. Pilihan mikrokontroler
 
@@ -185,9 +199,11 @@ Angka berikut adalah estimasi kerja, bukan harga final yang sudah terverifikasi.
 | Relay satu kanal 5 V (untuk uji kendali, bukan otomatis dianggap safety-rated) | Rp7.000–13.000 |
 | Limit switch | Rp2.000–5.000 |
 | PCB matrix | Rp3.000–10.000 |
-| Header, socket, resistor, kapasitor dan kabel prototipe | Rp15.000–40.000 |
+| Header, socket, resistor dan kapasitor prototipe | Rp10.000–35.000 | 
+| Kawat jumper PCB solid-core 0,5 mm, sekitar 1 meter | Rp1.500 | 
+| Kawat/kabel jumper tunggal berisolasi, sekitar 1 meter | Rp2.500 |
 | Dua lampu UV-C | Rp150.000–210.000 sebagai cadangan awal |
-| **Subtotal indikatif** | **Rp234.000–393.000** |
+| **Subtotal indikatif setelah pemisahan kawat jumper** | **Rp233.000–392.000** |
 
 Subtotal ini **belum** mencakup ballast/driver yang cocok, pemegang lampu, catu daya terisolasi untuk kontrol, fuse/overcurrent protection, enclosure, mekanisme pintu, pemutus independen, kabel PLN yang sesuai, strain relief, label peringatan, ongkir dan alat uji. Maka total sesungguhnya bisa melampaui Rp500.000. Harga Rp150.000 untuk dua lampu hanya masuk akal bila dua lampu pada kisaran Rp75.000 benar-benar cocok dan sumber UV-C-nya terbukti dari datasheet; ini belum terverifikasi untuk semua listing.
 
@@ -204,7 +220,7 @@ Anggaran board Rp55.000 sebagai kandidat pencarian belum cukup untuk menyimpulka
 5. **Tombol emergency/stop dan indikator.** Tentukan cara menghentikan operasi serta membedakan status standby, aktif, selesai, dan fault.
 6. **Pengukuran UV-C.** Daya listrik lampu (W) bukan dosis UV pada permukaan. Dosis dipengaruhi irradiance dan waktu; geometri, jarak, material, kontaminasi dan bayangan memengaruhi hasil.
 7. **Rangka mekanis modular.** Rak yang dapat diganti harus tidak menghalangi distribusi UV. Bahan rak juga harus tahan terhadap UV, panas, korosi dan prosedur pembersihan.
-8. **Ongkir dan pembelian lintas toko.** Harga Rp500–2.000 per resistor/header tidak berarti biaya sistem tinggal nominal itu; minimum pesanan, varian, dan ongkir bisa lebih besar dari harga unit.
+8. **Kawat jumper dan ongkir.** Kawat solid-core tanpa isolasi cocok untuk lintasan solder lokal; gunakan kawat berisolasi untuk lintasan silang agar tidak korslet. Harga murah per meter atau per potong harus dibaca bersama minimum pembelian, pilihan diameter, jenis isolasi, dan ongkir.
 
 ## 9. Catatan keselamatan dan batas klaim
 
