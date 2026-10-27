@@ -231,13 +231,16 @@ Angka berikut adalah estimasi kerja, bukan harga final yang sudah terverifikasi.
 | Relay satu kanal 5 V (untuk uji kendali, bukan otomatis dianggap safety-rated) | Rp7.000–13.000 |
 | Limit switch | Rp2.000–5.000 |
 | PCB matrix | Rp3.000–10.000 |
-| Header, socket, resistor dan kapasitor prototipe | Rp10.000–35.000 | 
-| Kawat jumper PCB solid-core 0,5 mm, sekitar 1 meter | Rp1.500 | 
+| Header, socket, resistor dan kapasitor prototipe | Rp10.000–35.000 |
+| Kawat jumper PCB solid-core 0,5 mm, sekitar 1 meter | Rp1.500 |
 | Kawat/kabel jumper tunggal berisolasi, sekitar 1 meter | Rp2.500 |
+| Konektor/harness JST-XH low-voltage untuk power, LCD dan door switch | Rp5.000–15.000 |
 | Dua lampu UV-C | Rp150.000–210.000 sebagai cadangan awal |
-| **Subtotal indikatif setelah pemisahan kawat jumper** | **Rp233.000–392.000** |
+| **Subtotal indikatif dengan modul relay dan konektor XH** | **Rp238.000–407.000** |
 
-Subtotal ini **belum** mencakup ballast/driver yang cocok, pemegang lampu, catu daya terisolasi untuk kontrol, fuse/overcurrent protection, enclosure, mekanisme pintu, pemutus independen, kabel PLN yang sesuai, strain relief, label peringatan, ongkir dan alat uji. Subtotal memakai modul relay siap pakai, bukan pilihan relay polos + MOSFET. Maka total sesungguhnya bisa melampaui Rp500.000. Harga Rp150.000 untuk dua lampu hanya masuk akal bila dua lampu pada kisaran Rp75.000 benar-benar cocok dan sumber UV-C-nya terbukti dari datasheet; ini belum terverifikasi untuk semua listing.
+Subtotal ini **belum** mencakup ballast/driver yang cocok, pemegang lampu, catu daya terisolasi untuk kontrol, fuse/overcurrent protection, enclosure, mekanisme pintu, pemutus independen, kabel PLN yang sesuai, strain relief, label peringatan, ongkir dan alat uji. Subtotal mengasumsikan modul relay siap pakai yang sudah mempunyai driver koil, bukan opsi relay polos + MOSFET. Maka total sesungguhnya bisa melampaui Rp500.000.
+
+Jika memakai **relay polos + MOSFET**, anggarkan komponen driver tambahan secara terpisah: MOSFET logic-level sekitar Rp7.000–12.000, diode flyback kira-kira Rp700, resistor gate sekitar Rp130, dan resistor pull-down sekitar Rp350 berdasarkan listing yang ditemukan. Total indikatif rangkaian driver sekitar **Rp8.000–14.000**, belum termasuk relay polos, konektor, ongkir, dan kemungkinan adapter/breakout. Nilai ini tidak ditambahkan ke biaya modul relay pada skenario utama karena kedua cara adalah alternatif. Harga Rp150.000 untuk dua lampu hanya masuk akal bila dua lampu pada kisaran Rp75.000 benar-benar cocok dan sumber UV-C-nya terbukti dari datasheet; ini belum terverifikasi untuk semua listing.
 
 ### CH32V003
 
@@ -339,12 +342,6 @@ Gambar ditampilkan tanpa perubahan. Pemilik gambar dan Wikimedia Commons tidak m
 - Catatan konsol scraper: `Pasted text.txt` (menunjukkan beberapa timeout dan hasil query yang tidak relevan).
 - Dokumen ini sebaiknya diperbarui ketika harga dicek ulang, model komponen dipilih, dan biaya checkout diketahui.
 
-## 17. Artefak desain dan data (versi lama)
-
-
-- CSV sumber: `hasil_tokopedia_20261017_173836.csv` (hasil scraper lokal, disimpan terpisah dari dokumen ini).
-- Catatan konsol scraper: `Pasted text.txt` (menunjukkan beberapa timeout dan hasil query yang tidak relevan).
-- Dokumen ini sebaiknya diperbarui ketika harga dicek ulang, model komponen dipilih, dan biaya checkout diketahui.
 
 ---
 *Dokumen studi awal untuk pendidikan dan eksperimen prototipe. Bukan panduan produksi, sertifikasi, atau jaminan performa sterilisasi.*
