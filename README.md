@@ -50,7 +50,7 @@ The photographs below are **real reference images found on Wikimedia Commons**, 
 ## Documentation
 
 - **[Component Price Study / BOM Review](docs/studi-harga-komponen.md)**: marketplace price observations, component comparison, preliminary budget, and purchase checks.
-- **[Optimized schematic v1.1](docs/schematic-optimized-v1.svg)** and [design notes](docs/schematic-optimized-v1.md): corrected 5 V control supply, LCD I²C connector, door monitoring, relay MOSFET driver, and separate safety-interlock boundary.
+- **[Optimized schematic v1.5](docs/schematic-optimized-v1.svg)** and [design notes](docs/schematic-optimized-v1.md): monochrome circuit-style schematic with regulated 5 V control, logical MCU nets, LCD I²C, door monitoring, Start/Stop input, relay/MOSFET driver, and separate mains-interlock boundary.
 - [Component-level schematic visual](docs/schematic-komponen-visual-v0.svg) and [earlier low-voltage draft](docs/schematic-low-voltage-v0.svg) are retained as historical references.
 
 > **Image policy:** photographs are external reference imagery from Wikimedia Commons. They are not images of this prototype and are not endorsements of the project. Attribution and license links are documented in the BOM review.
