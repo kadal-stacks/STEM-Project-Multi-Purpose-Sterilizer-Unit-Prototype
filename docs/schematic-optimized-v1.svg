@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1280" viewBox="0 0 1800 1280" role="img" aria-labelledby="title desc">
-<title id="title">Multi-Purpose Sterilizer Unit Prototype · corrected schematic rev 1.4</title>
+<title id="title">Multi-Purpose Sterilizer Unit Prototype · corrected schematic rev 1.5</title>
 <desc id="desc">Monochrome engineering schematic with regulated 5 V control power, MCU functional nets without unverified physical pin numbers, 16x2 LCD I2C with JST-XH-4, a normally closed door-monitor contact and pull-up, a normally open start stop input, a separate NC relay-coil inhibit, discrete logic-level N-MOSFET coil driver with gate resistor, 100 kiloohm pull-down and flyback diode, and an abstract protected load path with independent mains-rated door interlock and two UV-C lamps. Mains wiring is not detailed.</desc>
 <defs><style>
 .bg{fill:#fff;stroke:#111;stroke-width:2}.line{fill:none;stroke:#111;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.thin{fill:none;stroke:#111;stroke-width:1.2}.dash{fill:none;stroke:#111;stroke-width:1.4;stroke-dasharray:7 5}.blk{fill:#fff;stroke:#111;stroke-width:1.7}.txt{font:14px Arial,Helvetica,sans-serif;fill:#111}.sm{font:12px Arial,Helvetica,sans-serif;fill:#111}.tiny{font:10.5px Arial,Helvetica,sans-serif;fill:#111}.lab{font:700 15px Arial,Helvetica,sans-serif;fill:#111}.sec{font:700 18px Arial,Helvetica,sans-serif;fill:#111}.title{font:700 28px Arial,Helvetica,sans-serif;fill:#111}.net{font:700 12px Arial,Helvetica,sans-serif;fill:#111}.dot{fill:#111}.tag{fill:#fff;stroke:#111;stroke-width:1.2}
 </style></defs>
 <rect x="18" y="18" width="1764" height="1244" class="bg"/>
 <text x="48" y="55" class="title">MULTI-PURPOSE STERILIZER UNIT PROTOTYPE</text>
-<text x="50" y="81" class="txt">CORRECTED SCHEMATIC · REV 1.4 · 27 OCT 2026</text>
+<text x="50" y="81" class="txt">CORRECTED SCHEMATIC · REV 1.5 · 27 OCT 2026</text>
 <text x="1745" y="53" text-anchor="end" class="lab">ENGINEERING REVIEW DRAFT</text>
 <text x="1745" y="76" text-anchor="end" class="sm">Functional MCU nets; exact package pins TBD</text>
 <path d="M35 100H1765" class="line"/>
@@ -54,38 +54,23 @@
 <path d="M1385 226H1410V220H1440" class="line"/><text x="1389" y="214" class="tiny">+5V_CTL</text><path d="M1385 253H1418V245H1440" class="line"/><text x="1389" y="244" class="tiny">GND_CTL</text><path d="M1385 280H1425V270H1440" class="line"/><text x="1389" y="269" class="tiny">I2C_SDA</text><path d="M1385 307H1430V296H1440" class="line"/><text x="1389" y="297" class="tiny">I2C_SCL</text>
 <text x="1230" y="355" class="sm">Chosen harness pinout: VCC, GND, SDA, SCL.</text><text x="1230" y="373" class="sm">Verify backpack silkscreen; 5 V logic assumed.</text>
 
-<!-- D: inputs, externally connected by named nets -->
+<!-- D: inputs -->
 <rect x="40" y="415" width="650" height="520" class="blk"/>
 <text x="60" y="445" class="sec">D. DOOR MONITOR AND START / STOP</text>
-<!-- Door monitor pullup -->
-<text x="60" y="476" class="lab">SW1 · Normally closed door monitor</text>
-<text x="60" y="497" class="sm">External contact uses the same named nets as J3.</text>
-<rect x="65" y="520" width="145" height="80" class="blk"/>
-<text x="137" y="542" text-anchor="middle" class="lab">J3 · JST-XH-2</text>
-<text x="78" y="565" class="sm">1 DOOR_SENSE</text>
-<text x="78" y="585" class="sm">2 GND_CTL</text>
-<!-- SW1 contact: independent net-labelled external contact -->
-<rect x="245" y="520" width="230" height="80" class="dash"/>
-<text x="360" y="541" text-anchor="middle" class="lab">SW1 · NC contact</text>
-<circle cx="292" cy="566" r="3" class="dot"/><circle cx="357" cy="566" r="3" class="dot"/><path d="M292 566H357" class="line"/>
-<rect x="249" y="574" width="87" height="18" class="tag"/><text x="292" y="587" text-anchor="middle" class="tiny">DOOR_SENSE</text>
-<rect x="341" y="574" width="82" height="18" class="tag"/><text x="382" y="587" text-anchor="middle" class="tiny">GND_CTL</text>
-<text x="60" y="621" class="sm">J3 pin 1 = DOOR_SENSE; pin 2 = GND_CTL; harness connects to SW1.</text>
-<!-- Pull-up R2 -->
-<text x="60" y="655" class="lab">R2 · 10 kΩ pull-up</text>
-<text x="60" y="676" class="sm">+5V_CTL ─ R2 ─ DOOR_SENSE (same-name net)</text>
-<path d="M110 693V704" class="line"/><rect x="98" y="704" width="24" height="46" class="blk"/><path d="M102 709L118 717L102 725L118 733L102 741" class="thin"/><path d="M110 750V771H250" class="line"/>
-<rect x="250" y="761" width="105" height="20" class="tag"/><text x="302" y="775" text-anchor="middle" class="tiny">DOOR_SENSE</text>
-<path d="M110 693H175" class="line"/><text x="180" y="697" class="net">+5V_CTL</text>
-<text x="60" y="803" class="sm">Door closed = LOW; door open or cable break = HIGH/fault.</text>
-<!-- Start stop input -->
-<text x="60" y="836" class="lab">S1 · Start/Stop momentary NO</text>
+<text x="60" y="476" class="lab">SW1 · Door monitor (NC)</text>
+<text x="60" y="497" class="sm">J3 harness pins and SW1 contact use matching net labels.</text>
+<rect x="65" y="520" width="145" height="80" class="blk"/><text x="137" y="542" text-anchor="middle" class="lab">J3 · JST-XH-2</text><text x="78" y="565" class="sm">1 DOOR_SENSE</text><text x="78" y="585" class="sm">2 GND_CTL</text>
+<path d="M210 565H222" class="line"/><path d="M210 585H222" class="line"/><rect x="222" y="555" width="88" height="20" class="tag"/><text x="266" y="569" text-anchor="middle" class="tiny">DOOR_SENSE</text><rect x="222" y="577" width="88" height="20" class="tag"/><text x="266" y="591" text-anchor="middle" class="tiny">GND_CTL</text>
+<rect x="320" y="520" width="205" height="80" class="dash"/><text x="422" y="541" text-anchor="middle" class="lab">External switch SW1</text><circle cx="355" cy="559" r="3" class="dot"/><circle cx="425" cy="559" r="3" class="dot"/><path d="M355 559H425" class="line"/><path d="M355 562V568" class="line"/><path d="M425 562V568" class="line"/><rect x="326" y="568" width="90" height="18" class="tag"/><text x="371" y="581" text-anchor="middle" class="tiny">DOOR_SENSE</text><rect x="420" y="568" width="86" height="18" class="tag"/><text x="463" y="581" text-anchor="middle" class="tiny">GND_CTL</text>
+<text x="60" y="621" class="sm">R2 pulls DOOR_SENSE up to +5 V; SW1 closed shorts it to GND.</text>
+<text x="60" y="640" class="sm">Door closed = LOW; door open or broken cable = HIGH/fault.</text>
+<text x="60" y="675" class="lab">R2 · 10 kΩ pull-up</text><path d="M110 693V704" class="line"/><rect x="98" y="704" width="24" height="46" class="blk"/><path d="M102 709L118 717L102 725L118 733L102 741" class="thin"/><path d="M110 750V771H250" class="line"/><rect x="250" y="761" width="105" height="20" class="tag"/><text x="302" y="775" text-anchor="middle" class="tiny">DOOR_SENSE</text><path d="M110 693H175" class="line"/><text x="180" y="697" class="net">+5V_CTL</text>
+<text x="60" y="803" class="lab">S1 · Start/Stop pushbutton (momentary NO)</text>
 <rect x="65" y="851" width="145" height="65" class="blk"/><text x="137" y="872" text-anchor="middle" class="lab">J4 · JST-XH-2</text><text x="78" y="893" class="sm">1 START_STOP</text><text x="78" y="909" class="sm">2 GND_CTL</text>
-<rect x="245" y="851" width="230" height="65" class="dash"/><text x="360" y="871" text-anchor="middle" class="lab">External pushbutton S1 · NO</text><circle cx="292" cy="892" r="3" class="dot"/><circle cx="357" cy="892" r="3" class="dot"/><path d="M292 892L343 876" class="line"/>
-<rect x="249" y="896" width="87" height="16" class="tag"/><text x="292" y="908" text-anchor="middle" class="tiny">START_STOP</text><rect x="341" y="896" width="82" height="16" class="tag"/><text x="382" y="908" text-anchor="middle" class="tiny">GND_CTL</text>
+<path d="M210 889H222" class="line"/><path d="M210 908H222" class="line"/><rect x="222" y="879" width="88" height="20" class="tag"/><text x="266" y="893" text-anchor="middle" class="tiny">START_STOP</text><rect x="222" y="900" width="88" height="20" class="tag"/><text x="266" y="914" text-anchor="middle" class="tiny">GND_CTL</text>
+<rect x="320" y="851" width="205" height="65" class="dash"/><text x="422" y="871" text-anchor="middle" class="lab">External pushbutton S1</text><circle cx="355" cy="883" r="3" class="dot"/><circle cx="425" cy="883" r="3" class="dot"/><path d="M355 883L412 868" class="line"/><path d="M355 886V892" class="line"/><path d="M425 886V892" class="line"/><rect x="326" y="892" width="90" height="18" class="tag"/><text x="371" y="905" text-anchor="middle" class="tiny">START_STOP</text><rect x="420" y="892" width="86" height="18" class="tag"/><text x="463" y="905" text-anchor="middle" class="tiny">GND_CTL</text>
 <path d="M535 851V862" class="line"/><rect x="523" y="862" width="24" height="34" class="blk"/><path d="M527 866L543 873L527 880L543 887" class="thin"/><path d="M535 896V906H570" class="line"/><text x="552" y="872" class="tiny">R3</text><text x="552" y="885" class="tiny">10 kΩ</text><path d="M535 851H570" class="line"/><text x="575" y="855" class="tiny">+5V_CTL</text><rect x="570" y="896" width="106" height="20" class="tag"/><text x="623" y="910" text-anchor="middle" class="tiny">START_STOP</text>
-<text x="60" y="929" class="tiny">Same-name labels denote electrical continuity. S1 is not an emergency stop.</text>
-
+<text x="60" y="929" class="tiny">S1 is not an emergency stop. Same-name net tags denote electrical continuity.</text>
 <!-- E: driver circuit -->
 <rect x="710" y="415" width="660" height="520" class="blk"/>
 <text x="730" y="445" class="sec">E. RELAY COIL DRIVER (5 V DC)</text><text x="730" y="467" class="sm">Bare relay + logic-level N-MOSFET; not the same as a relay module</text>
@@ -129,6 +114,6 @@
 <!-- title -->
 <rect x="1140" y="955" width="620" height="235" class="blk"/>
 <path d="M1140 991H1760M1140 1027H1760M1140 1086H1760M1465 1086V1190" class="thin"/>
-<text x="1158" y="979" class="lab">STEM PROJECT</text><text x="1158" y="1015" class="lab">MULTI-PURPOSE STERILIZER UNIT PROTOTYPE</text><text x="1158" y="1047" class="sm">SCHEMATIC DIAGRAM · REV 1.4</text><text x="1158" y="1068" class="sm">DESIGNED BY: Kadal-Stacks</text><text x="1158" y="1110" class="sm">DATE: 2026-10-27</text><text x="1490" y="1110" class="sm">SHEET 1 / 1</text><text x="1158" y="1133" class="tiny">DRAFT · REVIEW COMPONENT RATINGS</text><text x="1158" y="1156" class="tiny">JST-XH pitch: 2.5 mm</text><text x="1158" y="1178" class="tiny">Check all datasheets before assembly.</text>
+<text x="1158" y="979" class="lab">STEM PROJECT</text><text x="1158" y="1015" class="lab">MULTI-PURPOSE STERILIZER UNIT PROTOTYPE</text><text x="1158" y="1047" class="sm">SCHEMATIC DIAGRAM · REV 1.5</text><text x="1158" y="1068" class="sm">DESIGNED BY: Kadal-Stacks</text><text x="1158" y="1110" class="sm">DATE: 2026-10-27</text><text x="1490" y="1110" class="sm">SHEET 1 / 1</text><text x="1158" y="1133" class="tiny">DRAFT · REVIEW COMPONENT RATINGS</text><text x="1158" y="1156" class="tiny">JST-XH pitch: 2.5 mm</text><text x="1158" y="1178" class="tiny">Check all datasheets before assembly.</text>
 <text x="900" y="1225" text-anchor="middle" class="sm">Functional net labels connect like-named nets. Confirm connector orientation, MCU package pinout, relay/driver parts and protection with qualified review before build.</text>
 </svg>
