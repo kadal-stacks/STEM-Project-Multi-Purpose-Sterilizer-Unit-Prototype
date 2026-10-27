@@ -27,7 +27,7 @@ Temuan awal:
 - **Lampu yang diklaim UV-C/germicidal** terdeteksi mulai Rp75.000 per unit. Jenis tabung, panjang gelombang, ballast, soket, emisi ozon, dan spektrum perlu diverifikasi.
 - Biaya utama bukan hanya MCU, LCD dan relay. Driver/ballast lampu, rangkaian catu daya, interlock keselamatan independen, enclosure, pengaman listrik, kabel/konektor, pengujian, dan ongkir bisa menaikkan biaya total secara signifikan.
 
-**Kesimpulan sementara:** jangan menganggap rancangan sudah bisa dibuat lengkap di bawah Rp500.000 hanya dengan menjumlahkan harga komponen kontrol yang terlihat. Sebelum pembelian, tetapkan spesifikasi lampu dan sistem keselamatan lalu buat BOM per varian.
+**Kesimpulan sementara:** rancangan belum terbukti dapat dibuat lengkap di bawah Rp500.000. MCU yang sekarang dipilih adalah STC8G1K08A-36I-DFN8, tetapi harga listing lokal yang cocok untuk paket DFN8 ini belum terverifikasi dan breakout 0,50 mm/custom PCB belum masuk subtotal. Harga MCU lama STC8H1K08/CH32V003 di tabel berikut adalah pembanding historis, bukan harga komponen terpilih.
 
 ## 2. Ruang lingkup
 
@@ -119,7 +119,7 @@ Shopee juga ditelusuri sebagai pembanding, tetapi data yang dapat diverifikasi p
 
 ## 4. Hasil pencarian Tokopedia
 
-Harga dalam tabel adalah harga listing yang terdeteksi saat pengambilan data, belum termasuk ongkir.
+Harga dalam tabel adalah harga listing yang terdeteksi saat pengambilan data, belum termasuk ongkir. Baris STC8H1K08 adalah hasil snapshot pembanding lama, bukan MCU yang sekarang dipilih. Tidak ada listing Tokopedia yang terverifikasi untuk STC8G1K08A-36I-DFN8 pada snapshot ini.
 
 | Komponen | Kandidat listing dan harga terendah relevan yang terdeteksi | Catatan verifikasi |
 |---|---|---|
@@ -143,6 +143,8 @@ Harga dalam tabel adalah harga listing yang terdeteksi saat pengambilan data, be
 ## 5. Pembanding Shopee
 
 Pencarian Shopee sebelumnya menghasilkan indikasi harga berikut. Harga dan status stok perlu diperiksa ulang sebelum digunakan sebagai dasar pembelian.
+
+**Catatan pemilihan MCU:** tabel ini memuat kandidat dari pencarian sebelumnya, bukan harga komponen final. Listing Shopee yang ditemukan untuk [STC8G1K08A-36I-SOP8 (Rp15.000)](https://shopee.co.id/STC8G1K08A-8G1K08A-STC8G1K08A-36I-SOP-8-i.14976147.15391971625) adalah paket **SOP8**, bukan DFN8, sehingga tidak boleh dianggap harga untuk part yang dipilih. Harga part DFN8 persis belum terverifikasi di Shopee/Tokopedia. Sebagai pembanding internasional saja, [LCSC](https://lcsc.com/product-detail/Microcontrollers-MCU-MPU-SOC_STC-Micro-STC8G1K08A-36I-DFN8_C915664.html) menunjukkan USD 0,2759/unit untuk kuantitas 5+, dengan minimum order lima unit dan belum termasuk ongkir/impor; ini bukan harga checkout Indonesia.
 
 | Komponen | Indikasi harga Shopee | Link |
 |---|---:|---|
@@ -242,7 +244,7 @@ Angka berikut adalah estimasi kerja, bukan harga final yang sudah terverifikasi.
 
 | Item | Asumsi anggaran |
 |---|---:|
-| MCU/board dan kebutuhan pemrograman awal | Rp10.000–50.000 |
+| STC8G1K08A-36I-DFN8 + akses ISP awal (harga lokal exact package belum terverifikasi) | allowance Rp10.000–50.000, asumsi kerja saja |
 | USB-to-TTL yang kompatibel (jika diperlukan untuk STC) | Rp17.000–25.000 |
 | Adaptor 5 V DC teregulasi dan terisolasi, sekitar 1 A | Rp16.500–31.000 |
 | LCD 16x2 dengan I²C backpack | Rp30.000–40.000 |
@@ -251,7 +253,7 @@ Angka berikut adalah estimasi kerja, bukan harga final yang sudah terverifikasi.
 | Diode flyback D1 1N4007 | Rp700–2.800 |
 | Dua micro limit switch low-voltage (SW1 monitor + SW2 coil inhibit) | Rp4.000–10.000 |
 | Pushbutton momentary NO untuk Start/Stop (estimasi anggaran, belum marketplace-verified) | Rp2.000–5.000 |
-| PCB matrix | Rp3.000–10.000 |
+| PCB matrix (tidak dapat langsung menerima bare DFN8) | Rp3.000–10.000 |
 | Header, konektor kecil, resistor, kapasitor dan komponen prototipe | Rp10.000–35.000 |
 | Kawat jumper PCB solid-core 0,5 mm, sekitar 1 meter | Rp1.500 |
 | Kawat/kabel jumper tunggal berisolasi, sekitar 1 meter | Rp2.500 |
@@ -263,9 +265,9 @@ Subtotal memakai **relay polos + driver MOSFET**, dua sakelar low-voltage, dan a
 
 Modul relay siap pakai adalah alternatif; bila dipilih, ganti relay polos + Q1 + D1 dengan satu modul relay yang rangkaiannya sudah diverifikasi, dan hitung ulang subtotal. Jangan menjumlahkan dua alternatif driver sekaligus.
 
-### CH32V003
+### Kandidat lama: CH32V003 (tidak dipakai pada skematik saat ini)
 
-Anggaran board Rp55.000 sebagai kandidat pencarian belum cukup untuk menyimpulkan bahwa sistem sudah siap diprogram. Tambahkan biaya programmer bila tidak termasuk. Perbandingan yang adil wajib mencatat **board + programmer + kabel debug + catu daya + konektor**, bukan membandingkan bare IC dengan board STC.
+Development kit Rp55.000 pada tabel sebelumnya adalah pembanding dari tahap seleksi MCU lama. Ini bukan bagian BOM v1.6. Jangan menjumlahkan biaya board/programmer CH32V003 dengan paket STC yang sekarang dipilih.
 
 ## 8. Komponen yang belum tercakup atau harus dipastikan
 
