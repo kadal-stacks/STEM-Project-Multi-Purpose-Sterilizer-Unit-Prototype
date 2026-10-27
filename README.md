@@ -50,9 +50,11 @@ The photographs below are **real reference images found on Wikimedia Commons**, 
 ## Documentation
 
 - **[Component Price Study / BOM Review](docs/studi-harga-komponen.md)**: marketplace price observations, component comparison, preliminary budget, and purchase checks.
-- **[Optimized schematic v1.5](docs/schematic-optimized-v1.svg)** and [design notes](docs/schematic-optimized-v1.md): monochrome circuit-style schematic with regulated 5 V control, logical MCU nets, LCD I²C, door monitoring, Start/Stop input, relay/MOSFET driver, and separate mains-interlock boundary.
+- **[Optimized schematic v1.6](docs/schematic-optimized-v1.svg)** and [design notes](docs/schematic-optimized-v1.md): monochrome circuit-style schematic mapped to STC8G1K08A-36I-DFN8 pins, LCD I²C, door monitoring, Start/Stop, relay/MOSFET driver, and separate mains-interlock boundary.
 - [Component-level schematic visual](docs/schematic-komponen-visual-v0.svg) and [earlier low-voltage draft](docs/schematic-low-voltage-v0.svg) are retained as historical references.
 
+> **Hardware note:** the selected STC8G1K08A-36I is a DFN8 0.5 mm-pitch part. It cannot be soldered straight into a standard matrix board; a compatible 0.5 mm DFN8 breakout or custom PCB/SMT assembly is required. The Indonesian BOM subtotal currently excludes this adapter/assembly cost.
+>
 > **Image policy:** photographs are external reference imagery from Wikimedia Commons. They are not images of this prototype and are not endorsements of the project. Attribution and license links are documented in the BOM review.
 
 ## Candidate hardware marks
