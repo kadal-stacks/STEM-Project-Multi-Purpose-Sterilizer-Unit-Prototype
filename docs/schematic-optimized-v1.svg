@@ -1,157 +1,117 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1240" viewBox="0 0 1800 1240" role="img" aria-labelledby="title desc">
-<title id="title">Multi-Purpose Sterilizer Unit Prototype, optimized schematic revision 1.3</title>
-<desc id="desc">Black and white circuit-style schematic. A regulated 5V input feeds a controller MCU, a 16 by 2 I2C LCD, a door-monitor switch input, a start-stop button, and a discrete logic-level MOSFET driver for a 5V relay coil. A separate NC switch inhibits relay-coil power while the door is open. The AC side is shown only as a functional block: protection, independent mains-rated interlock, relay contacts, matching ballast and two UV-C lamps. No mains wiring detail is provided.</desc>
-<defs>
-<style>
-.bg{fill:#fff;stroke:#111;stroke-width:2}.line{fill:none;stroke:#111;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.thin{fill:none;stroke:#111;stroke-width:1.2}.dash{fill:none;stroke:#111;stroke-width:1.4;stroke-dasharray:7 5}.blk{fill:#fff;stroke:#111;stroke-width:1.8}.txt{font:14px Arial,Helvetica,sans-serif;fill:#111}.sm{font:12px Arial,Helvetica,sans-serif;fill:#111}.tiny{font:10.5px Arial,Helvetica,sans-serif;fill:#111}.lab{font:700 15px Arial,Helvetica,sans-serif;fill:#111}.sec{font:700 18px Arial,Helvetica,sans-serif;fill:#111}.title{font:700 28px Arial,Helvetica,sans-serif;fill:#111}.net{font:700 12px Arial,Helvetica,sans-serif;fill:#111}.dot{fill:#111}.tag{fill:#fff;stroke:#111;stroke-width:1.3}
-</style>
-<pattern id="matrix" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="9" cy="9" r="2" fill="#fff" stroke="#777" stroke-width=".7"/></pattern>
-</defs>
-<rect x="18" y="18" width="1764" height="1204" class="bg"/>
-<!-- Header -->
-<text x="48" y="56" class="title">MULTI-PURPOSE STERILIZER UNIT PROTOTYPE</text>
-<text x="50" y="82" class="txt">OPTIMIZED SCHEMATIC · REV 1.3 · 27 OCT 2026</text>
-<text x="1745" y="55" text-anchor="end" class="lab">ENGINEERING REVIEW DRAFT</text>
-<text x="1745" y="78" text-anchor="end" class="sm">Logical pin names shown; exact MCU pins TBD</text>
-<path d="M35 101H1765" class="line"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1280" viewBox="0 0 1800 1280" role="img" aria-labelledby="title desc">
+<title id="title">Multi-Purpose Sterilizer Unit Prototype · corrected schematic rev 1.4</title>
+<desc id="desc">Monochrome engineering schematic with regulated 5 V control power, MCU functional nets without unverified physical pin numbers, 16x2 LCD I2C with JST-XH-4, a normally closed door-monitor contact and pull-up, a normally open start stop input, a separate NC relay-coil inhibit, discrete logic-level N-MOSFET coil driver with gate resistor, 100 kiloohm pull-down and flyback diode, and an abstract protected load path with independent mains-rated door interlock and two UV-C lamps. Mains wiring is not detailed.</desc>
+<defs><style>
+.bg{fill:#fff;stroke:#111;stroke-width:2}.line{fill:none;stroke:#111;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.thin{fill:none;stroke:#111;stroke-width:1.2}.dash{fill:none;stroke:#111;stroke-width:1.4;stroke-dasharray:7 5}.blk{fill:#fff;stroke:#111;stroke-width:1.7}.txt{font:14px Arial,Helvetica,sans-serif;fill:#111}.sm{font:12px Arial,Helvetica,sans-serif;fill:#111}.tiny{font:10.5px Arial,Helvetica,sans-serif;fill:#111}.lab{font:700 15px Arial,Helvetica,sans-serif;fill:#111}.sec{font:700 18px Arial,Helvetica,sans-serif;fill:#111}.title{font:700 28px Arial,Helvetica,sans-serif;fill:#111}.net{font:700 12px Arial,Helvetica,sans-serif;fill:#111}.dot{fill:#111}.tag{fill:#fff;stroke:#111;stroke-width:1.2}
+</style></defs>
+<rect x="18" y="18" width="1764" height="1244" class="bg"/>
+<text x="48" y="55" class="title">MULTI-PURPOSE STERILIZER UNIT PROTOTYPE</text>
+<text x="50" y="81" class="txt">CORRECTED SCHEMATIC · REV 1.4 · 27 OCT 2026</text>
+<text x="1745" y="53" text-anchor="end" class="lab">ENGINEERING REVIEW DRAFT</text>
+<text x="1745" y="76" text-anchor="end" class="sm">Functional MCU nets; exact package pins TBD</text>
+<path d="M35 100H1765" class="line"/>
 
-<!-- A Power -->
-<rect x="40" y="120" width="660" height="280" class="blk"/>
-<text x="60" y="150" class="sec">A. CONTROL POWER (5 V DC)</text>
-<text x="60" y="172" class="sm">Use an isolated, regulated 5 V adapter</text>
-<!-- input connector -->
-<rect x="65" y="198" width="115" height="83" class="blk"/>
-<text x="122" y="219" text-anchor="middle" class="lab">J1 · XH-2</text>
-<circle cx="82" cy="240" r="5" class="blk"/><circle cx="82" cy="262" r="5" class="blk"/>
-<text x="96" y="244" class="sm">1 +5V_CTL</text><text x="96" y="266" class="sm">2 GND_CTL</text>
-<text x="122" y="299" text-anchor="middle" class="tiny">5 V input</text>
-<!-- fuse and rails -->
-<path d="M180 240H214" class="line"/><rect x="214" y="229" width="58" height="22" class="blk"/><text x="243" y="244" text-anchor="middle" class="sm">F1*</text><path d="M272 240H663" class="line"/><text x="293" y="228" class="net">+5V_CTL</text>
-<path d="M180 262H197V343H663" class="line"/><text x="295" y="362" class="net">GND_CTL</text>
-<!-- C1 -->
-<path d="M343 240V278M330 278H356M330 287H356M343 287V343" class="line"/><circle cx="343" cy="240" r="3" class="dot"/><circle cx="343" cy="343" r="3" class="dot"/><text x="365" y="278" class="sm">C1 100 nF</text>
-<!-- C2 -->
-<path d="M465 240V278M452 278H478M452 287H478M465 287V343" class="line"/><circle cx="465" cy="240" r="3" class="dot"/><circle cx="465" cy="343" r="3" class="dot"/><text x="487" y="278" class="sm">C2 47–100 µF</text>
-<!-- LED branch with series resistor -->
-<path d="M574 240V251" class="line"/><rect x="563" y="251" width="22" height="38" class="blk"/><path d="M567 255L581 261L567 267L581 273L567 279L581 285" class="thin"/><text x="592" y="265" class="sm">R1</text><text x="592" y="279" class="sm">1 kΩ</text><path d="M574 289V297" class="line"/><circle cx="574" cy="307" r="8" class="blk"/><path d="M568 301L580 313M580 301L568 313" class="thin"/><path d="M574 315V343" class="line"/><circle cx="574" cy="240" r="3" class="dot"/><circle cx="574" cy="343" r="3" class="dot"/><text x="592" y="312" class="sm">LED1</text>
-<text x="60" y="382" class="sm">LM7805 omitted: no regulator after an already-regulated 5 V input.</text>
-<text x="60" y="394" class="tiny">F1 rating and supply current are TBD; choose after load-current calculation.</text>
+<!-- A: power -->
+<rect x="40" y="118" width="650" height="267" class="blk"/>
+<text x="60" y="148" class="sec">A. CONTROL POWER (REGULATED 5 V)</text>
+<text x="60" y="170" class="sm">5 V isolated adapter; no LM7805 after a regulated 5 V source</text>
+<rect x="65" y="194" width="120" height="83" class="blk"/><text x="125" y="216" text-anchor="middle" class="lab">J1 · XH-2</text><circle cx="83" cy="237" r="5" class="blk"/><circle cx="83" cy="260" r="5" class="blk"/><text x="97" y="241" class="sm">1 +5V_CTL</text><text x="97" y="264" class="sm">2 GND_CTL</text>
+<path d="M185 237H220" class="line"/><rect x="220" y="226" width="60" height="22" class="blk"/><text x="250" y="241" text-anchor="middle" class="sm">F1*</text><path d="M280 237H665" class="line"/><text x="294" y="225" class="net">+5V_CTL</text><path d="M185 260H202V328H665" class="line"/><text x="294" y="347" class="net">GND_CTL</text>
+<!-- bypass capacitors -->
+<path d="M352 237V270M340 270H364M340 278H364M352 278V328" class="line"/><circle cx="352" cy="237" r="3" class="dot"/><circle cx="352" cy="328" r="3" class="dot"/><text x="371" y="268" class="sm">C1 100 nF</text>
+<path d="M470 237V270M458 270H482M458 278H482M470 278V328" class="line"/><circle cx="470" cy="237" r="3" class="dot"/><circle cx="470" cy="328" r="3" class="dot"/><text x="488" y="268" class="sm">C2 47–100 µF</text>
+<!-- LED+R -->
+<path d="M574 237V248" class="line"/><rect x="563" y="248" width="22" height="37" class="blk"/><path d="M567 252L581 258L567 264L581 270L567 276L581 282" class="thin"/><text x="591" y="262" class="sm">R1 1 kΩ</text><path d="M574 285V294" class="line"/><circle cx="574" cy="303" r="8" class="blk"/><path d="M568 297L580 309M580 297L568 309" class="thin"/><path d="M574 311V328" class="line"/><circle cx="574" cy="237" r="3" class="dot"/><circle cx="574" cy="328" r="3" class="dot"/><text x="592" y="307" class="sm">LED1</text>
+<text x="60" y="369" class="sm">F1 optional; rating TBD from measured current. C1/C2 across +5V_CTL and GND_CTL.</text>
 
-<!-- B MCU -->
-<rect x="720" y="120" width="475" height="330" class="blk"/>
-<text x="740" y="150" class="sec">B. MICROCONTROLLER U1</text>
-<text x="740" y="172" class="sm">Select one MCU; no pin numbers until package is final</text>
-<rect x="815" y="198" width="285" height="208" class="blk"/>
-<text x="957" y="224" text-anchor="middle" class="lab">U1 · MCU</text>
-<text x="957" y="247" text-anchor="middle" class="txt">CH32V003F4P6 (TSSOP-20)</text>
-<text x="957" y="267" text-anchor="middle" class="sm">OR STC8H1K08, exact variant TBD</text>
-<path d="M835 280H1080" class="thin"/>
-<text x="837" y="303" class="txt">VDD / +5V_CTL</text>
-<text x="837" y="326" class="txt">GND / GND_CTL</text>
-<text x="837" y="349" class="txt">DOOR_SENSE</text>
-<text x="837" y="372" class="txt">START_STOP</text>
-<text x="837" y="395" class="txt">I2C_SDA / I2C_SCL / UV_RELAY_CMD</text>
-<text x="740" y="430" class="sm">Logical net labels only; use the selected device datasheet</text><text x="740" y="443" class="sm">to assign real package pins in the final CAD schematic.</text>
-<!-- Power net labels on MCU -->
-<path d="M815 303H785" class="line"/><rect x="735" y="292" width="50" height="20" class="tag"/><text x="760" y="306" text-anchor="middle" class="tiny">+5V</text>
-<path d="M815 326H785" class="line"/><rect x="735" y="315" width="50" height="20" class="tag"/><text x="760" y="329" text-anchor="middle" class="tiny">GND</text>
-<!-- I/O net labels to other sections -->
-<path d="M815 349H770" class="line"/><rect x="724" y="339" width="92" height="20" class="tag"/><text x="770" y="353" text-anchor="middle" class="tiny">DOOR_SENSE</text>
-<path d="M815 372H770" class="line"/><rect x="724" y="362" width="92" height="20" class="tag"/><text x="770" y="376" text-anchor="middle" class="tiny">START_STOP</text>
-<path d="M1100 395H1165" class="line"/><text x="1107" y="386" class="tiny">I2C / RELAY nets by label</text>
+<!-- B: MCU -->
+<rect x="710" y="118" width="480" height="267" class="blk"/>
+<text x="730" y="148" class="sec">B. MCU U1 · LOGICAL INTERFACE</text>
+<text x="730" y="170" class="sm">Select one MCU; physical pin mapping remains TBD</text>
+<rect x="805" y="194" width="290" height="160" class="blk"/>
+<text x="950" y="218" text-anchor="middle" class="lab">U1 · MCU</text>
+<text x="950" y="241" text-anchor="middle" class="txt">CH32V003F4P6 (TSSOP-20)</text>
+<text x="950" y="260" text-anchor="middle" class="sm">OR STC8H1K08 (exact variant TBD)</text><path d="M823 270H1077" class="thin"/>
+<text x="823" y="292" class="sm">VDD · GND</text><text x="823" y="311" class="sm">DOOR_SENSE · START_STOP</text><text x="823" y="330" class="sm">I2C_SDA · I2C_SCL</text><text x="823" y="349" class="sm">UV_RELAY_CMD</text>
+<text x="730" y="373" class="tiny">Use the actual selected MCU datasheet to assign package pins.</text>
+<!-- nets linked by label -->
+<rect x="730" y="202" width="62" height="20" class="tag"/><text x="761" y="216" text-anchor="middle" class="tiny">+5V_CTL</text><path d="M792 212H805" class="line"/>
+<rect x="730" y="226" width="62" height="20" class="tag"/><text x="761" y="240" text-anchor="middle" class="tiny">GND_CTL</text><path d="M792 236H798V305H805" class="line"/>
+<rect x="1097" y="274" width="81" height="18" class="tag"/><text x="1137" y="287" text-anchor="middle" class="tiny">I2C_SDA</text>
+<rect x="1097" y="297" width="81" height="18" class="tag"/><text x="1137" y="310" text-anchor="middle" class="tiny">I2C_SCL</text>
+<rect x="1097" y="320" width="81" height="18" class="tag"/><text x="1137" y="333" text-anchor="middle" class="tiny">DOOR_SENSE</text>
+<rect x="1097" y="343" width="81" height="18" class="tag"/><text x="1137" y="356" text-anchor="middle" class="tiny">START_STOP</text>
+<rect x="1097" y="366" width="81" height="18" class="tag"/><text x="1137" y="379" text-anchor="middle" class="tiny">RELAY_CMD</text>
 
-<!-- C LCD -->
-<rect x="1215" y="120" width="545" height="330" class="blk"/>
-<text x="1235" y="150" class="sec">C. LCD 16×2 WITH I²C BACKPACK</text>
-<rect x="1242" y="192" width="138" height="146" class="blk"/>
-<text x="1311" y="214" text-anchor="middle" class="lab">J2 · JST-XH-4</text>
-<path d="M1255 224H1367M1255 251H1367M1255 278H1367M1255 305H1367" class="thin"/>
-<text x="1255" y="241" class="sm">1 VCC</text><text x="1255" y="268" class="sm">2 GND</text><text x="1255" y="295" class="sm">3 SDA</text><text x="1255" y="322" class="sm">4 SCL</text>
-<rect x="1435" y="201" width="295" height="144" class="blk"/><rect x="1450" y="217" width="265" height="86" class="blk"/>
-<text x="1582" y="322" text-anchor="middle" class="lab">LCD module</text><text x="1582" y="339" text-anchor="middle" class="sm">16×2 + I²C backpack</text>
-<path d="M1380 232H1407V232H1435" class="line"/><text x="1390" y="223" class="tiny">+5V_CTL</text>
-<path d="M1380 259H1417V258H1435" class="line"/><text x="1390" y="251" class="tiny">GND_CTL</text>
-<path d="M1380 286H1415V282H1435" class="line"/><text x="1390" y="278" class="tiny">I2C_SDA</text>
-<path d="M1380 313H1424V307H1435" class="line"/><text x="1390" y="305" class="tiny">I2C_SCL</text>
-<text x="1235" y="378" class="sm">Pinout for our harness: VCC, GND, SDA, SCL.</text><text x="1235" y="396" class="sm">Verify actual backpack silkscreen before wiring.</text><text x="1235" y="414" class="sm">5 V logic assumed; a 3.3 V-only board may need I²C level shifting.</text>
+<!-- C: LCD -->
+<rect x="1210" y="118" width="550" height="267" class="blk"/>
+<text x="1230" y="148" class="sec">C. LCD 16×2 WITH I²C BACKPACK</text>
+<rect x="1245" y="190" width="140" height="143" class="blk"/><text x="1315" y="212" text-anchor="middle" class="lab">J2 · JST-XH-4</text><path d="M1258 222H1372M1258 249H1372M1258 276H1372M1258 303H1372" class="thin"/><text x="1258" y="239" class="sm">1 VCC</text><text x="1258" y="266" class="sm">2 GND</text><text x="1258" y="293" class="sm">3 SDA</text><text x="1258" y="320" class="sm">4 SCL</text>
+<rect x="1440" y="192" width="285" height="126" class="blk"/><rect x="1453" y="206" width="259" height="74" class="blk"/><text x="1582" y="297" text-anchor="middle" class="lab">LCD module</text><text x="1582" y="313" text-anchor="middle" class="sm">16×2 + I²C backpack</text>
+<path d="M1385 226H1410V220H1440" class="line"/><text x="1389" y="214" class="tiny">+5V_CTL</text><path d="M1385 253H1418V245H1440" class="line"/><text x="1389" y="244" class="tiny">GND_CTL</text><path d="M1385 280H1425V270H1440" class="line"/><text x="1389" y="269" class="tiny">I2C_SDA</text><path d="M1385 307H1430V296H1440" class="line"/><text x="1389" y="297" class="tiny">I2C_SCL</text>
+<text x="1230" y="355" class="sm">Chosen harness pinout: VCC, GND, SDA, SCL.</text><text x="1230" y="373" class="sm">Verify backpack silkscreen; 5 V logic assumed.</text>
 
-<!-- D inputs -->
-<rect x="40" y="465" width="660" height="515" class="blk"/>
-<text x="60" y="495" class="sec">D. DOOR MONITOR AND START / STOP INPUTS</text>
-<!-- Door monitor -->
-<text x="60" y="526" class="lab">SW1 · Door monitor NC, external through J3</text>
-<rect x="65" y="544" width="120" height="80" class="blk"/><text x="125" y="565" text-anchor="middle" class="lab">J3 · XH-2</text><text x="78" y="587" class="sm">1 DOOR_SENSE</text><text x="78" y="607" class="sm">2 GND_CTL</text>
-<path d="M185 582H215" class="line"/><circle cx="215" cy="582" r="3" class="dot"/><path d="M215 582H270" class="line"/><circle cx="270" cy="582" r="3" class="dot"/><path d="M270 582L306 564" class="line"/><path d="M306 582H343V612H365" class="line"/>
-<text x="270" y="548" text-anchor="middle" class="sm">SW1 NC</text><text x="270" y="602" text-anchor="middle" class="tiny">door closed = contact closed</text>
-<path d="M185 606H343V635H365" class="line"/><text x="370" y="617" class="tiny">to GND_CTL</text>
-<!-- Pull-up -->
-<rect x="410" y="543" width="45" height="58" class="blk"/><path d="M416 548L449 557L416 566L449 575L416 584L449 593" class="thin"/><text x="465" y="566" class="sm">R2 10 kΩ</text><text x="465" y="582" class="sm">pull-up</text>
-<path d="M432 543V525H490" class="line"/><text x="495" y="529" class="net">+5V_CTL</text>
-<path d="M432 601V646H650" class="line"/><text x="520" y="639" class="net">DOOR_SENSE → U1</text>
-<text x="60" y="671" class="sm">NC closed pulls DOOR_SENSE LOW; door open or broken wire reads HIGH/fault.</text>
+<!-- D: inputs, explicit net name topology -->
+<rect x="40" y="415" width="650" height="520" class="blk"/>
+<text x="60" y="445" class="sec">D. USER INPUTS AND DOOR MONITOR</text>
+<!-- Door monitor pullup -->
+<text x="60" y="476" class="lab">Door state input · SW1 (NC)</text>
+<text x="60" y="498" class="sm">R2 pulls DOOR_SENSE high; SW1 grounds it when closed</text>
+<path d="M100 526V542" class="line"/><rect x="88" y="542" width="24" height="53" class="blk"/><path d="M92 547L108 556L92 565L108 574L92 583" class="thin"/><text x="123" y="563" class="sm">R2 10 kΩ</text><path d="M100 595V621H255" class="line"/><circle cx="100" cy="621" r="3" class="dot"/><text x="265" y="626" class="net">DOOR_SENSE</text><text x="60" y="529" class="net">+5V_CTL</text>
+<!-- connector, external switch symbol to GND -->
+<rect x="70" y="651" width="130" height="72" class="blk"/><text x="135" y="672" text-anchor="middle" class="lab">J3 · JST-XH-2</text><text x="82" y="694" class="sm">1 DOOR_SENSE</text><text x="82" y="711" class="sm">2 GND_CTL</text>
+<path d="M200 692H250" class="line"/><circle cx="250" cy="692" r="3" class="dot"/><circle cx="305" cy="692" r="3" class="dot"/><path d="M250 692H305" class="line"/><path d="M305 692H340V721H375" class="line"/><text x="278" y="672" text-anchor="middle" class="sm">SW1 NC</text><path d="M200 710H340V721" class="line"/><text x="381" y="725" class="tiny">GND_CTL</text>
+<text x="60" y="747" class="sm">At the external harness: pin 1 to DOOR_SENSE, pin 2 to GND.</text><text x="60" y="766" class="sm">Closed = LOW; door open or broken cable = HIGH/fault.</text>
 <!-- Start stop -->
-<text x="60" y="714" class="lab">S1 · Start/Stop momentary NO, external through J4</text>
-<rect x="65" y="734" width="120" height="80" class="blk"/><text x="125" y="755" text-anchor="middle" class="lab">J4 · XH-2</text><text x="78" y="777" class="sm">1 START_STOP</text><text x="78" y="797" class="sm">2 GND_CTL</text>
-<path d="M185 772H215" class="line"/><circle cx="215" cy="772" r="3" class="dot"/><circle cx="270" cy="772" r="3" class="dot"/><path d="M215 772L257 750" class="line"/><path d="M270 772H343V802H365" class="line"/>
-<text x="244" y="738" text-anchor="middle" class="sm">S1 NO</text><path d="M185 796H343V824H365" class="line"/><text x="370" y="807" class="tiny">to GND_CTL</text>
-<rect x="410" y="734" width="45" height="58" class="blk"/><path d="M416 739L449 748L416 757L449 766L416 775L449 784" class="thin"/><text x="465" y="757" class="sm">R3 10 kΩ</text><text x="465" y="773" class="sm">pull-up</text>
-<path d="M432 734V716H490" class="line"/><text x="495" y="720" class="net">+5V_CTL</text><path d="M432 792V841H650" class="line"/><text x="520" y="834" class="net">START_STOP → U1</text>
-<text x="60" y="870" class="sm">S1 is a user-interface feature; add the pushbutton and harness to the BOM.</text>
-<text x="60" y="891" class="sm">Do not use this user button as an emergency stop or UV safety interlock.</text>
-<text x="60" y="941" class="tiny">SW1 is only a monitor contact. It does not replace a separate hardware safety cutoff.</text>
+<text x="60" y="802" class="lab">Start/Stop · S1 (momentary NO)</text>
+<text x="60" y="824" class="sm">R3 pull-up; press button to connect START_STOP to GND</text>
+<path d="M100 847V858" class="line"/><rect x="88" y="858" width="24" height="47" class="blk"/><path d="M92 863L108 871L92 879L108 887L92 895" class="thin"/><text x="123" y="878" class="sm">R3 10 kΩ</text><text x="60" y="850" class="net">+5V_CTL</text>
+<path d="M100 905V916H255" class="line"/><circle cx="100" cy="916" r="3" class="dot"/><text x="265" y="921" class="net">START_STOP</text>
+<rect x="390" y="839" width="250" height="71" class="blk"/><text x="515" y="860" text-anchor="middle" class="lab">J4 · JST-XH-2</text><text x="407" y="882" class="sm">1 START_STOP</text><text x="407" y="900" class="sm">2 GND_CTL</text><text x="60" y="930" class="tiny">Add a momentary pushbutton to the BOM. Not an emergency stop.</text>
 
-<!-- E Relay driver -->
-<rect x="720" y="465" width="660" height="515" class="blk"/>
-<text x="740" y="495" class="sec">E. RELAY COIL DRIVER (5 V DC)</text>
-<text x="740" y="518" class="sm">Use either this discrete driver OR a verified ready-made relay module.</text>
-<!-- Coil rail plus SW2 -->
-<text x="750" y="566" class="net">+5V_CTL</text><path d="M812 561H850" class="line"/><circle cx="850" cy="561" r="3" class="dot"/><circle cx="895" cy="561" r="3" class="dot"/><path d="M850 561L884 545" class="line"/><path d="M895 561H930" class="line"/>
-<text x="872" y="538" text-anchor="middle" class="sm">SW2 NC</text><text x="872" y="580" text-anchor="middle" class="tiny">door inhibits coil</text>
-<!-- Relay coil -->
-<rect x="930" y="542" width="132" height="38" rx="15" class="blk"/><text x="996" y="565" text-anchor="middle" class="lab">K1 · 5 V coil</text><path d="M1062 561H1100V635H1135" class="line"/><text x="1070" y="548" class="tiny">COIL− / DRAIN</text>
-<!-- diode in parallel across coil -->
-<path d="M930 561V617H950" class="line"/><path d="M950 617H966" class="line"/><polygon points="966,607 966,627 984,617" fill="#fff" stroke="#111" stroke-width="1.6"/><path d="M987 607V627" class="line"/><path d="M987 617H1100V635" class="line"/><text x="1006" y="607" class="sm">D1 1N4007</text><text x="1006" y="631" class="tiny">K to +5V, A to drain</text>
-<!-- MOSFET and gate -->
-<rect x="1135" y="616" width="190" height="142" class="blk"/><text x="1230" y="640" text-anchor="middle" class="lab">Q1 · N-MOSFET</text>
-<!-- schematic N-MOSFET symbol -->
-<path d="M1186 663V714" class="line"/><path d="M1204 663V714" class="line"/><path d="M1204 663H1230V635" class="line"/><path d="M1204 714H1230V739" class="line"/><path d="M1166 688H1186" class="line"/><text x="1150" y="682" class="tiny">G</text><text x="1238" y="638" class="tiny">D</text><text x="1238" y="743" class="tiny">S</text>
-<path d="M1230 635V635" class="line"/><path d="M1230 739V779H1300" class="line"/><text x="1305" y="784" class="tiny">GND_CTL</text>
-<!-- gate resistor path -->
-<path d="M1045 688H1070" class="line"/><rect x="1070" y="676" width="42" height="24" class="blk"/><path d="M1075 680L1107 696M1075 696L1107 680" class="thin"/><path d="M1112 688H1166" class="line"/><text x="1090" y="666" text-anchor="middle" class="sm">Rg 100Ω</text><text x="1045" y="711" class="tiny">UV_RELAY_CMD</text>
-<!-- Rpd from gate node to source/ground -->
-<path d="M1130 688V729" class="line"/><rect x="1118" y="729" width="24" height="48" class="blk"/><text x="1150" y="747" class="tiny">Rpd</text><text x="1150" y="761" class="tiny">100 kΩ</text><path d="M1130 777V790H1300" class="line"/>
-<text x="740" y="821" class="sm">Coil current path: +5V_CTL → SW2 NC → K1 coil → Q1 drain/source → GND_CTL.</text>
-<text x="740" y="843" class="sm">D1 is across the coil: cathode toward +5 V, anode toward drain/coil−.</text>
-<text x="740" y="865" class="sm">Rpd 100 kΩ gate-to-source keeps Q1 OFF when MCU resets.</text>
-<text x="740" y="887" class="sm">Choose logic-level Q1 by RDS(on) at VGS = 4.5–5 V and coil current.</text>
-<text x="740" y="909" class="sm">If using a relay module with onboard driver/diode, omit Q1/Rg/Rpd/D1.</text>
-<text x="740" y="943" class="tiny">Do not use IRF540N by default without verifying gate-drive requirements.</text>
+<!-- E: driver circuit -->
+<rect x="710" y="415" width="660" height="520" class="blk"/>
+<text x="730" y="445" class="sec">E. RELAY COIL DRIVER (5 V DC)</text><text x="730" y="467" class="sm">Bare relay + logic-level N-MOSFET; not the same as a relay module</text>
+<!-- +5 through SW2 NC -->
+<text x="742" y="510" class="net">+5V_CTL</text><path d="M810 505H850" class="line"/><circle cx="850" cy="505" r="3" class="dot"/><circle cx="900" cy="505" r="3" class="dot"/><path d="M850 505H900" class="line"/><text x="875" y="490" text-anchor="middle" class="sm">SW2 NC</text><text x="875" y="522" text-anchor="middle" class="tiny">coil inhibit</text><path d="M900 505H945" class="line"/>
+<!-- coil -->
+<rect x="945" y="485" width="135" height="40" rx="17" class="blk"/><text x="1012" y="510" text-anchor="middle" class="lab">K1 · 5 V coil</text>
+<!-- Drain path -->
+<path d="M1080 505H1130V620H1230V648" class="line"/><text x="1090" y="493" class="tiny">COIL− / DRAIN</text>
+<!-- Flyback branch -->
+<path d="M945 505V557H972" class="line"/><path d="M972 545L972 569L994 557Z" fill="#fff" stroke="#111" stroke-width="1.6"/><path d="M999 545V569" class="line"/><path d="M999 557H1130V505" class="line"/><text x="1007" y="540" class="sm">D1 1N4007</text><text x="1007" y="576" class="tiny">K → +5V; A → drain</text>
+<!-- MOSFET symbol and connections -->
+<path d="M1230 648V671" class="line"/><path d="M1213 672V719" class="line"/><path d="M1230 672V719" class="line"/><path d="M1230 719V744" class="line"/><path d="M1195 685H1213" class="line"/><text x="1180" y="679" class="tiny">G</text><text x="1240" y="670" class="tiny">D</text><text x="1240" y="741" class="tiny">S</text>
+<path d="M1230 744V767H1320" class="line"/><path d="M1307 767H1333M1311 774H1329M1316 781H1324" class="line"/><text x="1320" y="800" text-anchor="middle" class="sm">GND_CTL</text>
+<!-- gate network -->
+<rect x="1035" y="670" width="78" height="29" class="blk"/><path d="M1042 675L1106 694M1042 694L1106 675" class="thin"/><text x="1074" y="662" text-anchor="middle" class="sm">Rg 100 Ω</text><path d="M990 685H1035" class="line"/><text x="990" y="670" class="net">UV_RELAY_CMD</text><path d="M1113 685H1195" class="line"/>
+<!-- pull-down -->
+<path d="M1152 685V720" class="line"/><rect x="1140" y="720" width="24" height="43" class="blk"/><path d="M1144 724L1160 732L1144 740L1160 748L1144 756" class="thin"/><text x="1170" y="738" class="sm">Rpd</text><text x="1170" y="753" class="sm">100 kΩ</text><path d="M1152 763V767H1230" class="line"/>
+<text x="730" y="833" class="sm">Current path: +5V_CTL → SW2 NC → K1 coil → Q1 drain/source → GND_CTL.</text><text x="730" y="855" class="sm">D1 is parallel with the coil: cathode at +5 V, anode at drain/coil−.</text><text x="730" y="877" class="sm">Rpd 100 kΩ from gate to source; Q1 needs RDS(on) specified at VGS 4.5–5 V.</text><text x="730" y="899" class="sm">If a verified relay module already includes driver + diode, use it instead of Q1/Rg/Rpd/D1.</text><text x="730" y="921" class="tiny">Check MOSFET pinout and relay coil current against the actual datasheets.</text>
 
-<!-- F Load safety boundary -->
-<rect x="1400" y="465" width="360" height="515" class="blk"/>
-<text x="1420" y="495" class="sec">F. UV-C LOAD</text><text x="1420" y="518" class="sm">Functional blocks only; no AC wiring</text>
-<rect x="1425" y="545" width="310" height="51" class="blk"/><text x="1580" y="566" text-anchor="middle" class="lab">AC supply + protection</text><text x="1580" y="584" text-anchor="middle" class="tiny">specification TBD</text>
-<path d="M1580 596V617" class="dash"/>
-<rect x="1425" y="617" width="310" height="64" class="blk"/><text x="1580" y="641" text-anchor="middle" class="lab">SW3 · independent mains interlock</text><text x="1580" y="661" text-anchor="middle" class="sm">door open → lamp energy cut</text>
-<path d="M1580 681V701" class="dash"/>
-<rect x="1425" y="701" width="310" height="55" class="blk"/><text x="1580" y="723" text-anchor="middle" class="lab">K1 isolated contacts</text><text x="1580" y="741" text-anchor="middle" class="sm">rating for ballast/inrush TBD</text>
-<path d="M1580 756V776" class="dash"/>
-<rect x="1425" y="776" width="310" height="62" class="blk"/><text x="1580" y="799" text-anchor="middle" class="lab">Matched ballast / driver(s)</text><text x="1580" y="820" text-anchor="middle" class="sm">selected for actual lamp model</text>
-<path d="M1580 838V858" class="dash"/>
-<rect x="1425" y="858" width="310" height="70" class="blk"/><text x="1580" y="883" text-anchor="middle" class="lab">2 × UV-C lamps</text><text x="1580" y="905" text-anchor="middle" class="sm">one channel switches both together</text><text x="1420" y="953" class="sm">SW3 must be independent of MCU and relay</text><text x="1420" y="973" class="sm">coil control; relay contacts may weld closed.</text>
+<!-- F: mains functional boundary -->
+<rect x="1390" y="415" width="370" height="520" class="blk"/>
+<text x="1410" y="445" class="sec">F. UV-C LOAD BLOCK</text><text x="1410" y="467" class="sm">Functional path only, not AC wiring instructions</text>
+<rect x="1420" y="500" width="310" height="52" class="blk"/><text x="1575" y="522" text-anchor="middle" class="lab">AC input + protection</text><text x="1575" y="540" text-anchor="middle" class="tiny">ratings TBD</text><path d="M1575 552V575" class="dash"/>
+<rect x="1420" y="575" width="310" height="67" class="blk"/><text x="1575" y="598" text-anchor="middle" class="lab">SW3 · mains-rated door interlock</text><text x="1575" y="620" text-anchor="middle" class="sm">must independently cut lamp power</text><path d="M1575 642V666" class="dash"/>
+<rect x="1420" y="666" width="310" height="58" class="blk"/><text x="1575" y="690" text-anchor="middle" class="lab">K1 isolated contacts</text><text x="1575" y="709" text-anchor="middle" class="sm">ballast/inrush rating TBD</text><path d="M1575 724V747" class="dash"/>
+<rect x="1420" y="747" width="310" height="65" class="blk"/><text x="1575" y="771" text-anchor="middle" class="lab">Matched ballast / driver(s)</text><text x="1575" y="792" text-anchor="middle" class="sm">for actual lamp model</text><path d="M1575 812V835" class="dash"/>
+<rect x="1420" y="835" width="310" height="62" class="blk"/><text x="1575" y="859" text-anchor="middle" class="lab">2 × UV-C lamps</text><text x="1575" y="880" text-anchor="middle" class="sm">one relay channel switches both</text>
+<text x="1410" y="914" class="tiny">SW3 must still cut power if K1 contacts weld closed.</text>
 
-<!-- bottom notes -->
-<rect x="40" y="1000" width="1090" height="180" class="blk"/>
-<text x="60" y="1030" class="sec">G. CORRECTIONS AND SCOPE</text>
-<text x="62" y="1058" class="txt">1. 5 V regulated adapter replaces the 12 V + LM7805 scheme.</text>
-<text x="62" y="1082" class="txt">2. LED indicator now has a series resistor; supply capacitors go across 5 V and GND.</text>
-<text x="62" y="1106" class="txt">3. MCU physical pins are intentionally not assigned before final MCU/package choice.</text>
-<text x="62" y="1130" class="txt">4. SW1 monitors door; SW2 inhibits relay coil; SW3 independently interrupts lamp power.</text>
-<text x="62" y="1154" class="txt">5. Heater/fan/solenoid removed from baseline. Start/Stop button is included and must be added to BOM.</text>
-<text x="62" y="1172" class="tiny">This remains a draft. It is not a certified design or a guide for wiring mains/ballast.</text>
-<!-- Title block -->
-<rect x="1150" y="1000" width="610" height="180" class="blk"/>
-<path d="M1150 1035H1760M1150 1070H1760M1150 1128H1760M1455 1128V1180" class="thin"/>
-<text x="1168" y="1023" class="lab">STEM PROJECT</text><text x="1168" y="1058" class="lab">MULTI-PURPOSE STERILIZER UNIT PROTOTYPE</text><text x="1168" y="1093" class="sm">SCHEMATIC DIAGRAM · REV 1.3</text><text x="1168" y="1113" class="sm">DESIGNED BY: Kadal-Stacks</text><text x="1168" y="1150" class="sm">DATE: 2026-10-27</text><text x="1480" y="1150" class="sm">SHEET: 1 / 1</text><text x="1168" y="1171" class="tiny">DRAFT · NOT FOR MAINS CONSTRUCTION</text>
-<text x="900" y="1206" text-anchor="middle" class="sm">JST-XH pitch 2.5 mm. Check pinout, component datasheets, MOSFET package pins, coil current and contact ratings before assembly.</text>
+<!-- G notes and title block -->
+<rect x="40" y="955" width="1080" height="235" class="blk"/>
+<text x="60" y="985" class="sec">G. CORRECTIONS AND SCOPE</text>
+<text x="62" y="1015" class="txt">1. Regulated 5 V input replaces the previous 12 V + LM7805 scheme.</text>
+<text x="62" y="1040" class="txt">2. Power LED now has R1 in series; C1/C2 are connected across the control rails.</text>
+<text x="62" y="1065" class="txt">3. CH32V003F4P6 is TSSOP-20; exact MCU pin mapping is intentionally not fabricated.</text>
+<text x="62" y="1090" class="txt">4. SW1 monitors door, SW2 interrupts relay-coil power, SW3 independently interrupts lamp power.</text>
+<text x="62" y="1115" class="txt">5. Heater/fan/solenoid removed from baseline; S1 Start/Stop is included and must be added to BOM.</text>
+<text x="62" y="1140" class="txt">6. UV-C source requires an opaque enclosure and validated exposure process. No sterilization claim yet.</text>
+<text x="62" y="1170" class="tiny">Not a certified or fabrication-ready design. Do not use as a mains/ballast wiring guide.</text>
+<!-- title -->
+<rect x="1140" y="955" width="620" height="235" class="blk"/>
+<path d="M1140 991H1760M1140 1027H1760M1140 1086H1760M1465 1086V1190" class="thin"/>
+<text x="1158" y="979" class="lab">STEM PROJECT</text><text x="1158" y="1015" class="lab">MULTI-PURPOSE STERILIZER UNIT PROTOTYPE</text><text x="1158" y="1047" class="sm">SCHEMATIC DIAGRAM · REV 1.4</text><text x="1158" y="1068" class="sm">DESIGNED BY: Kadal-Stacks</text><text x="1158" y="1110" class="sm">DATE: 2026-10-27</text><text x="1490" y="1110" class="sm">SHEET 1 / 1</text><text x="1158" y="1133" class="tiny">DRAFT · REVIEW COMPONENT RATINGS</text><text x="1158" y="1156" class="tiny">JST-XH pitch: 2.5 mm</text><text x="1158" y="1178" class="tiny">Check all datasheets before assembly.</text>
+<text x="900" y="1225" text-anchor="middle" class="sm">Functional net labels connect like-named nets. Confirm connector orientation, MCU package pinout, relay/driver parts and protection with qualified review before build.</text>
 </svg>
