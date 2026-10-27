@@ -57,7 +57,7 @@
 <rect x="92" y="657" width="190" height="120" rx="7" class="comp"/>
 <text x="187" y="682" text-anchor="middle" class="lab">J4 · JST-XH-3</text><text x="108" y="709" class="tx">1 · +5V_LV</text><text x="108" y="733" class="tx">2 · GND_LV</text><text x="108" y="757" class="tx">3 · RELAY_CMD</text>
 <rect x="360" y="657" width="330" height="120" rx="7" class="comp"/>
-<text x="525" y="685" text-anchor="middle" class="lab">K1 · RELAY MODULE</text><text x="380" y="711" class="tx">VCC / GND / IN</text><text x="380" y="735" class="tx">Check active HIGH/LOW and</text><text x="380" y="757" class="tx">3.3 V/5 V input compatibility.</text>
+<text x="525" y="685" text-anchor="middle" class="lab">K1 · RELAY MODULE</text><text x="380" y="711" class="tx">VCC / GND / IN</text><text x="380" y="735" class="tx">Check active HIGH/LOW,</text><text x="380" y="757" class="tx">logic level and OFF bias on reset.</text>
 <path d="M282 709 H320 V690 H360" class="pwr"/><path d="M282 733 H337 V733 H360" class="wire"/><path d="M282 757 H346 V757 H360" class="sig"/>
 <text x="88" y="800" class="sm">No extra MOSFET needed if the relay module’s driver is complete.</text>
 
