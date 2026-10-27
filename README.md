@@ -50,8 +50,8 @@ The photographs below are **real reference images found on Wikimedia Commons**, 
 ## Documentation
 
 - **[Component Price Study / BOM Review](docs/studi-harga-komponen.md)**: marketplace price observations, component comparison, preliminary budget, and purchase checks.
-- **[Component-level schematic visual](docs/schematic-komponen-visual-v0.svg)**: a labeled illustration of the physical component types and low-voltage harness.
-- **[Low-Voltage Schematic Draft](docs/schematic-low-voltage-v0.svg)** and [design notes](docs/schematic-notes-v0.md): JST-XH pinouts, LCD I²C, door input, and relay/MOSFET driver alternatives.
+- **[Optimized schematic v1.1](docs/schematic-optimized-v1.svg)** and [design notes](docs/schematic-optimized-v1.md): corrected 5 V control supply, LCD I²C connector, door monitoring, relay MOSFET driver, and separate safety-interlock boundary.
+- [Component-level schematic visual](docs/schematic-komponen-visual-v0.svg) and [earlier low-voltage draft](docs/schematic-low-voltage-v0.svg) are retained as historical references.
 
 > **Image policy:** photographs are external reference imagery from Wikimedia Commons. They are not images of this prototype and are not endorsements of the project. Attribution and license links are documented in the BOM review.
 
