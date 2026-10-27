@@ -43,14 +43,14 @@
 <text x="825" y="377" text-anchor="middle" class="sm">NET LABELS, NOT ADDITIONAL GPIO</text>
 <text x="825" y="394" text-anchor="middle" class="sm">P3.0/P3.1 also support UART ISP</text>
 <text x="825" y="425" text-anchor="middle" class="tiny">EPAD pin 9 electrical tie: verify package note</text>
-<!-- left pins 5,6,7 -->
-<path d="M690 278H654" class="wire"/><circle cx="690" cy="278" r="2.7" class="dot"/><text x="684" y="270" text-anchor="end" class="sm">5</text><text x="648" y="282" text-anchor="end" class="lab">P3.0</text><rect x="515" y="289" width="134" height="19" class="tag"/><text x="582" y="302" text-anchor="middle" class="tiny">DOOR_SENSE</text>
-<path d="M690 326H654" class="wire"/><circle cx="690" cy="326" r="2.7" class="dot"/><text x="684" y="318" text-anchor="end" class="sm">6</text><text x="648" y="330" text-anchor="end" class="lab">P3.1</text><rect x="515" y="337" width="134" height="19" class="tag"/><text x="582" y="350" text-anchor="middle" class="tiny">START_STOP</text>
-<path d="M690 374H654" class="wire"/><circle cx="690" cy="374" r="2.7" class="dot"/><text x="684" y="366" text-anchor="end" class="sm">7</text><text x="648" y="378" text-anchor="end" class="lab">P3.2 / SCL</text><rect x="515" y="385" width="134" height="19" class="tag"/><text x="582" y="398" text-anchor="middle" class="tiny">I2C_SCL</text>
-<!-- right pins 8,1,3 -->
-<path d="M960 278H997" class="wire"/><circle cx="960" cy="278" r="2.7" class="dot"/><text x="968" y="270" class="sm">8</text><text x="1004" y="282" class="lab">P3.3 / SDA</text><rect x="995" y="289" width="128" height="19" class="tag"/><text x="1059" y="302" text-anchor="middle" class="tiny">I2C_SDA</text>
-<path d="M960 326H997" class="wire"/><circle cx="960" cy="326" r="2.7" class="dot"/><text x="968" y="318" class="sm">1</text><text x="1004" y="330" class="lab">P5.4</text><rect x="995" y="337" width="128" height="19" class="tag"/><text x="1059" y="350" text-anchor="middle" class="tiny">RESERVED / ISP-RST</text>
-<path d="M960 374H997" class="wire"/><circle cx="960" cy="374" r="2.7" class="dot"/><text x="968" y="366" class="sm">3</text><text x="1004" y="378" class="lab">P5.5</text><rect x="995" y="385" width="128" height="19" class="tag"/><text x="1059" y="398" text-anchor="middle" class="tiny">RELAY_CMD</text>
+<!-- left pins 5,6,7; pin functions labelled directly -->
+<path d="M690 278H654" class="wire"/><circle cx="690" cy="278" r="2.7" class="dot"/><text x="684" y="270" text-anchor="end" class="sm">5</text><text x="646" y="273" text-anchor="end" class="lab">P3.0</text><text x="646" y="286" text-anchor="end" class="tiny">DOOR_SENSE</text>
+<path d="M690 326H654" class="wire"/><circle cx="690" cy="326" r="2.7" class="dot"/><text x="684" y="318" text-anchor="end" class="sm">6</text><text x="646" y="321" text-anchor="end" class="lab">P3.1</text><text x="646" y="334" text-anchor="end" class="tiny">START_STOP</text>
+<path d="M690 374H654" class="wire"/><circle cx="690" cy="374" r="2.7" class="dot"/><text x="684" y="366" text-anchor="end" class="sm">7</text><text x="646" y="369" text-anchor="end" class="lab">P3.2</text><text x="646" y="382" text-anchor="end" class="tiny">I2C_SCL</text>
+<!-- right pins 8,1,3; pin functions labelled directly -->
+<path d="M960 278H997" class="wire"/><circle cx="960" cy="278" r="2.7" class="dot"/><text x="968" y="270" class="sm">8</text><text x="1005" y="273" class="lab">P3.3</text><text x="1005" y="286" class="tiny">I2C_SDA</text>
+<path d="M960 326H997" class="wire"/><circle cx="960" cy="326" r="2.7" class="dot"/><text x="968" y="318" class="sm">1</text><text x="1005" y="321" class="lab">P5.4</text><text x="1005" y="334" class="tiny">RESERVED / ISP-RST</text>
+<path d="M960 374H997" class="wire"/><circle cx="960" cy="374" r="2.7" class="dot"/><text x="968" y="366" class="sm">3</text><text x="1005" y="369" class="lab">P5.5</text><text x="1005" y="382" class="tiny">RELAY_CMD</text>
 <!-- top pin2 VCC -->
 <path d="M790 225V197" class="wire"/><circle cx="790" cy="225" r="2.7" class="dot"/><text x="778" y="216" text-anchor="end" class="sm">2</text><text x="790" y="187" text-anchor="middle" class="lab">VCC → +5V_CTL</text>
 <!-- bottom pin4 GND and EPAD9 -->
