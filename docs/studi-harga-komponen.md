@@ -35,23 +35,25 @@ Studi ini meninjau komponen berikut:
 
 1. Mikrokontroler: STC8H1K08 atau CH32V003.
 2. Lampu germicidal UV-C, kandidat dua unit.
-3. Modul relay satu kanal 5 V.
-4. Micro limit switch untuk mendeteksi pintu.
-5. LCD karakter 16x2, idealnya dengan antarmuka I2C.
-6. PCB matrix/perfboard, resistor, kapasitor, pin header/socket, kawat jumper PCB dan kabel penghubung.
-7. Kabel dan steker 220 VAC serta komponen perlindungan yang diperlukan.
+3. Relay polos dengan koil 5 V dan driver MOSFET logic-level (baseline skematik); modul relay siap pakai adalah alternatif, bukan komponen tambahan.
+4. Dua micro limit switch low-voltage: SW1 untuk pemantauan pintu ke MCU dan SW2 untuk memutus suplai koil relay.
+5. Interlock pintu SW3 yang berating mains dan bekerja independen dari MCU/relay coil; model final dan harga belum ditentukan.
+6. LCD karakter 16x2 dengan backpack I²C dan konektor JST-XH-4.
+7. PCB matrix/perfboard, resistor, kapasitor, diode flyback, konektor, kawat jumper PCB dan kabel penghubung.
+8. Ballast/driver yang sesuai untuk dua lampu, enclosure dan komponen proteksi/interlock yang harus direview sebelum dirakit.
 
 Dokumen ini hanya merupakan kajian belanja awal. Bukan skematik listrik, sertifikasi keselamatan, validasi mikrobiologis, ataupun instruksi pemasangan tegangan PLN.
 
-## Draft skematik kontrol elektronik
+## Draft skematik yang dikoreksi
 
-Skematik awal dan penjelasan konektor/driver disimpan di dua berkas berikut:
+File rujukan terbaru:
 
-- [**Visual komponen skematik (SVG)**](schematic-komponen-visual-v0.svg): gambar referensi berisi bentuk komponen dan jalur sambungan low-voltage.
-- [**Skematik low-voltage v0.2 (SVG)**](schematic-low-voltage-v0.svg): diagram kontrol 5 V, LCD I²C, door-status input, serta dua alternatif penggerak relay.
-- [**Catatan skematik v0.2 (Markdown)**](schematic-notes-v0.md): pinout konektor JST-XH, asumsi logika, opsi relay module versus bare relay + MOSFET, dan prosedur pengujian awal.
+- [**Skematik optimasi v1.1 (SVG)**](schematic-optimized-v1.svg): versi visual utama untuk catu kontrol, MCU, LCD I²C, dua fungsi sakelar pintu, dan driver relay MOSFET.
+- [**Catatan optimasi v1.1 (Markdown)**](schematic-optimized-v1.md): koreksi skematik awal, asumsi pinout JST-XH, pilihan driver, daftar komponen, dan batas keselamatan.
+- [Visual komponen skematik (SVG)](schematic-komponen-visual-v0.svg): ilustrasi komponen fisik; bukan pengganti skematik koneksi.
+- [Skematik low-voltage v0.2 (SVG)](schematic-low-voltage-v0.svg) dan [catatan v0.2](schematic-notes-v0.md): versi terdahulu untuk jejak perubahan.
 
-Kedua berkas masih draft. Nomor pin MCU belum difinalkan karena pemilihan STC8H1K08 atau CH32V003 dan tipe board belum diputuskan. Rangkaian detail PLN/ballast UV-C sengaja tidak disertakan sampai model lampu, driver, enclosure, dan skema interlock direview.
+v1.1 masih draft. Nomor pin MCU belum final karena STC8H1K08 atau CH32V003 dan tipe board belum dipilih. Sambungan PLN dan ballast UV-C sengaja hanya berupa batas blok, bukan instruksi kabel rinci.
 
 ## Referensi visual dari sumber eksternal
 
@@ -149,6 +151,11 @@ Pencarian Shopee sebelumnya menghasilkan indikasi harga berikut. Harga dan statu
 | Relay satu kanal 5 V | sekitar Rp7.500–12.500 | [Pencarian relay 1 kanal 5 V](https://shopee.co.id/search?keyword=relay+1+channel+5V) |
 | Micro limit switch | sekitar Rp1.900–4.600 | [Pencarian micro limit switch](https://shopee.co.id/search?keyword=micro+limit+switch) |
 | PCB matrix | sekitar Rp4.250 untuk 5x7 cm pada listing lain | [Pencarian PCB matrix](https://shopee.co.id/search?keyword=PCB+matrix+5x7) |
+| Adaptor DC 5 V 1 A | Rp16.500–31.000 pada listing yang ditemukan | [Adaptor 5 V 1 A](https://shopee.co.id/Adaptor-5v-1a-Adapter-DC-Switching-5-Volt-1-Ampere-i.48084222.57711814949) |
+| Relay polos koil DC 5 V, misalnya SRD-05VDC-SL-C | sekitar Rp2.500–4.500/listing; pilih varian koil 5 V | [Relay polos 5 V](https://shopee.co.id/Relay-SPDT-SONGLE-5V-10A-250VAC-SRD-05VDC-SL-C-i.27499686.17436019731) |
+| MOSFET logic-level Q1 (kandidat FQP30N06L) | Rp5.000 pada satu listing yang dilaporkan habis; gunakan anggaran Rp5.000–12.000 dan verifikasi ulang | [Contoh listing FQP30N06L](https://shopee.co.id/FQP30N06-30N06-30N06L-N-channel-MOSFET-60v-30A-TO-220-FQP30N06L-i.20732744.6100081208) |
+| Diode flyback D1 1N4007 | sekitar Rp700–2.800/unit tergantung listing/pack | [Contoh listing 1N4007](https://shopee.co.id/avicenateknologiindonesia) |
+| Modul relay satu kanal 5 V (alternatif jika tidak memakai driver diskrit) | sekitar Rp7.500–12.500 | [Pencarian modul relay 1 kanal 5 V](https://shopee.co.id/search?keyword=relay+1+channel+5V) |
 | Lampu UV-C 254 nm | sekitar Rp75.000/unit untuk listing 4 W yang diklaim germicidal; perlu cek model | [Pencarian lampu UV-C 254 nm](https://shopee.co.id/search?keyword=lampu+UV-C+254nm+4W) |
 | Konektor JST-XH-2P + kabel pendek | listing sekitar Rp1.750–3.250/set, stok/varian perlu dicek | [Contoh kabel JST-XH-2P](https://shopee.co.id/ORIGINAL-KABEL-JST-XH-2P-2.54mm-Pitch-JST-Male-Female-2PIN-Konektor-Terminal-Socket-soket-Cable-Connector-PH2.0-MOLEX-MOLEK-CABLE-KABLE-2-PIN-xh3p-i.137620933.20457052106) |
 | Konektor/header JST-XH-4P | listing sekitar Rp2.000/set untuk header; kabel lengkap dapat jauh lebih mahal | [Contoh header XH-4P](https://shopee.co.id/1-Set-Konektor-Header-XH-4p-Siku-2.54mm-JST-XH-4-pin-Male-Female-Inner-4pin-bengkok-i.985143.29537360213) |
@@ -174,9 +181,10 @@ Header PCB, housing, terminal crimp, dan kabel adalah bagian yang berbeda. Harga
 
 ### Pilihan relay dan MOSFET
 
-- **Jika menggunakan modul relay 5 V:** gunakan driver koil yang sudah terpasang pada modul. Biasanya tidak diperlukan MOSFET eksternal untuk menggerakkan koil; verifikasi layout modul, logika input dan diode flyback.
-- **Jika menggunakan relay polos:** gunakan MOSFET logic-level N-channel sebagai low-side driver koil, resistor gate seri, gate pull-down, dan diode flyback. Estimasi harga tambahan untuk contoh set penggerak adalah sekitar Rp8.000–10.000 untuk MOSFET + diode + dua resistor, belum termasuk harga relay polos dan ongkir. Ini alternatif dari modul relay, bukan biaya yang ditambahkan begitu saja ke modul.
+- **Baseline v1.1: relay polos + MOSFET logic-level.** Estimasi komponen utama driver adalah MOSFET Rp5.000–12.000, diode flyback Rp700–2.800, resistor gate 100 Ω dan pull-down 100 kΩ (dimasukkan dalam anggaran paket resistor). Tambahkan relay polos koil 5 V sekitar Rp2.500–4.500.
+- **Alternatif: modul relay 5 V siap pakai.** Biasanya modul sudah memiliki transistor/MOSFET driver dan diode flyback; gunakan modul sebagai pengganti driver diskrit, jangan menumpuk seluruh komponennya tanpa alasan.
 - MOSFET pada skematik hanya digunakan untuk koil relay DC. Ia tidak dimaksudkan untuk switching lampu UV-C AC secara langsung.
+- Kontak relay generik harus dinilai berdasarkan tipe ballast, arus masuk, rating beban yang sebenarnya dan kebutuhan isolasi. Angka “10 A / 250 VAC” di listing bukan persetujuan keselamatan untuk beban proyek ini.
 
 ### Kawat penghubung untuk matrix board
 
@@ -226,22 +234,25 @@ Angka berikut adalah estimasi kerja, bukan harga final yang sudah terverifikasi.
 
 | Item | Asumsi anggaran |
 |---|---:|
-| STC MCU / board atau adaptor minimum | Rp10.000–50.000 |
-| USB-to-TTL yang kompatibel | Rp17.000–25.000 |
-| LCD 16x2 I2C | Rp30.000–40.000 |
-| Relay satu kanal 5 V (untuk uji kendali, bukan otomatis dianggap safety-rated) | Rp7.000–13.000 |
-| Limit switch | Rp2.000–5.000 |
+| MCU/board dan kebutuhan pemrograman awal | Rp10.000–50.000 |
+| USB-to-TTL yang kompatibel (jika diperlukan untuk STC) | Rp17.000–25.000 |
+| Adaptor 5 V DC teregulasi dan terisolasi, sekitar 1 A | Rp16.500–31.000 |
+| LCD 16x2 dengan I²C backpack | Rp30.000–40.000 |
+| Relay polos dengan koil 5 V | Rp2.500–4.500 |
+| MOSFET logic-level Q1 | Rp5.000–12.000 |
+| Diode flyback D1 1N4007 | Rp700–2.800 |
+| Dua micro limit switch low-voltage (SW1 monitor + SW2 coil inhibit) | Rp4.000–10.000 |
 | PCB matrix | Rp3.000–10.000 |
-| Header, socket, resistor dan kapasitor prototipe | Rp10.000–35.000 |
+| Header, konektor kecil, resistor, kapasitor dan komponen prototipe | Rp10.000–35.000 |
 | Kawat jumper PCB solid-core 0,5 mm, sekitar 1 meter | Rp1.500 |
 | Kawat/kabel jumper tunggal berisolasi, sekitar 1 meter | Rp2.500 |
-| Konektor/harness JST-XH low-voltage untuk power, LCD dan door switch | Rp5.000–15.000 |
-| Dua lampu UV-C | Rp150.000–210.000 sebagai cadangan awal |
-| **Subtotal indikatif dengan modul relay dan konektor XH** | **Rp238.000–407.000** |
+| Harness JST-XH low-voltage untuk catu dan LCD/sensor | Rp5.000–15.000 |
+| Dua lampu UV-C (klaim listing perlu verifikasi) | Rp150.000–210.000 |
+| **Subtotal indikatif baseline v1.1** | **Rp253.000–449.000** |
 
-Subtotal ini **belum** mencakup ballast/driver yang cocok, pemegang lampu, catu daya terisolasi untuk kontrol, fuse/overcurrent protection, enclosure, mekanisme pintu, pemutus independen, kabel PLN yang sesuai, strain relief, label peringatan, ongkir dan alat uji. Subtotal mengasumsikan modul relay siap pakai yang sudah mempunyai driver koil, bukan opsi relay polos + MOSFET. Maka total sesungguhnya bisa melampaui Rp500.000.
+Subtotal memakai **relay polos + driver MOSFET** dan memasukkan dua sakelar low-voltage. Angka ini bukan total alat siap digunakan. **SW3 interlock pintu ber-rating mains, ballast/driver, dudukan lampu, enclosure opaque, proteksi/isolasi AC, strain relief, kabel dan pengujian belum masuk subtotal.** Harga SW3 belum dikunci karena pemilihan harus berdasarkan tipe kontak, mekanisme positive-opening bila dipersyaratkan, rating tegangan/arus serta arus masuk ballast. Total aktual dapat melewati Rp500.000.
 
-Jika memakai **relay polos + MOSFET**, anggarkan komponen driver tambahan secara terpisah: MOSFET logic-level sekitar Rp7.000–12.000, diode flyback kira-kira Rp700, resistor gate sekitar Rp130, dan resistor pull-down sekitar Rp350 berdasarkan listing yang ditemukan. Total indikatif rangkaian driver sekitar **Rp8.000–14.000**, belum termasuk relay polos, konektor, ongkir, dan kemungkinan adapter/breakout. Nilai ini tidak ditambahkan ke biaya modul relay pada skenario utama karena kedua cara adalah alternatif. Harga Rp150.000 untuk dua lampu hanya masuk akal bila dua lampu pada kisaran Rp75.000 benar-benar cocok dan sumber UV-C-nya terbukti dari datasheet; ini belum terverifikasi untuk semua listing.
+Modul relay siap pakai adalah alternatif; bila dipilih, ganti relay polos + Q1 + D1 dengan satu modul relay yang rangkaiannya sudah diverifikasi, dan hitung ulang subtotal. Jangan menjumlahkan dua alternatif driver sekaligus.
 
 ### CH32V003
 
@@ -252,7 +263,7 @@ Anggaran board Rp55.000 sebagai kandidat pencarian belum cukup untuk menyimpulka
 1. **Ballast/driver dan dudukan lampu.** Banyak tabung fluoresen germicidal tidak bisa langsung disambungkan ke jaringan listrik. Jenis ballast harus cocok dengan model serta watt lampu. Jangan mengasumsikan paket lampu sudah lengkap.
 2. **Catu daya kontrol.** Tentukan tegangan dan arus untuk MCU, LCD, serta modul relay. Pastikan catu daya terisolasi dari jaringan listrik dan logika tidak terpapar tegangan berbahaya.
 3. **Proteksi jaringan listrik.** Fuse/overcurrent protection, terminal tertutup, enclosure yang layak, strain relief dan penanganan kabel harus dipertimbangkan oleh orang yang kompeten.
-4. **Interlock pintu.** Limit switch satu buah dapat dibaca melalui input digital MCU dengan pull-up/pull-down yang sesuai; multiplexer analog/digital tidak diperlukan untuk satu saklar. Namun, untuk sumber UV-C, jangan menjadikan firmware sebagai satu-satunya pengaman. Pertimbangkan mekanisme pemutus energi independen yang fail-safe dan membuat sumber UV padam saat pintu terbuka atau rangkaian interlock gagal.
+4. **Sakelar pintu tiga fungsi berbeda.** SW1 membaca status pintu ke MCU; SW2 NC memutus suplai koil relay pada domain low-voltage; SW3 harus merupakan interlock pintu ber-rating mains yang memutus energi lampu secara independen. Multiplexer tidak diperlukan untuk input saklar tunggal. SW1/SW2 bukan pengganti SW3, dan SW3 belum dihitung harganya.
 5. **Tombol emergency/stop dan indikator.** Tentukan cara menghentikan operasi serta membedakan status standby, aktif, selesai, dan fault.
 6. **Pengukuran UV-C.** Daya listrik lampu (W) bukan dosis UV pada permukaan. Dosis dipengaruhi irradiance dan waktu; geometri, jarak, material, kontaminasi dan bayangan memengaruhi hasil.
 7. **Rangka mekanis modular.** Rak yang dapat diganti harus tidak menghalangi distribusi UV. Bahan rak juga harus tahan terhadap UV, panas, korosi dan prosedur pembersihan.
@@ -337,8 +348,10 @@ Gambar ditampilkan tanpa perubahan. Pemilik gambar dan Wikimedia Commons tidak m
 
 ## 16. Artefak desain dan data
 
-- Skematik low-voltage: [schematic-low-voltage-v0.svg](schematic-low-voltage-v0.svg).
-- Catatan pinout dan driver: [schematic-notes-v0.md](schematic-notes-v0.md).
+- Skematik terkoreksi: [schematic-optimized-v1.svg](schematic-optimized-v1.svg).
+- Catatan optimasi: [schematic-optimized-v1.md](schematic-optimized-v1.md).
+- Skematik low-voltage versi sebelumnya: [schematic-low-voltage-v0.svg](schematic-low-voltage-v0.svg).
+- Catatan skematik v0.2: [schematic-notes-v0.md](schematic-notes-v0.md).
 - CSV sumber: `hasil_tokopedia_20261017_173836.csv` (hasil scraper lokal, disimpan terpisah dari dokumen ini).
 - Catatan konsol scraper: `Pasted text.txt` (menunjukkan beberapa timeout dan hasil query yang tidak relevan).
 - Dokumen ini sebaiknya diperbarui ketika harga dicek ulang, model komponen dipilih, dan biaya checkout diketahui.
