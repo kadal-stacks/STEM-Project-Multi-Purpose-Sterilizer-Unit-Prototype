@@ -73,7 +73,7 @@ Modul relay umum biasanya telah memiliki transistor penggerak koil dan diode fly
 - GND_LV → GND modul.
 - RELAY_CMD → IN modul.
 
-Sebelum menyambungkan MCU, verifikasi apakah input modul aktif HIGH atau aktif LOW dan apakah level inputnya kompatibel dengan keluaran MCU. Tentukan kondisi default yang membuat relay **OFF** saat MCU reset/boot. Jika modul sudah memiliki driver dan flyback diode, jangan menambahkan MOSFET penggerak koil eksternal tanpa alasan desain yang jelas.
+Sebelum menyambungkan MCU, verifikasi apakah input modul aktif HIGH atau aktif LOW dan apakah level inputnya kompatibel dengan keluaran MCU. Tentukan kondisi default yang membuat relay **OFF** saat MCU reset/boot. Jika pin IN bisa mengambang ketika MCU reset, tambahkan resistor bias eksternal ke level OFF sesuai logika modul, lalu validasi dengan uji tanpa beban. Jika modul sudah memiliki driver dan flyback diode, jangan menambahkan MOSFET penggerak koil eksternal tanpa alasan desain yang jelas.
 
 Tabel konektor J4 hanya berlaku jika modul ditempatkan terpisah dan memakai konektor 3-pin.
 
