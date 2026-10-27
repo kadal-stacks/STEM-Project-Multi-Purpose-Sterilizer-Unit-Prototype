@@ -26,22 +26,25 @@
 
 <!-- B: MCU -->
 <rect x="710" y="118" width="480" height="267" class="blk"/>
-<text x="730" y="148" class="sec">B. MCU U1 · LOGICAL INTERFACE</text>
-<text x="730" y="170" class="sm">Select one MCU; physical pin mapping remains TBD</text>
-<rect x="805" y="194" width="290" height="160" class="blk"/>
-<text x="950" y="218" text-anchor="middle" class="lab">U1 · MCU</text>
-<text x="950" y="241" text-anchor="middle" class="txt">CH32V003F4P6 (TSSOP-20)</text>
-<text x="950" y="260" text-anchor="middle" class="sm">OR STC8H1K08 (exact variant TBD)</text><path d="M823 270H1077" class="thin"/>
-<text x="823" y="292" class="sm">VDD · GND</text><text x="823" y="311" class="sm">DOOR_SENSE · START_STOP</text><text x="823" y="330" class="sm">I2C_SDA · I2C_SCL</text><text x="823" y="349" class="sm">UV_RELAY_CMD</text>
-<text x="730" y="373" class="tiny">Use the actual selected MCU datasheet to assign package pins.</text>
-<!-- nets linked by label -->
-<rect x="730" y="202" width="62" height="20" class="tag"/><text x="761" y="216" text-anchor="middle" class="tiny">+5V_CTL</text><path d="M792 212H805" class="line"/>
-<rect x="730" y="226" width="62" height="20" class="tag"/><text x="761" y="240" text-anchor="middle" class="tiny">GND_CTL</text><path d="M792 236H798V305H805" class="line"/>
-<rect x="1097" y="274" width="81" height="18" class="tag"/><text x="1137" y="287" text-anchor="middle" class="tiny">I2C_SDA</text>
-<rect x="1097" y="297" width="81" height="18" class="tag"/><text x="1137" y="310" text-anchor="middle" class="tiny">I2C_SCL</text>
-<rect x="1097" y="320" width="81" height="18" class="tag"/><text x="1137" y="333" text-anchor="middle" class="tiny">DOOR_SENSE</text>
-<rect x="1097" y="343" width="81" height="18" class="tag"/><text x="1137" y="356" text-anchor="middle" class="tiny">START_STOP</text>
-<rect x="1097" y="366" width="81" height="18" class="tag"/><text x="1137" y="379" text-anchor="middle" class="tiny">RELAY_CMD</text>
+<text x="730" y="148" class="sec">B. MICROCONTROLLER U1</text>
+<text x="730" y="170" class="sm">Logical I/O only; no package pin numbers assigned yet</text>
+<rect x="815" y="196" width="280" height="174" class="blk"/>
+<text x="955" y="224" text-anchor="middle" class="lab">U1 · MCU</text>
+<text x="955" y="248" text-anchor="middle" class="txt">CH32V003F4P6 (TSSOP-20)</text>
+<text x="955" y="268" text-anchor="middle" class="sm">OR STC8H1K08 (exact variant TBD)</text>
+<path d="M835 282H1075" class="thin"/>
+<text x="955" y="302" text-anchor="middle" class="sm">Use one MCU only</text>
+<text x="955" y="323" text-anchor="middle" class="sm">Assign real pins from datasheet</text>
+<!-- U1 power/input nets -->
+<path d="M815 282H790" class="line"/><rect x="720" y="272" width="70" height="20" class="tag"/><text x="755" y="286" text-anchor="middle" class="tiny">+5V_CTL</text>
+<path d="M815 304H790" class="line"/><rect x="720" y="294" width="70" height="20" class="tag"/><text x="755" y="308" text-anchor="middle" class="tiny">GND_CTL</text>
+<path d="M815 326H790" class="line"/><rect x="711" y="316" width="79" height="20" class="tag"/><text x="750" y="330" text-anchor="middle" class="tiny">DOOR_SENSE</text>
+<path d="M815 348H790" class="line"/><rect x="711" y="338" width="79" height="20" class="tag"/><text x="750" y="352" text-anchor="middle" class="tiny">START_STOP</text>
+<!-- U1 output nets -->
+<path d="M1095 304H1107" class="line"/><rect x="1107" y="294" width="81" height="20" class="tag"/><text x="1147" y="308" text-anchor="middle" class="tiny">I2C_SDA</text>
+<path d="M1095 326H1107" class="line"/><rect x="1107" y="316" width="81" height="20" class="tag"/><text x="1147" y="330" text-anchor="middle" class="tiny">I2C_SCL</text>
+<path d="M1095 348H1107" class="line"/><rect x="1107" y="338" width="81" height="20" class="tag"/><text x="1147" y="352" text-anchor="middle" class="tiny">UV_RELAY_CMD</text>
+<text x="730" y="373" class="tiny">Check selected MCU datasheet before mapping to physical pins.</text>
 
 <!-- C: LCD -->
 <rect x="1210" y="118" width="550" height="267" class="blk"/>
@@ -51,23 +54,37 @@
 <path d="M1385 226H1410V220H1440" class="line"/><text x="1389" y="214" class="tiny">+5V_CTL</text><path d="M1385 253H1418V245H1440" class="line"/><text x="1389" y="244" class="tiny">GND_CTL</text><path d="M1385 280H1425V270H1440" class="line"/><text x="1389" y="269" class="tiny">I2C_SDA</text><path d="M1385 307H1430V296H1440" class="line"/><text x="1389" y="297" class="tiny">I2C_SCL</text>
 <text x="1230" y="355" class="sm">Chosen harness pinout: VCC, GND, SDA, SCL.</text><text x="1230" y="373" class="sm">Verify backpack silkscreen; 5 V logic assumed.</text>
 
-<!-- D: inputs, explicit net name topology -->
+<!-- D: inputs, externally connected by named nets -->
 <rect x="40" y="415" width="650" height="520" class="blk"/>
-<text x="60" y="445" class="sec">D. USER INPUTS AND DOOR MONITOR</text>
+<text x="60" y="445" class="sec">D. DOOR MONITOR AND START / STOP</text>
 <!-- Door monitor pullup -->
-<text x="60" y="476" class="lab">Door state input · SW1 (NC)</text>
-<text x="60" y="498" class="sm">R2 pulls DOOR_SENSE high; SW1 grounds it when closed</text>
-<path d="M100 526V542" class="line"/><rect x="88" y="542" width="24" height="53" class="blk"/><path d="M92 547L108 556L92 565L108 574L92 583" class="thin"/><text x="123" y="563" class="sm">R2 10 kΩ</text><path d="M100 595V621H255" class="line"/><circle cx="100" cy="621" r="3" class="dot"/><text x="265" y="626" class="net">DOOR_SENSE</text><text x="60" y="529" class="net">+5V_CTL</text>
-<!-- connector, external switch symbol to GND -->
-<rect x="70" y="651" width="130" height="72" class="blk"/><text x="135" y="672" text-anchor="middle" class="lab">J3 · JST-XH-2</text><text x="82" y="694" class="sm">1 DOOR_SENSE</text><text x="82" y="711" class="sm">2 GND_CTL</text>
-<path d="M200 692H250" class="line"/><circle cx="250" cy="692" r="3" class="dot"/><circle cx="305" cy="692" r="3" class="dot"/><path d="M250 692H305" class="line"/><path d="M305 692H340V721H375" class="line"/><text x="278" y="672" text-anchor="middle" class="sm">SW1 NC</text><path d="M200 710H340V721" class="line"/><text x="381" y="725" class="tiny">GND_CTL</text>
-<text x="60" y="747" class="sm">At the external harness: pin 1 to DOOR_SENSE, pin 2 to GND.</text><text x="60" y="766" class="sm">Closed = LOW; door open or broken cable = HIGH/fault.</text>
-<!-- Start stop -->
-<text x="60" y="802" class="lab">Start/Stop · S1 (momentary NO)</text>
-<text x="60" y="824" class="sm">R3 pull-up; press button to connect START_STOP to GND</text>
-<path d="M100 847V858" class="line"/><rect x="88" y="858" width="24" height="47" class="blk"/><path d="M92 863L108 871L92 879L108 887L92 895" class="thin"/><text x="123" y="878" class="sm">R3 10 kΩ</text><text x="60" y="850" class="net">+5V_CTL</text>
-<path d="M100 905V916H255" class="line"/><circle cx="100" cy="916" r="3" class="dot"/><text x="265" y="921" class="net">START_STOP</text>
-<rect x="390" y="839" width="250" height="71" class="blk"/><text x="515" y="860" text-anchor="middle" class="lab">J4 · JST-XH-2</text><text x="407" y="882" class="sm">1 START_STOP</text><text x="407" y="900" class="sm">2 GND_CTL</text><text x="60" y="930" class="tiny">Add a momentary pushbutton to the BOM. Not an emergency stop.</text>
+<text x="60" y="476" class="lab">SW1 · Normally closed door monitor</text>
+<text x="60" y="497" class="sm">External contact uses the same named nets as J3.</text>
+<rect x="65" y="520" width="145" height="80" class="blk"/>
+<text x="137" y="542" text-anchor="middle" class="lab">J3 · JST-XH-2</text>
+<text x="78" y="565" class="sm">1 DOOR_SENSE</text>
+<text x="78" y="585" class="sm">2 GND_CTL</text>
+<!-- SW1 contact: independent net-labelled external contact -->
+<rect x="245" y="520" width="230" height="80" class="dash"/>
+<text x="360" y="541" text-anchor="middle" class="lab">SW1 · NC contact</text>
+<circle cx="292" cy="566" r="3" class="dot"/><circle cx="357" cy="566" r="3" class="dot"/><path d="M292 566H357" class="line"/>
+<rect x="249" y="574" width="87" height="18" class="tag"/><text x="292" y="587" text-anchor="middle" class="tiny">DOOR_SENSE</text>
+<rect x="341" y="574" width="82" height="18" class="tag"/><text x="382" y="587" text-anchor="middle" class="tiny">GND_CTL</text>
+<text x="60" y="621" class="sm">J3 pin 1 = DOOR_SENSE; pin 2 = GND_CTL; harness connects to SW1.</text>
+<!-- Pull-up R2 -->
+<text x="60" y="655" class="lab">R2 · 10 kΩ pull-up</text>
+<text x="60" y="676" class="sm">+5V_CTL ─ R2 ─ DOOR_SENSE (same-name net)</text>
+<path d="M110 693V704" class="line"/><rect x="98" y="704" width="24" height="46" class="blk"/><path d="M102 709L118 717L102 725L118 733L102 741" class="thin"/><path d="M110 750V771H250" class="line"/>
+<rect x="250" y="761" width="105" height="20" class="tag"/><text x="302" y="775" text-anchor="middle" class="tiny">DOOR_SENSE</text>
+<path d="M110 693H175" class="line"/><text x="180" y="697" class="net">+5V_CTL</text>
+<text x="60" y="803" class="sm">Door closed = LOW; door open or cable break = HIGH/fault.</text>
+<!-- Start stop input -->
+<text x="60" y="836" class="lab">S1 · Start/Stop momentary NO</text>
+<rect x="65" y="851" width="145" height="65" class="blk"/><text x="137" y="872" text-anchor="middle" class="lab">J4 · JST-XH-2</text><text x="78" y="893" class="sm">1 START_STOP</text><text x="78" y="909" class="sm">2 GND_CTL</text>
+<rect x="245" y="851" width="230" height="65" class="dash"/><text x="360" y="871" text-anchor="middle" class="lab">External pushbutton S1 · NO</text><circle cx="292" cy="892" r="3" class="dot"/><circle cx="357" cy="892" r="3" class="dot"/><path d="M292 892L343 876" class="line"/>
+<rect x="249" y="896" width="87" height="16" class="tag"/><text x="292" y="908" text-anchor="middle" class="tiny">START_STOP</text><rect x="341" y="896" width="82" height="16" class="tag"/><text x="382" y="908" text-anchor="middle" class="tiny">GND_CTL</text>
+<path d="M535 851V862" class="line"/><rect x="523" y="862" width="24" height="34" class="blk"/><path d="M527 866L543 873L527 880L543 887" class="thin"/><path d="M535 896V906H570" class="line"/><text x="552" y="872" class="tiny">R3</text><text x="552" y="885" class="tiny">10 kΩ</text><path d="M535 851H570" class="line"/><text x="575" y="855" class="tiny">+5V_CTL</text><rect x="570" y="896" width="106" height="20" class="tag"/><text x="623" y="910" text-anchor="middle" class="tiny">START_STOP</text>
+<text x="60" y="929" class="tiny">Same-name labels denote electrical continuity. S1 is not an emergency stop.</text>
 
 <!-- E: driver circuit -->
 <rect x="710" y="415" width="660" height="520" class="blk"/>
@@ -79,7 +96,7 @@
 <!-- Drain path -->
 <path d="M1080 505H1130V620H1230V648" class="line"/><text x="1090" y="493" class="tiny">COIL− / DRAIN</text>
 <!-- Flyback branch -->
-<path d="M945 505V557H972" class="line"/><path d="M972 545L972 569L994 557Z" fill="#fff" stroke="#111" stroke-width="1.6"/><path d="M999 545V569" class="line"/><path d="M999 557H1130V505" class="line"/><text x="1007" y="540" class="sm">D1 1N4007</text><text x="1007" y="576" class="tiny">K → +5V; A → drain</text>
+<path d="M945 505V557H966" class="line"/><path d="M970 545V569" class="line"/><path d="M992 545L992 569L972 557Z" fill="#fff" stroke="#111" stroke-width="1.6"/><path d="M992 557H1130V505" class="line"/><text x="1007" y="540" class="sm">D1 1N4007</text><text x="1007" y="576" class="tiny">K → +5V; A → drain</text>
 <!-- MOSFET symbol and connections -->
 <path d="M1230 648V671" class="line"/><path d="M1213 672V719" class="line"/><path d="M1230 672V719" class="line"/><path d="M1230 719V744" class="line"/><path d="M1195 685H1213" class="line"/><text x="1180" y="679" class="tiny">G</text><text x="1240" y="670" class="tiny">D</text><text x="1240" y="741" class="tiny">S</text>
 <path d="M1230 744V767H1320" class="line"/><path d="M1307 767H1333M1311 774H1329M1316 781H1324" class="line"/><text x="1320" y="800" text-anchor="middle" class="sm">GND_CTL</text>
