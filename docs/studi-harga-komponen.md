@@ -48,12 +48,12 @@ Dokumen ini hanya merupakan kajian belanja awal. Bukan skematik listrik, sertifi
 
 File rujukan terbaru:
 
-- [**Skematik optimasi v1.1 (SVG)**](schematic-optimized-v1.svg): versi visual utama untuk catu kontrol, MCU, LCD I²C, dua fungsi sakelar pintu, dan driver relay MOSFET.
-- [**Catatan optimasi v1.1 (Markdown)**](schematic-optimized-v1.md): koreksi skematik awal, asumsi pinout JST-XH, pilihan driver, daftar komponen, dan batas keselamatan.
+- [**Skematik optimasi v1.5 (SVG)**](schematic-optimized-v1.svg): diagram gaya teknis dengan catu kontrol 5 V, MCU memakai net logis, LCD I²C, input pintu, tombol Start/Stop, driver relay MOSFET, dan batas subsistem AC/UV-C.
+- [**Catatan optimasi v1.5 (Markdown)**](schematic-optimized-v1.md): koreksi skematik awal, pinout JST-XH, dua opsi driver, dan batas keselamatan.
 - [Visual komponen skematik (SVG)](schematic-komponen-visual-v0.svg): ilustrasi komponen fisik; bukan pengganti skematik koneksi.
 - [Skematik low-voltage v0.2 (SVG)](schematic-low-voltage-v0.svg) dan [catatan v0.2](schematic-notes-v0.md): versi terdahulu untuk jejak perubahan.
 
-v1.1 masih draft. Nomor pin MCU belum final karena STC8H1K08 atau CH32V003 dan tipe board belum dipilih. Sambungan PLN dan ballast UV-C sengaja hanya berupa batas blok, bukan instruksi kabel rinci.
+v1.5 masih draft. Nomor pin fisik MCU belum dicantumkan karena STC8H1K08 atau CH32V003 dan tipe board belum dipilih. Sambungan PLN dan ballast UV-C sengaja hanya berupa batas blok, bukan instruksi kabel rinci.
 
 ## Referensi visual dari sumber eksternal
 
@@ -242,15 +242,16 @@ Angka berikut adalah estimasi kerja, bukan harga final yang sudah terverifikasi.
 | MOSFET logic-level Q1 | Rp5.000–12.000 |
 | Diode flyback D1 1N4007 | Rp700–2.800 |
 | Dua micro limit switch low-voltage (SW1 monitor + SW2 coil inhibit) | Rp4.000–10.000 |
+| Pushbutton momentary NO untuk Start/Stop (estimasi anggaran, belum marketplace-verified) | Rp2.000–5.000 |
 | PCB matrix | Rp3.000–10.000 |
 | Header, konektor kecil, resistor, kapasitor dan komponen prototipe | Rp10.000–35.000 |
 | Kawat jumper PCB solid-core 0,5 mm, sekitar 1 meter | Rp1.500 |
 | Kawat/kabel jumper tunggal berisolasi, sekitar 1 meter | Rp2.500 |
-| Harness JST-XH low-voltage untuk catu dan LCD/sensor | Rp5.000–15.000 |
+| Harness JST-XH low-voltage untuk catu, LCD, pemantauan pintu dan Start/Stop | Rp5.000–15.000 |
 | Dua lampu UV-C (klaim listing perlu verifikasi) | Rp150.000–210.000 |
-| **Subtotal indikatif baseline v1.1** | **Rp258.000–449.000** |
+| **Subtotal indikatif baseline v1.5** | **Rp260.000–454.000** |
 
-Subtotal memakai **relay polos + driver MOSFET** dan memasukkan dua sakelar low-voltage. Angka ini bukan total alat siap digunakan. **SW3 interlock pintu ber-rating mains, ballast/driver, dudukan lampu, enclosure opaque, proteksi/isolasi AC, strain relief, kabel dan pengujian belum masuk subtotal.** Harga SW3 belum dikunci karena pemilihan harus berdasarkan tipe kontak, mekanisme positive-opening bila dipersyaratkan, rating tegangan/arus serta arus masuk ballast. Total aktual dapat melewati Rp500.000.
+Subtotal memakai **relay polos + driver MOSFET**, dua sakelar low-voltage, dan allowance awal untuk tombol Start/Stop. Harga tombol belum diverifikasi melalui marketplace. Angka ini bukan total alat siap digunakan. **SW3 interlock pintu ber-rating mains, ballast/driver, dudukan lampu, enclosure opaque, proteksi/isolasi AC, strain relief, kabel dan pengujian belum masuk subtotal.** Harga SW3 belum dikunci karena pemilihan harus berdasarkan tipe kontak, mekanisme positive-opening bila dipersyaratkan, rating tegangan/arus serta arus masuk ballast. Total aktual dapat melewati Rp500.000.
 
 Modul relay siap pakai adalah alternatif; bila dipilih, ganti relay polos + Q1 + D1 dengan satu modul relay yang rangkaiannya sudah diverifikasi, dan hitung ulang subtotal. Jangan menjumlahkan dua alternatif driver sekaligus.
 
@@ -348,8 +349,8 @@ Gambar ditampilkan tanpa perubahan. Pemilik gambar dan Wikimedia Commons tidak m
 
 ## 16. Artefak desain dan data
 
-- Skematik terkoreksi: [schematic-optimized-v1.svg](schematic-optimized-v1.svg).
-- Catatan optimasi: [schematic-optimized-v1.md](schematic-optimized-v1.md).
+- Skematik terkoreksi v1.5: [schematic-optimized-v1.svg](schematic-optimized-v1.svg).
+- Catatan optimasi v1.5: [schematic-optimized-v1.md](schematic-optimized-v1.md).
 - Skematik low-voltage versi sebelumnya: [schematic-low-voltage-v0.svg](schematic-low-voltage-v0.svg).
 - Catatan skematik v0.2: [schematic-notes-v0.md](schematic-notes-v0.md).
 - CSV sumber: `hasil_tokopedia_20261017_173836.csv` (hasil scraper lokal, disimpan terpisah dari dokumen ini).
