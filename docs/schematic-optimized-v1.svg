@@ -15,7 +15,7 @@
 <rect x="40" y="118" width="650" height="267" class="blk"/>
 <text x="60" y="148" class="sec">A. CONTROL POWER (REGULATED 5 V)</text>
 <text x="60" y="170" class="sm">5 V isolated adapter; no LM7805 after a regulated 5 V source</text>
-<rect x="65" y="194" width="120" height="83" class="blk"/><text x="125" y="216" text-anchor="middle" class="lab">J1 · XH-2</text><text x="82" y="241" class="sm">1 +5V_CTL</text><text x="82" y="264" class="sm">2 GND_CTL</text><circle cx="180" cy="237" r="4" class="dot"/><circle cx="180" cy="260" r="4" class="dot"/>
+<rect x="65" y="194" width="120" height="83" class="blk"/><text x="125" y="216" text-anchor="middle" class="lab">J1 · XH-2</text><text x="82" y="241" class="sm">1 +5V_IN</text><text x="82" y="264" class="sm">2 GND_CTL</text><circle cx="180" cy="237" r="4" class="dot"/><circle cx="180" cy="260" r="4" class="dot"/>
 <path d="M180 237H220" class="line"/><rect x="220" y="226" width="60" height="22" class="blk"/><text x="250" y="241" text-anchor="middle" class="sm">F1*</text><path d="M280 237H665" class="line"/><text x="294" y="225" class="net">+5V_CTL</text><path d="M180 260H202V328H665" class="line"/><text x="294" y="347" class="net">GND_CTL</text>
 <!-- bypass capacitors -->
 <path d="M352 237V270M340 270H364M340 278H364M352 278V328" class="line"/><circle cx="352" cy="237" r="3" class="dot"/><circle cx="352" cy="328" r="3" class="dot"/><text x="371" y="268" class="sm">C1 100 nF</text>
