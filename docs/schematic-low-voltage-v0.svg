@@ -41,9 +41,9 @@
 <text x="1330" y="231" text-anchor="middle" class="lab">J3 · JST-XH-2 → DOOR STATUS</text>
 <line x1="1180" y1="243" x2="1480" y2="243" stroke="#94a3b8"/>
 <text x="1183" y="270" class="tx">1 · DOOR_SENSE</text><text x="1183" y="294" class="tx">2 · GND_LV</text>
-<text x="1183" y="323" class="sm">NC contact to GND: closed = LOW;</text><text x="1183" y="340" class="sm">open/broken wire = HIGH fault.</text><text x="1183" y="359" class="sm">R1 10 kΩ pull-up to +5V_LV.</text>
-<path d="M1160 270 H1125 V190" class="pwr"/><path d="M1160 294 H1125 V440" class="wire"/>
-<path d="M495 365 H680 V383 H1125 V284 H1160" class="sig"/>
+<text x="1183" y="323" class="sm">NC contact to GND: closed = LOW;</text><text x="1183" y="340" class="sm">open/broken wire = HIGH fault.</text><text x="1183" y="359" class="sm">Enable MCU internal pull-up.</text>
+<path d="M1160 294 H1125 V440" class="wire"/>
+<path d="M495 365 H680 V383 H1125 V270 H1160" class="sig"/>
 <text x="710" y="377" class="net">DOOR_SENSE (pull-up to +5 V)</text>
 <text x="62" y="462" class="sm">If a 3.3 V-only MCU board is selected, verify input tolerance and add bidirectional I²C level shifting for a 5 V LCD backpack.</text>
 
