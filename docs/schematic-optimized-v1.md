@@ -34,7 +34,7 @@ Referensi pabrikan:
 - [STC8G Series Manual mirror (DFN8 mechanical note)](https://akizukidenshi.com/goodsaffix/STC8G.pdf)
 - [KiCad symbol-library discussion for this package](https://gitlab.com/kicad/libraries/kicad-symbols/-/merge_requests/4489)
 
-Dokumentasi pabrikan menyebut P3.2 mendukung fungsi I²C SCL dan P3.3 mendukung I²C SDA; P3.0/P3.1 juga memiliki fungsi UART RXD/TXD; serta P5.4 dapat dipilih menjadi reset saat ISP. ​
+Dokumentasi pabrikan menyebut P3.2 mendukung fungsi I²C SCL dan P3.3 mendukung I²C SDA. Karena keluarga STC8G1K08A juga dapat mengalihkan I²C ke P5.4/P5.5, firmware harus memilih pasangan P3.2/P3.3 (I2C_S[1:0]=00) agar P5.5 tetap menjadi RELAY_CMD. P3.0/P3.1 juga memiliki fungsi UART RXD/TXD, dan P5.4 dapat dipilih sebagai reset aktif-low saat ISP. ​
 
 ## 3. Net dan konektor
 
@@ -47,7 +47,7 @@ Dokumentasi pabrikan menyebut P3.2 mendukung fungsi I²C SCL dan P3.3 mendukung 
 
 F1 ditunjukkan sebagai proteksi opsional. Rating fuse/PTC ditentukan setelah arus aktual dan catu dipastikan. Setelah F1, net suplai disebut +5V_CTL. LM7805 sengaja tidak dipakai ketika sumber sudah 5 V teregulasi.
 
-C1 = 100 nF dan C2 = 10 µF ditunjukkan di rail kontrol. Datasheet STC merekomendasikan kapasitor decoupling dekat suplai IC; ikuti juga rekomendasi datasheet komponen dan layout final.
+C1 = 100 nF dan C2 = 10 µF ditunjukkan di rail kontrol. Tambahkan C3 = 100 nF sedekat mungkin antara pin 2 VCC dan pin 4 GND pada U1. Datasheet serta layout final tetap menjadi acuan akhir.
 
 ### J2 — JST-XH-4, LCD 16×2 I²C
 
