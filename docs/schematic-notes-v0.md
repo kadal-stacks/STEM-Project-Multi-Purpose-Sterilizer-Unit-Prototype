@@ -3,11 +3,15 @@
 > **Status:** draft untuk review, bukan skematik final siap produksi.  
 > **Ruang lingkup:** rangkaian kontrol low-voltage 5 V, antarmuka LCD I²C, input status pintu, dan dua alternatif penggerak relay. Rangkaian kabel PLN/ballast UV-C tidak dirinci di dokumen ini.
 
-## 1. Skematik
+## 1. Gambar skematik
 
-![Draft skematik low-voltage v0.2](schematic-low-voltage-v0.svg)
+**Panduan visual komponen** menampilkan bentuk fisik ilustratif dari matrix board, MCU, LCD I²C, JST-XH, micro limit switch, modul relay, dan opsi relay polos dengan MOSFET.
 
-File gambar: [schematic-low-voltage-v0.svg](schematic-low-voltage-v0.svg)
+![Visual skematik komponen elektronik](schematic-komponen-visual-v0.svg)
+
+File gambar: [schematic-komponen-visual-v0.svg](schematic-komponen-visual-v0.svg)
+
+Untuk diagram blok/net yang lebih teknis, lihat [skematik low-voltage v0.2](schematic-low-voltage-v0.svg).
 
 ## 2. Asumsi rancangan
 
