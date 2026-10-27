@@ -22,6 +22,7 @@ Temuan awal:
 - **LCD 16x2 non-I2C** terdeteksi mulai sekitar Rp16.665; modul I2C terpisah atau versi LCD+I2C perlu dipastikan sebelum membeli.
 - **Relay 1 kanal 5 V** terdeteksi mulai sekitar Rp7.000, tetapi rating yang tercetak pada relay murah bukan bukti bahwa keseluruhan modul aman untuk switching beban 220 VAC.
 - **PCB matrix 5x7 cm** terdeteksi mulai sekitar Rp2.750.
+- Untuk koneksi yang rapi dan bisa dilepas, pertimbangkan JST-XH 2P untuk catu/sensor dan JST-XH 4P untuk LCD I²C. Seri JST-XH resmi memiliki pitch 2,5 mm, bukan JST-PH 2,0 mm.
 - Untuk menghubungkan pad komponen pada matrix board, anggarkan **kawat jumper solid-core sekitar 0,5 mm** untuk lintasan pendek dan **kabel jumper berisolasi** untuk lintasan yang menyilang atau lebih panjang.
 - **Lampu yang diklaim UV-C/germicidal** terdeteksi mulai Rp75.000 per unit. Jenis tabung, panjang gelombang, ballast, soket, emisi ozon, dan spektrum perlu diverifikasi.
 - Biaya utama bukan hanya MCU, LCD dan relay. Driver/ballast lampu, rangkaian catu daya, interlock keselamatan independen, enclosure, pengaman listrik, kabel/konektor, pengujian, dan ongkir bisa menaikkan biaya total secara signifikan.
@@ -41,6 +42,15 @@ Studi ini meninjau komponen berikut:
 7. Kabel dan steker 220 VAC serta komponen perlindungan yang diperlukan.
 
 Dokumen ini hanya merupakan kajian belanja awal. Bukan skematik listrik, sertifikasi keselamatan, validasi mikrobiologis, ataupun instruksi pemasangan tegangan PLN.
+
+## Draft skematik kontrol elektronik
+
+Skematik awal dan penjelasan konektor/driver disimpan di dua berkas berikut:
+
+- [**Skematik low-voltage v0.2 (SVG)**](schematic-low-voltage-v0.svg): diagram kontrol 5 V, LCD I²C, door-status input, serta dua alternatif penggerak relay.
+- [**Catatan skematik v0.2 (Markdown)**](schematic-notes-v0.md): pinout konektor JST-XH, asumsi logika, opsi relay module versus bare relay + MOSFET, dan prosedur pengujian awal.
+
+Kedua berkas masih draft. Nomor pin MCU belum difinalkan karena pemilihan STC8H1K08 atau CH32V003 dan tipe board belum diputuskan. Rangkaian detail PLN/ballast UV-C sengaja tidak disertakan sampai model lampu, driver, enclosure, dan skema interlock direview.
 
 ## Referensi visual dari sumber eksternal
 
@@ -139,11 +149,33 @@ Pencarian Shopee sebelumnya menghasilkan indikasi harga berikut. Harga dan statu
 | Micro limit switch | sekitar Rp1.900–4.600 | [Pencarian micro limit switch](https://shopee.co.id/search?keyword=micro+limit+switch) |
 | PCB matrix | sekitar Rp4.250 untuk 5x7 cm pada listing lain | [Pencarian PCB matrix](https://shopee.co.id/search?keyword=PCB+matrix+5x7) |
 | Lampu UV-C 254 nm | sekitar Rp75.000/unit untuk listing 4 W yang diklaim germicidal; perlu cek model | [Pencarian lampu UV-C 254 nm](https://shopee.co.id/search?keyword=lampu+UV-C+254nm+4W) |
+| Konektor JST-XH-2P + kabel pendek | listing sekitar Rp1.750–3.250/set, stok/varian perlu dicek | [Contoh kabel JST-XH-2P](https://shopee.co.id/ORIGINAL-KABEL-JST-XH-2P-2.54mm-Pitch-JST-Male-Female-2PIN-Konektor-Terminal-Socket-soket-Cable-Connector-PH2.0-MOLEX-MOLEK-CABLE-KABLE-2-PIN-xh3p-i.137620933.20457052106) |
+| Konektor/header JST-XH-4P | listing sekitar Rp2.000/set untuk header; kabel lengkap dapat jauh lebih mahal | [Contoh header XH-4P](https://shopee.co.id/1-Set-Konektor-Header-XH-4p-Siku-2.54mm-JST-XH-4-pin-Male-Female-Inner-4pin-bengkok-i.985143.29537360213) |
+| Logic-level N-MOSFET (opsi bare relay) | listing FQP30N06L sekitar Rp7.000; varian/keaslian/stok perlu diverifikasi | [Contoh FQP30N06L](https://shopee.co.id/FQP30N06L-Original-asli-InFath-60V-Logic-Level-N-Channel-QFET-MOSFET-FQP-30N06L-30N06-L-sparepart-power-supply-i.17874779.40557594878) |
+| Dioda flyback 1N4007 (opsi bare relay) | sekitar Rp700/pcs jika listing 10 pcs Rp7.000 | [Contoh listing 1N4007](https://shopee.co.id/avicenateknologiindonesia) |
+| Resistor 100 Ω (opsi bare relay) | sekitar Rp130/pcs jika listing 100 pcs Rp13.000 | [Katalog resistor 100 Ω](https://shopee.co.id/wahoopart) |
+| Resistor 100 kΩ (opsi bare relay) | sekitar Rp350/pcs jika listing 10 pcs Rp3.500 | [Contoh resistor 100 kΩ](https://shopee.co.id/avicenateknologiindonesia) |
 | Kawat jumper PCB solid-core 0,5 mm, 1 meter | Rp1.500/m pada listing | [Kawat jumper 0,5 mm per meter](https://shopee.co.id/Kawat-Jumper-0.5mm-Tunggal-Kabel-Wire-PCB-Breadboard-harga-permeter-i.134242419.21021859571) |
 | Kawat/kabel tunggal berisolasi untuk jalur PCB, 1 meter | Rp2.500 pada listing dengan pilihan variasi | [Kabel tunggal 0,5 mm untuk PCB/breadboard](https://shopee.co.id/Kabel-Tunggal-Kawat-NYA-0.5mm-0.5-mm-Warna-Bread-Proto-Project-Board-PCB-Jumper-Male-BreadBoard-i.1093272634.29938159885) |
 | Jumper PCB potong 6 cm, diameter 0,5 mm | Rp150/pcs, listing mensyaratkan minimum 50 pcs | [Kawat jumper 6 cm, minimum 50 pcs](https://shopee.co.id/Kawat-Jumper-6cm-d.0.5mm-wire-breadboard-pcb-arduino-harga-perbuah-minimal-beli-50buah-i.134242419.5845710785) |
 
 Harga CH32V003 bare chip tidak boleh dibandingkan langsung dengan harga development kit. Ketersediaan komponen, paket, programmer, dan kebutuhan penyolderan berbeda.
+
+### Konektor JST-XH untuk harness prototipe
+
+JST-XH adalah keluarga konektor wire-to-board pitch 2,5 mm. Untuk rancangan ini:
+
+- **XH-2 / 2P:** 5 V input dan sensor pintu dua kabel.
+- **XH-4 / 4P:** LCD I²C dengan VCC, GND, SDA dan SCL.
+- **XH-3 / 3P (opsional):** modul relay yang ditempatkan terpisah dari PCB kontrol.
+
+Header PCB, housing, terminal crimp, dan kabel adalah bagian yang berbeda. Harga listing “header male/female” belum tentu termasuk kabel siap pakai. Untuk jumlah prototipe kecil, harness siap-crimp bisa lebih praktis, tetapi cek urutan pin dan panjang kabel. Walaupun spesifikasi JST-XH menyebut rating tertentu untuk konektor asli, **pada proyek ini konektor XH hanya ditetapkan untuk kontrol low-voltage**, bukan jalur PLN/ballast. Lihat [spesifikasi XH resmi JST](https://www.jst-mfg.com/product/index.php?lang=2&series=277).
+
+### Pilihan relay dan MOSFET
+
+- **Jika menggunakan modul relay 5 V:** gunakan driver koil yang sudah terpasang pada modul. Biasanya tidak diperlukan MOSFET eksternal untuk menggerakkan koil; verifikasi layout modul, logika input dan diode flyback.
+- **Jika menggunakan relay polos:** gunakan MOSFET logic-level N-channel sebagai low-side driver koil, resistor gate seri, gate pull-down, dan diode flyback. Estimasi harga tambahan untuk contoh set penggerak adalah sekitar Rp8.000–10.000 untuk MOSFET + diode + dua resistor, belum termasuk harga relay polos dan ongkir. Ini alternatif dari modul relay, bukan biaya yang ditambahkan begitu saja ke modul.
+- MOSFET pada skematik hanya digunakan untuk koil relay DC. Ia tidak dimaksudkan untuk switching lampu UV-C AC secara langsung.
 
 ### Kawat penghubung untuk matrix board
 
@@ -205,7 +237,7 @@ Angka berikut adalah estimasi kerja, bukan harga final yang sudah terverifikasi.
 | Dua lampu UV-C | Rp150.000–210.000 sebagai cadangan awal |
 | **Subtotal indikatif setelah pemisahan kawat jumper** | **Rp233.000–392.000** |
 
-Subtotal ini **belum** mencakup ballast/driver yang cocok, pemegang lampu, catu daya terisolasi untuk kontrol, fuse/overcurrent protection, enclosure, mekanisme pintu, pemutus independen, kabel PLN yang sesuai, strain relief, label peringatan, ongkir dan alat uji. Maka total sesungguhnya bisa melampaui Rp500.000. Harga Rp150.000 untuk dua lampu hanya masuk akal bila dua lampu pada kisaran Rp75.000 benar-benar cocok dan sumber UV-C-nya terbukti dari datasheet; ini belum terverifikasi untuk semua listing.
+Subtotal ini **belum** mencakup ballast/driver yang cocok, pemegang lampu, catu daya terisolasi untuk kontrol, fuse/overcurrent protection, enclosure, mekanisme pintu, pemutus independen, kabel PLN yang sesuai, strain relief, label peringatan, ongkir dan alat uji. Subtotal memakai modul relay siap pakai, bukan pilihan relay polos + MOSFET. Maka total sesungguhnya bisa melampaui Rp500.000. Harga Rp150.000 untuk dua lampu hanya masuk akal bila dua lampu pada kisaran Rp75.000 benar-benar cocok dan sumber UV-C-nya terbukti dari datasheet; ini belum terverifikasi untuk semua listing.
 
 ### CH32V003
 
@@ -299,7 +331,16 @@ Semua foto di bagian referensi visual ditautkan ke versi asli di Wikimedia Commo
 
 Gambar ditampilkan tanpa perubahan. Pemilik gambar dan Wikimedia Commons tidak menyatakan dukungan terhadap proyek ini.
 
-## 16. Artefak data
+## 16. Artefak desain dan data
+
+- Skematik low-voltage: [schematic-low-voltage-v0.svg](schematic-low-voltage-v0.svg).
+- Catatan pinout dan driver: [schematic-notes-v0.md](schematic-notes-v0.md).
+- CSV sumber: `hasil_tokopedia_20261017_173836.csv` (hasil scraper lokal, disimpan terpisah dari dokumen ini).
+- Catatan konsol scraper: `Pasted text.txt` (menunjukkan beberapa timeout dan hasil query yang tidak relevan).
+- Dokumen ini sebaiknya diperbarui ketika harga dicek ulang, model komponen dipilih, dan biaya checkout diketahui.
+
+## 17. Artefak desain dan data (versi lama)
+
 
 - CSV sumber: `hasil_tokopedia_20261017_173836.csv` (hasil scraper lokal, disimpan terpisah dari dokumen ini).
 - Catatan konsol scraper: `Pasted text.txt` (menunjukkan beberapa timeout dan hasil query yang tidak relevan).
