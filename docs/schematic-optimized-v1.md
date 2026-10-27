@@ -44,10 +44,10 @@ Skematik v1.5 digambar ulang dengan gaya rangkaian hitam-putih seperti diagram t
 
 | Pin | Net |
 |---|---|
-| 1 | +5V_CTL |
+| 1 | +5V_IN (adapter 5 V before F1) |
 | 2 | GND_CTL |
 
-Gunakan sumber 5 V DC yang terisolasi dan teratur. F1 pada gambar merupakan opsi proteksi yang rating-nya harus dipilih setelah arus beban dan adaptor ditentukan.
+Gunakan sumber 5 V DC yang terisolasi dan teratur. J1 pin 1 adalah +5V_IN; setelah F1, rail menjadi +5V_CTL. F1 pada gambar merupakan opsi proteksi yang rating-nya harus dipilih setelah arus beban dan adaptor ditentukan.
 
 ### J2 — JST-XH-4, LCD 16×2 I²C
 
