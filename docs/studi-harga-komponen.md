@@ -248,7 +248,7 @@ Angka berikut adalah estimasi kerja, bukan harga final yang sudah terverifikasi.
 | Kawat/kabel jumper tunggal berisolasi, sekitar 1 meter | Rp2.500 |
 | Harness JST-XH low-voltage untuk catu dan LCD/sensor | Rp5.000–15.000 |
 | Dua lampu UV-C (klaim listing perlu verifikasi) | Rp150.000–210.000 |
-| **Subtotal indikatif baseline v1.1** | **Rp253.000–449.000** |
+| **Subtotal indikatif baseline v1.1** | **Rp258.000–449.000** |
 
 Subtotal memakai **relay polos + driver MOSFET** dan memasukkan dua sakelar low-voltage. Angka ini bukan total alat siap digunakan. **SW3 interlock pintu ber-rating mains, ballast/driver, dudukan lampu, enclosure opaque, proteksi/isolasi AC, strain relief, kabel dan pengujian belum masuk subtotal.** Harga SW3 belum dikunci karena pemilihan harus berdasarkan tipe kontak, mekanisme positive-opening bila dipersyaratkan, rating tegangan/arus serta arus masuk ballast. Total aktual dapat melewati Rp500.000.
 
