@@ -47,6 +47,7 @@ Dokumen ini hanya merupakan kajian belanja awal. Bukan skematik listrik, sertifi
 
 Skematik awal dan penjelasan konektor/driver disimpan di dua berkas berikut:
 
+- [**Visual komponen skematik (SVG)**](schematic-komponen-visual-v0.svg): gambar referensi berisi bentuk komponen dan jalur sambungan low-voltage.
 - [**Skematik low-voltage v0.2 (SVG)**](schematic-low-voltage-v0.svg): diagram kontrol 5 V, LCD I²C, door-status input, serta dua alternatif penggerak relay.
 - [**Catatan skematik v0.2 (Markdown)**](schematic-notes-v0.md): pinout konektor JST-XH, asumsi logika, opsi relay module versus bare relay + MOSFET, dan prosedur pengujian awal.
 
