@@ -44,7 +44,7 @@
 <text x="90" y="873" class="lab" fill="#cb433c">+5V_CTL</text><path d="M165 868 H235" class="r"/><circle cx="235" cy="868" r="4" class="dot"/><circle cx="302" cy="868" r="4" class="dot"/><path d="M235 868 H302" class="k"/><path d="M302 868 H350" class="r"/><text x="268" y="842" text-anchor="middle" class="sm">SW2 · NC</text><text x="268" y="854" text-anchor="middle" class="tiny">coil inhibit</text>
 <rect x="350" y="847" width="145" height="42" rx="20" class="comp"/><text x="422" y="873" text-anchor="middle" class="lab">K1 · 5 V coil</text>
 <!-- coil negative net to drain -->
-<path d="M495 868 H560 V879 H760 V900" class="r"/><text x="575" y="861" class="tiny" fill="#cb433c">COIL− / DRAIN NET</text>
+<path d="M495 868 H560 V879 H780 V900" class="r"/><text x="575" y="861" class="tiny" fill="#cb433c">COIL− / DRAIN NET</text>
 <!-- diode in parallel -->
 <path d="M350 868 V920 H375" class="k"/><rect x="375" y="904" width="145" height="32" rx="5" class="comp"/><text x="447" y="917" text-anchor="middle" class="sm">D1 · 1N4007</text><text x="447" y="930" text-anchor="middle" class="tiny">K to +5V / A to drain</text><path d="M520 920 H560 V879" class="k"/>
 <!-- Q1 block with pin names -->
