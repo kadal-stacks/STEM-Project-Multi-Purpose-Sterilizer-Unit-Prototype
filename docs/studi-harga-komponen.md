@@ -27,20 +27,23 @@ Temuan awal:
 - **Lampu yang diklaim UV-C/germicidal** terdeteksi mulai Rp75.000 per unit. Jenis tabung, panjang gelombang, ballast, soket, emisi ozon, dan spektrum perlu diverifikasi.
 - Biaya utama bukan hanya MCU, LCD dan relay. Driver/ballast lampu, rangkaian catu daya, interlock keselamatan independen, enclosure, pengaman listrik, kabel/konektor, pengujian, dan ongkir bisa menaikkan biaya total secara signifikan.
 
-**Kesimpulan sementara:** jangan menganggap rancangan sudah bisa dibuat lengkap di bawah Rp500.000 hanya dengan menjumlahkan harga komponen kontrol yang terlihat. Sebelum pembelian, tetapkan spesifikasi lampu dan sistem keselamatan lalu buat BOM per varian.
+**Kesimpulan sementara:** rancangan belum terbukti dapat dibuat lengkap di bawah Rp500.000. MCU yang sekarang dipilih adalah STC8G1K08A-36I-DFN8, tetapi harga listing lokal yang cocok untuk paket DFN8 ini belum terverifikasi dan breakout 0,50 mm/custom PCB belum masuk subtotal. Harga MCU lama STC8H1K08/CH32V003 di tabel berikut adalah pembanding historis, bukan harga komponen terpilih.
 
 ## 2. Ruang lingkup
 
-Studi ini meninjau komponen berikut:
+MCU yang dipilih untuk skematik saat ini adalah **STC8G1K08A-36I-DFN8**. Komponen dan pekerjaan utama:
 
-1. Mikrokontroler: STC8H1K08 atau CH32V003.
-2. Lampu germicidal UV-C, kandidat dua unit.
-3. Relay polos dengan koil 5 V dan driver MOSFET logic-level (baseline skematik); modul relay siap pakai adalah alternatif, bukan komponen tambahan.
-4. Dua micro limit switch low-voltage: SW1 untuk pemantauan pintu ke MCU dan SW2 untuk memutus suplai koil relay.
-5. Interlock pintu SW3 yang berating mains dan bekerja independen dari MCU/relay coil; model final dan harga belum ditentukan.
-6. LCD karakter 16x2 dengan backpack I²C dan konektor JST-XH-4.
-7. PCB matrix/perfboard, resistor, kapasitor, diode flyback, konektor, kawat jumper PCB dan kabel penghubung.
-8. Ballast/driver yang sesuai untuk dua lampu, enclosure dan komponen proteksi/interlock yang harus direview sebelum dirakit.
+1. MCU STC8G1K08A-36I dalam paket DFN8 3×3 mm.
+2. Breakout DFN8 0,5 mm ke pitch 2,54 mm **atau** PCB custom/SMT assembly. Paket DFN8 tidak bisa dipasang langsung di matrix board standar.
+3. Dua lampu germicidal UV-C dengan model, panjang gelombang dan kebutuhan ballast/driver yang harus diverifikasi.
+4. Relay polos dengan koil 5 V dan driver MOSFET logic-level; modul relay siap pakai adalah alternatif, bukan komponen tambahan.
+5. SW1 untuk pemantauan pintu oleh MCU dan SW2 NC untuk memutus suplai koil relay pada sisi low-voltage.
+6. SW3, interlock pintu berating mains yang bekerja independen dari MCU/relay coil; model final dan harga belum ditentukan.
+7. LCD karakter 16×2 dengan backpack I²C dan konektor JST-XH-4.
+8. Tombol Start/Stop momentary NO, PCB matrix/perfboard, resistor, kapasitor, diode flyback, konektor, kawat jumper dan kabel penghubung.
+9. Ballast/driver, enclosure opaque dan komponen proteksi/interlock yang sesuai serta harus direview sebelum dirakit.
+
+Dokumen ini adalah kajian belanja awal, bukan skematik produksi, sertifikasi keselamatan, validasi mikrobiologis, ataupun instruksi pemasangan tegangan PLN.
 
 Dokumen ini hanya merupakan kajian belanja awal. Bukan skematik listrik, sertifikasi keselamatan, validasi mikrobiologis, ataupun instruksi pemasangan tegangan PLN.
 
@@ -48,12 +51,12 @@ Dokumen ini hanya merupakan kajian belanja awal. Bukan skematik listrik, sertifi
 
 File rujukan terbaru:
 
-- [**Skematik optimasi v1.5 (SVG)**](schematic-optimized-v1.svg): diagram gaya teknis dengan catu kontrol 5 V, MCU memakai net logis, LCD I²C, input pintu, tombol Start/Stop, driver relay MOSFET, dan batas subsistem AC/UV-C.
-- [**Catatan optimasi v1.5 (Markdown)**](schematic-optimized-v1.md): koreksi skematik awal, pinout JST-XH, dua opsi driver, dan batas keselamatan.
+- [**Skematik optimasi v1.6 (SVG)**](schematic-optimized-v1.svg): gaya skematik teknik dengan pin fisik STC8G1K08A-36I-DFN8, LCD I²C, input pintu/Start-Stop, driver relay MOSFET dan batas subsistem AC/UV-C.
+- [**Catatan optimasi v1.6 (Markdown)**](schematic-optimized-v1.md): tabel pin MCU, konsekuensi ISP, urutan konektor dan batas keselamatan.
 - [Visual komponen skematik (SVG)](schematic-komponen-visual-v0.svg): ilustrasi komponen fisik; bukan pengganti skematik koneksi.
 - [Skematik low-voltage v0.2 (SVG)](schematic-low-voltage-v0.svg) dan [catatan v0.2](schematic-notes-v0.md): versi terdahulu untuk jejak perubahan.
 
-v1.5 masih draft. Nomor pin fisik MCU belum dicantumkan karena STC8H1K08 atau CH32V003 dan tipe board belum dipilih. Sambungan PLN dan ballast UV-C sengaja hanya berupa batas blok, bukan instruksi kabel rinci.
+v1.6 masih draft. Pin MCU mengacu ke STC8G1K08A-36I-DFN8, tetapi EPAD dan layout PCB perlu divalidasi terhadap paket yang dipakai. Sambungan PLN dan ballast UV-C sengaja hanya berupa batas blok, bukan instruksi kabel rinci.
 
 ## Referensi visual dari sumber eksternal
 
@@ -116,7 +119,7 @@ Shopee juga ditelusuri sebagai pembanding, tetapi data yang dapat diverifikasi p
 
 ## 4. Hasil pencarian Tokopedia
 
-Harga dalam tabel adalah harga listing yang terdeteksi saat pengambilan data, belum termasuk ongkir.
+Harga dalam tabel adalah harga listing yang terdeteksi saat pengambilan data, belum termasuk ongkir. Baris STC8H1K08 adalah hasil snapshot pembanding lama, bukan MCU yang sekarang dipilih. Tidak ada listing Tokopedia yang terverifikasi untuk STC8G1K08A-36I-DFN8 pada snapshot ini.
 
 | Komponen | Kandidat listing dan harga terendah relevan yang terdeteksi | Catatan verifikasi |
 |---|---|---|
@@ -140,6 +143,8 @@ Harga dalam tabel adalah harga listing yang terdeteksi saat pengambilan data, be
 ## 5. Pembanding Shopee
 
 Pencarian Shopee sebelumnya menghasilkan indikasi harga berikut. Harga dan status stok perlu diperiksa ulang sebelum digunakan sebagai dasar pembelian.
+
+**Catatan pemilihan MCU:** tabel ini memuat kandidat dari pencarian sebelumnya, bukan harga komponen final. Listing Shopee yang ditemukan untuk [STC8G1K08A-36I-SOP8 (Rp15.000)](https://shopee.co.id/STC8G1K08A-8G1K08A-STC8G1K08A-36I-SOP-8-i.14976147.15391971625) adalah paket **SOP8**, bukan DFN8, sehingga tidak boleh dianggap harga untuk part yang dipilih. Harga part DFN8 persis belum terverifikasi di Shopee/Tokopedia. Sebagai pembanding internasional saja, [LCSC](https://lcsc.com/product-detail/Microcontrollers-MCU-MPU-SOC_STC-Micro-STC8G1K08A-36I-DFN8_C915664.html) menunjukkan USD 0,2759/unit untuk kuantitas 5+, dengan minimum order lima unit dan belum termasuk ongkir/impor; ini bukan harga checkout Indonesia.
 
 | Komponen | Indikasi harga Shopee | Link |
 |---|---:|---|
@@ -196,35 +201,40 @@ Untuk papan matrix dengan pad tembaga per lubang, pertimbangkan dua jenis penghu
 
 **Jangan memakai besi/kawat baja biasa.** Pilih kawat konduktor yang memang bisa disolder untuk elektronik, idealnya kawat tembaga berlapis timah atau kawat jumper PCB. Kawat tanpa isolasi tidak boleh menyentuh jalur/pad lain yang berbeda net. Harga marketplace di atas adalah referensi saat pencarian, bukan konfirmasi stok atau harga checkout.
 
-## 6. Pilihan mikrokontroler
+## 6. MCU terpilih dan konsekuensi paket
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Candidate-STC8H1K08-2563eb?style=flat-square" alt="Candidate: STC8H1K08" />
-  <img src="https://img.shields.io/badge/Candidate-CH32V003-7c3aed?style=flat-square" alt="Candidate: CH32V003" />
-  <img src="https://img.shields.io/badge/Architecture-RISC--V-334155?style=flat-square&logo=riscv&logoColor=white" alt="RISC-V architecture badge" />
-</p>
+![Selected MCU](https://img.shields.io/badge/MCU-STC8G1K08A--36I--DFN8-2563eb?style=flat-square) ![Package](https://img.shields.io/badge/Package-DFN8%203%C3%973%20mm-334155?style=flat-square)
 
-> Badge adalah penanda kandidat yang sedang dibandingkan, bukan konfirmasi pemilihan komponen. Logo RISC-V digunakan hanya sebagai penjelas arsitektur untuk kandidat CH32V003.
+MCU yang dipakai pada skematik revisi 1.6 adalah **STC8G1K08A-36I-DFN8**, bukan STC8H1K08 atau CH32V003. Datasheet STC menyebut rentang operasi 1,9–5,5 V, core 8051 1T, 8 KB Flash dan antarmuka UART, SPI serta I²C. Lihat [halaman produk STC](https://www.stcmicro.com/stc/stc8g1k08a.html) dan [datasheet fitur/pinout resmi](https://www.stcmicro.com/datasheet/STC8G1K08A_Features.pdf).
 
-![Pilihan MCU](https://img.shields.io/badge/MCU%20option-STC8H1K08-2563eb?style=flat-square) ![Pilihan MCU](https://img.shields.io/badge/MCU%20option-CH32V003%20%2F%20RISC--V-7c3aed?style=flat-square&logo=riscv&logoColor=white)
+### Pinout yang dipakai pada skematik
 
-> Badge di atas hanya menandai dua kandidat yang sedang dikaji. Tidak menyatakan bahwa MCU sudah dipilih atau digunakan pada prototipe.
+| Pin DFN8 | Fungsi | Net dalam prototipe |
+|---:|---|---|
+| 1 | P5.4 | Reserved untuk ISP/reset; tidak dipakai di baseline |
+| 2 | VCC | +5V_CTL |
+| 3 | P5.5 | RELAY_CMD ke gate Q1 |
+| 4 | GND | GND_CTL |
+| 5 | P3.0 / RXD | DOOR_SENSE |
+| 6 | P3.1 / TXD | START_STOP |
+| 7 | P3.2 / SCL | I2C_SCL |
+| 8 | P3.3 / SDA | I2C_SDA |
+| 9 / EPAD | Exposed substrate pad dari simbol/footprint | Tidak diberi net secara default; manual paket menyatakan pad ini tidak terhubung ke GND di dalam IC dan dapat di-ground-kan atau dibiarkan open sesuai rancangan footprint |
 
-### Opsi A: STC8H1K08
+Pinout P3.2 sebagai SCL dan P3.3 sebagai SDA cocok dengan fungsi alternate-pin yang didokumentasikan STC. P3.0/P3.1 juga memiliki fungsi UART RXD/TXD, sehingga harness SW1 dan Start/Stop mungkin perlu dilepas saat ISP bila mengganggu pemrograman. P5.4 disisihkan karena dapat dikonfigurasi sebagai pin reset aktif-low selama ISP. Perhatikan juga kondisi power-up: jangan membiarkan P3.0, P3.1 dan P3.2 semuanya LOW secara bersamaan.
 
-Produsen STC menyatakan keluarga STC8H1K08 memakai inti 8051 1T, rentang operasi 1,9–5,5 V, memori program 8 KB untuk varian STC8H1K08, dan memiliki UART, SPI serta I2C. STC juga mendokumentasikan ISP (in-system programming), sehingga penggunaan USB-to-TTL yang kompatibel dapat mengurangi kebutuhan programmer khusus. Lihat [halaman resmi STC8H1K08](https://www.stcmicro.com/stc/stc8h1k08.html) dan [manual keluarga STC8H](https://www.stcmicro.com/datasheet/STC8H-en.pdf).
+### Implikasi DFN8 untuk prototipe matrix board
 
-**Pertimbangan:** varian QFN20 sulit untuk solder manual pemula. Utamakan TSSOP20 atau development board bila kompatibel dan tersedia, dan pastikan pinout/part number persis sama. Jangan menganggap setiap USB-to-TTL otomatis kompatibel; level tegangan, pin UART, prosedur ISP, reset/boot dan dukungan perangkat lunak harus sesuai.
+Paket **DFN8 3×3 mm memiliki pitch sekitar 0,5 mm** dan tidak mempunyai kaki panjang yang bisa dimasukkan ke lubang matrix board. Jadi, daftar PCB matrix saja belum cukup untuk pemasangan MCU.
 
-### Opsi B: CH32V003F4P6
+Pilihan implementasi:
+- **DFN8-to-DIP8 breakout dengan pitch 0,5 mm**, kemudian kaki 2,54 mm-nya dipasang pada matrix board. Contoh adapter internasional: [Chip Quik IPC0060, DFN8 0,50 mm to DIP8](https://www.digikey.com/en/products/detail/chip-quik-inc/IPC0060/5014786). Harga pada halaman DigiKey yang ditemukan adalah USD 7,79 sebelum ongkir/pajak; ini bukan harga Shopee/Tokopedia Indonesia dan belum dimasukkan ke subtotal BOM.
+- PCB custom ber-footprint DFN8 yang benar, dirakit dengan teknik solder yang sesuai atau SMT assembly.
+- Jangan membeli breakout DFN8 0,65 mm tanpa cek pitch: **0,65 mm tidak cocok** untuk footprint 0,50 mm.
 
-CH32V003 adalah MCU 32-bit berbasis RISC-V dengan dokumentasi serta contoh resmi tersedia di [repo WCH Open Source](https://github.com/openwch/ch32v003). Jalur pemrograman/debug yang lazim menggunakan WCH-Link/WCH-LinkE atau tool kompatibel untuk antarmuka debug satu-kawat. Referensi komunitas: [CH32V003 Arduino Quickstart](https://github.com/vimalb/CH32V003_Arduino_Quickstart) dan [CH32V003 Dev Guide](https://github.com/limingjie/CH32V003-ST7735-Driver/blob/main/CH32V003_Dev_Guide.md).
+EPAD pin 9 pada simbol perlu ditangani menurut mechanical drawing dan panduan assembly yang dipakai. Manual STC8G yang ditemukan menyatakan substrate pad DFN8 tidak di-ground-kan di dalam IC dan dapat di-ground-kan atau dibiarkan open pada PCB. Rujukan: [manual keluarga STC8G](https://akizukidenshi.com/goodsaffix/STC8G.pdf) dan [diskusi simbol KiCad untuk part ini](https://gitlab.com/kicad/libraries/kicad-symbols/-/merge_requests/4489).
 
-**Pertimbangan:** harga chip murah belum tentu membuat total sistem termurah. Periksa apakah board yang dibeli sudah menyertakan programmer, header debug, regulator, dan contoh firmware. Varian TSSOP20 juga menuntut teknik solder lebih baik daripada modul yang sudah dirakit.
-
-### Rekomendasi sementara
-
-Untuk prototipe tugas dengan waktu dan anggaran terbatas, prioritaskan **kemudahan bring-up dan ketersediaan board**, bukan sekadar harga bare IC atau jumlah bit CPU. Bandingkan biaya *total siap diprogram*: MCU/board + programmer/USB-TTL + adaptor/konektor + tooling + risiko rework. Pilih salah satu MCU dahulu agar tidak membeli dua ekosistem sekaligus.
+Untuk ISP, datasheet STC mendokumentasikan penggunaan USB-to-UART pada jalur serial yang sesuai; ini bukan berarti sembarang modul USB-TTL otomatis cocok. Verifikasi level tegangan dan urutan TX/RX, lakukan urutan power-cycle sesuai alat ISP, serta lepaskan beban/harness pada P3.0/P3.1 bila diperlukan.
 
 ## 7. Estimasi biaya awal
 
@@ -234,7 +244,7 @@ Angka berikut adalah estimasi kerja, bukan harga final yang sudah terverifikasi.
 
 | Item | Asumsi anggaran |
 |---|---:|
-| MCU/board dan kebutuhan pemrograman awal | Rp10.000–50.000 |
+| STC8G1K08A-36I-DFN8 + akses ISP awal (harga lokal exact package belum terverifikasi) | allowance Rp10.000–50.000, asumsi kerja saja |
 | USB-to-TTL yang kompatibel (jika diperlukan untuk STC) | Rp17.000–25.000 |
 | Adaptor 5 V DC teregulasi dan terisolasi, sekitar 1 A | Rp16.500–31.000 |
 | LCD 16x2 dengan I²C backpack | Rp30.000–40.000 |
@@ -243,21 +253,21 @@ Angka berikut adalah estimasi kerja, bukan harga final yang sudah terverifikasi.
 | Diode flyback D1 1N4007 | Rp700–2.800 |
 | Dua micro limit switch low-voltage (SW1 monitor + SW2 coil inhibit) | Rp4.000–10.000 |
 | Pushbutton momentary NO untuk Start/Stop (estimasi anggaran, belum marketplace-verified) | Rp2.000–5.000 |
-| PCB matrix | Rp3.000–10.000 |
+| PCB matrix (tidak dapat langsung menerima bare DFN8) | Rp3.000–10.000 |
 | Header, konektor kecil, resistor, kapasitor dan komponen prototipe | Rp10.000–35.000 |
 | Kawat jumper PCB solid-core 0,5 mm, sekitar 1 meter | Rp1.500 |
 | Kawat/kabel jumper tunggal berisolasi, sekitar 1 meter | Rp2.500 |
 | Harness JST-XH low-voltage untuk catu, LCD, pemantauan pintu dan Start/Stop | Rp5.000–15.000 |
 | Dua lampu UV-C (klaim listing perlu verifikasi) | Rp150.000–210.000 |
-| **Subtotal indikatif baseline v1.5** | **Rp260.000–454.000** |
+| **Subtotal indikatif baseline v1.6 (tanpa breakout DFN8 / PCB custom)** | **Rp260.000–454.000** |
 
-Subtotal memakai **relay polos + driver MOSFET**, dua sakelar low-voltage, dan allowance awal untuk tombol Start/Stop. Harga tombol belum diverifikasi melalui marketplace. Angka ini bukan total alat siap digunakan. **SW3 interlock pintu ber-rating mains, ballast/driver, dudukan lampu, enclosure opaque, proteksi/isolasi AC, strain relief, kabel dan pengujian belum masuk subtotal.** Harga SW3 belum dikunci karena pemilihan harus berdasarkan tipe kontak, mekanisme positive-opening bila dipersyaratkan, rating tegangan/arus serta arus masuk ballast. Total aktual dapat melewati Rp500.000.
+Subtotal memakai **relay polos + driver MOSFET**, dua sakelar low-voltage, dan allowance awal untuk tombol Start/Stop. Harga tombol belum diverifikasi melalui marketplace. **Biaya breakout DFN8 pitch 0,50 mm atau PCB custom/SMT juga belum dimasukkan**; bare DFN8 tidak dapat langsung dipasang pada matrix board berlubang biasa. Angka ini bukan total alat siap digunakan. **SW3 interlock pintu ber-rating mains, ballast/driver, dudukan lampu, enclosure opaque, proteksi/isolasi AC, strain relief, kabel dan pengujian juga belum masuk subtotal.** Harga SW3 belum dikunci karena pemilihan harus berdasarkan tipe kontak, mekanisme positive-opening bila dipersyaratkan, rating tegangan/arus serta arus masuk ballast. Total aktual dapat melewati Rp500.000.
 
 Modul relay siap pakai adalah alternatif; bila dipilih, ganti relay polos + Q1 + D1 dengan satu modul relay yang rangkaiannya sudah diverifikasi, dan hitung ulang subtotal. Jangan menjumlahkan dua alternatif driver sekaligus.
 
-### CH32V003
+### Kandidat lama: CH32V003 (tidak dipakai pada skematik saat ini)
 
-Anggaran board Rp55.000 sebagai kandidat pencarian belum cukup untuk menyimpulkan bahwa sistem sudah siap diprogram. Tambahkan biaya programmer bila tidak termasuk. Perbandingan yang adil wajib mencatat **board + programmer + kabel debug + catu daya + konektor**, bukan membandingkan bare IC dengan board STC.
+Development kit Rp55.000 pada tabel sebelumnya adalah pembanding dari tahap seleksi MCU lama. Ini bukan bagian BOM v1.6. Jangan menjumlahkan biaya board/programmer CH32V003 dengan paket STC yang sekarang dipilih.
 
 ## 8. Komponen yang belum tercakup atau harus dipastikan
 
@@ -349,8 +359,8 @@ Gambar ditampilkan tanpa perubahan. Pemilik gambar dan Wikimedia Commons tidak m
 
 ## 16. Artefak desain dan data
 
-- Skematik terkoreksi v1.5: [schematic-optimized-v1.svg](schematic-optimized-v1.svg).
-- Catatan optimasi v1.5: [schematic-optimized-v1.md](schematic-optimized-v1.md).
+- Skematik terkoreksi v1.6: [schematic-optimized-v1.svg](schematic-optimized-v1.svg).
+- Catatan optimasi v1.6: [schematic-optimized-v1.md](schematic-optimized-v1.md).
 - Skematik low-voltage versi sebelumnya: [schematic-low-voltage-v0.svg](schematic-low-voltage-v0.svg).
 - Catatan skematik v0.2: [schematic-notes-v0.md](schematic-notes-v0.md).
 - CSV sumber: `hasil_tokopedia_20261017_173836.csv` (hasil scraper lokal, disimpan terpisah dari dokumen ini).
