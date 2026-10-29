@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name sop16-ssop16)(type KiCad)(uri ${KIPRJMOD}/sop16-ssop16.pretty)(options "")(descr "Custom silkscreen"))
+)

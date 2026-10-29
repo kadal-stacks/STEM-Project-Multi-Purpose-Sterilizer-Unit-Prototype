@@ -1,0 +1,169 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "SSOP20"
+Date "2021-01-13"
+Rev "1.0"
+Comp "Lin Ke-Fong"
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Connector_Generic:Conn_01x10 J1
+U 1 1 5FED3BDC
+P 3300 2900
+F 0 "J1" H 3218 3517 50  0000 C CNN
+F 1 "Conn_01x10" H 3218 3426 50  0000 C CNN
+F 2 "ssop20:PinHeader_1x10_P2.54mm_Vertical_Silkscreen_Changed" H 3300 2900 50  0001 C CNN
+F 3 "~" H 3300 2900 50  0001 C CNN
+	1    3300 2900
+	-1   0    0    -1  
+$EndComp
+$Comp
+L ssop20:SSOP20 U1
+U 1 1 5FEDA1CE
+P 5000 3500
+F 0 "U1" H 5000 4665 50  0000 C CNN
+F 1 "SSOP20" H 5000 4574 50  0000 C CNN
+F 2 "Package_SO:SSOP-20_4.4x6.5mm_P0.65mm" H 5000 4600 50  0001 C CNN
+F 3 "" H 5000 4600 50  0001 C CNN
+	1    5000 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x10 J2
+U 1 1 5FEDFAAB
+P 6700 2900
+F 0 "J2" H 6780 2892 50  0000 L CNN
+F 1 "Conn_01x10" H 6780 2801 50  0000 L CNN
+F 2 "ssop20:PinHeader_1x10_P2.54mm_Vertical_Silkscreen_Changed" H 6700 2900 50  0001 C CNN
+F 3 "~" H 6700 2900 50  0001 C CNN
+	1    6700 2900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3500 2500 4300 2500
+Wire Wire Line
+	4300 2500 4300 2600
+Wire Wire Line
+	4300 2600 4400 2600
+Wire Wire Line
+	3500 2600 4250 2600
+Wire Wire Line
+	4250 2600 4250 2800
+Wire Wire Line
+	4250 2800 4400 2800
+Wire Wire Line
+	4200 2700 4200 3000
+Wire Wire Line
+	4200 3000 4400 3000
+Wire Wire Line
+	3500 2700 4200 2700
+Wire Wire Line
+	3500 2800 4150 2800
+Wire Wire Line
+	4150 2800 4150 3200
+Wire Wire Line
+	4150 3200 4400 3200
+Wire Wire Line
+	3500 2900 4100 2900
+Wire Wire Line
+	4100 2900 4100 3400
+Wire Wire Line
+	4100 3400 4400 3400
+Wire Wire Line
+	3500 3000 4050 3000
+Wire Wire Line
+	4050 3000 4050 3600
+Wire Wire Line
+	4050 3600 4400 3600
+Wire Wire Line
+	3500 3100 4000 3100
+Wire Wire Line
+	4000 3100 4000 3800
+Wire Wire Line
+	4000 3800 4400 3800
+Wire Wire Line
+	4400 4000 3950 4000
+Wire Wire Line
+	3950 4000 3950 3200
+Wire Wire Line
+	3950 3200 3500 3200
+Wire Wire Line
+	3500 3300 3900 3300
+Wire Wire Line
+	3900 3300 3900 4200
+Wire Wire Line
+	3900 4200 4400 4200
+Wire Wire Line
+	3500 3400 3850 3400
+Wire Wire Line
+	3850 3400 3850 4400
+Wire Wire Line
+	3850 4400 4400 4400
+Wire Wire Line
+	6500 2500 5700 2500
+Wire Wire Line
+	5700 2500 5700 2600
+Wire Wire Line
+	5700 2600 5600 2600
+Wire Wire Line
+	5600 2800 5750 2800
+Wire Wire Line
+	5750 2800 5750 2600
+Wire Wire Line
+	5750 2600 6500 2600
+Wire Wire Line
+	6500 2700 5800 2700
+Wire Wire Line
+	5800 2700 5800 3000
+Wire Wire Line
+	5800 3000 5600 3000
+Wire Wire Line
+	5600 3200 5850 3200
+Wire Wire Line
+	5850 3200 5850 2800
+Wire Wire Line
+	5850 2800 6500 2800
+Wire Wire Line
+	6500 2900 5900 2900
+Wire Wire Line
+	5900 2900 5900 3400
+Wire Wire Line
+	5900 3400 5600 3400
+Wire Wire Line
+	5600 3600 5950 3600
+Wire Wire Line
+	5950 3600 5950 3000
+Wire Wire Line
+	5950 3000 6500 3000
+Wire Wire Line
+	6500 3100 6000 3100
+Wire Wire Line
+	6000 3100 6000 3800
+Wire Wire Line
+	6000 3800 5600 3800
+Wire Wire Line
+	5600 4000 6050 4000
+Wire Wire Line
+	6050 4000 6050 3200
+Wire Wire Line
+	6050 3200 6500 3200
+Wire Wire Line
+	6500 3300 6100 3300
+Wire Wire Line
+	6100 3300 6100 4200
+Wire Wire Line
+	6100 4200 5600 4200
+Wire Wire Line
+	5600 4400 6150 4400
+Wire Wire Line
+	6150 4400 6150 3400
+Wire Wire Line
+	6150 3400 6500 3400
+$EndSCHEMATC

@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP dummy_16_pins
+D Dummy 16 pins IC (ssop16 or sop16)
+K dummy
+$ENDCMP
+#
+#End Doc Library

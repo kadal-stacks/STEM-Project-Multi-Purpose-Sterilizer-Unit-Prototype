@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name ssop20)(type Legacy)(uri ${KIPRJMOD}/ssop20.lib)(options "")(descr "Dummy symbol"))
+)

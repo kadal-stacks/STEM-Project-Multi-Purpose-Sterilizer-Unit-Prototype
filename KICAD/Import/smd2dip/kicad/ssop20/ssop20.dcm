@@ -1,0 +1,7 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP SSOP20
+D Dummy 20 pins symbol
+$ENDCMP
+#
+#End Doc Library
