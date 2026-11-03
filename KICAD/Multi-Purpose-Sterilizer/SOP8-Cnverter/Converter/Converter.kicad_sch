@@ -1,0 +1,451 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "ed2dbe9c-3f75-4a7c-857f-b28e8a80212e")
+	(paper "A4")
+	(lib_symbols
+		(symbol "MCU_STC:STC8G1K08A-36I-SOP8"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "U"
+				(at 0 11.43 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "STC8G1K08A-36I-SOP8"
+				(at 0 -11.43 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Library:Converter SOP8-DIP8"
+				(at 0 -13.97 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://lcsc.com/product-detail/STC_STC-Micro-STC8G1K08A-36I-SOP8_C915663.html"
+				(at 0 -16.51 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Manufacturer" "STC(宏晶)"
+				(at 0 -19.05 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "MPN" "STC8G1K08A-36I-SOP8"
+				(at 0 -21.59 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "LCSC Part" "C915663"
+				(at 0 -24.13 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "STC"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "STC8G1K08A-36I-SOP8_0_1"
+				(rectangle
+					(start -57.15 8.89)
+					(end 57.15 -8.89)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(circle
+					(center -55.88 7.62)
+					(radius 0.38)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at -59.69 6.35 0)
+					(length 2.54)
+					(name "CCP2_2/CCP2/MCLKO/RST/SCL_2/MOSI/RxD_3/T1CLKO/T0/INT2/ADC4/P5.4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 59.69 6.35 180)
+					(length 2.54)
+					(name "Vcc/AVcc"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -59.69 3.81 0)
+					(length 2.54)
+					(name "ECI_2/ECI/CCP2_3/SDA_2/SS/TxD_3/T0CLKO/T1/INT3/ADC5/P5.5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 59.69 -6.35 180)
+					(length 2.54)
+					(name "Gnd/AGnd"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -59.69 1.27 0)
+					(length 2.54)
+					(name "P3.0/ADC0/RxD/INT4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -59.69 -1.27 0)
+					(length 2.54)
+					(name "P3.1/ADC1/TxD/CCP0_2/ECI_3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -59.69 -3.81 0)
+					(length 2.54)
+					(name "P3.2/ADC2/RxD_2/INT0/SCLK/SCL/CCP0/CCP0_3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -59.69 -6.35 0)
+					(length 2.54)
+					(name "P3.3/ADC3/TxD_2/INT1/MISO/SDA/CCP1/CCP1_2/CCP1_3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+	)
+	(no_connect
+		(at 214.63 106.68)
+		(uuid "6012b2ba-8279-42cd-b4e1-20cd0c652363")
+	)
+	(no_connect
+		(at 95.25 104.14)
+		(uuid "6d8f5aa4-2cda-4ff5-8c47-3aef228be80a")
+	)
+	(no_connect
+		(at 95.25 96.52)
+		(uuid "7b2d8eca-023b-492f-a4da-6b2932f795d2")
+	)
+	(no_connect
+		(at 95.25 101.6)
+		(uuid "8acad771-98bc-4970-b89f-924a3c567c94")
+	)
+	(no_connect
+		(at 214.63 93.98)
+		(uuid "920b2fa0-0fdc-42aa-a46b-2d1021f2e117")
+	)
+	(no_connect
+		(at 95.25 93.98)
+		(uuid "953c27ac-bbaa-4b83-a601-d8d8b524a5ed")
+	)
+	(no_connect
+		(at 95.25 106.68)
+		(uuid "be997daf-4e45-4b64-8903-4c2e902f8b2e")
+	)
+	(no_connect
+		(at 95.25 99.06)
+		(uuid "f552049d-a01c-42ac-8ded-7bdc8408fd87")
+	)
+	(symbol
+		(lib_id "MCU_STC:STC8G1K08A-36I-SOP8")
+		(at 154.94 100.33 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "514a92c3-b946-4419-bd92-3182c00f632a")
+		(property "Reference" "U1"
+			(at 154.94 86.36 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "STC8G1K08A-36I-SOP8"
+			(at 154.94 88.9 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Library:Converter SOP8-DIP8"
+			(at 154.94 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://lcsc.com/product-detail/STC_STC-Micro-STC8G1K08A-36I-SOP8_C915663.html"
+			(at 154.94 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 154.94 100.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "STC(宏晶)"
+			(at 154.94 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "STC8G1K08A-36I-SOP8"
+			(at 154.94 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C915663"
+			(at 154.94 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "931d15f2-172a-4849-a943-31891ab9eeab")
+		)
+		(pin "4"
+			(uuid "6c65ef4a-f65b-4e86-b746-a1cbcd5b3d1a")
+		)
+		(pin "2"
+			(uuid "3234fbab-a0c0-4685-b4ec-212dd14cd803")
+		)
+		(pin "3"
+			(uuid "530b60f9-975f-4ea5-ac50-e8e77af92967")
+		)
+		(pin "8"
+			(uuid "8ab24c14-d4d7-4f29-a30b-8d41c8861cbb")
+		)
+		(pin "6"
+			(uuid "beee2354-39ef-4b46-aa1a-6b9bc116a3e2")
+		)
+		(pin "7"
+			(uuid "4fa82c3d-054d-46b3-afa5-294963f03eb7")
+		)
+		(pin "5"
+			(uuid "eba06869-499d-43e3-aa1d-1b66aa0ee22f")
+		)
+		(instances
+			(project "Converter"
+				(path "/ed2dbe9c-3f75-4a7c-857f-b28e8a80212e"
+					(reference "U1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)

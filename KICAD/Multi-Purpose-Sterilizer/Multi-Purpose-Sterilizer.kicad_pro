@@ -526,7 +526,7 @@
       "netlist": "",
       "plot": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "Multi-Purpose-Sterilizer.step",
       "vrml": ""
     },
     "page_layout_descr_file": ""
@@ -701,6 +701,24 @@
           "label": "Availability",
           "name": "Availability",
           "show": false
+        },
+        {
+          "group_by": false,
+          "label": "MPN",
+          "name": "MPN",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Manufacturer",
+          "name": "Manufacturer",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "LCSC Part",
+          "name": "LCSC Part",
+          "show": false
         }
       ],
       "filter_string": "",
@@ -751,7 +769,7 @@
         "uuid": "069a536e-15de-40e2-9ef7-46225f00c77d"
       }
     ],
-    "used_designators": "U2-4,#PWR1-12,#PWR14-15,D1-3,K1-2,C1-6,R1-8,#FLG1-3,J1-7,Q3-4",
+    "used_designators": "U1-4,#PWR1-20,D1-3,K1-2,C1-6,R1-8,#FLG1-7,J1-8,Q3-4,SW1-3",
     "variants": []
   },
   "sheets": [
